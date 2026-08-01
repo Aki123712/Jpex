@@ -1,181 +1,172 @@
-# Jpex — JEPX 区域价 × 气温 分析数据集
+# Jpex — 工厂级电力风险地图（v3）
 
-Public dataset for temperature–power-price cross analysis on Japan wholesale electricity (JEPX area prices).
+Public dataset: **JEPX regional spot prices × site-level temperature × manufacturing load profiles**.
+
+分析主体是**日本先进制造产能所在地**，不是行政区。
 
 ## Structure
 
 ```
 data/
-  jepx_spot_daily.csv        # day-aggregated area prices
-  jepx_spot_halfhourly.csv   # raw 48 half-hour slots
-  jma_temp_daily.csv         # daily temperatures (Open-Meteo archive @ station coords)
-  merged_analysis.csv        # join + is_weekend / is_obon flags
-  raw_temp/                  # per-station Open-Meteo JSON pulls
+  site_master.csv              # 17 manufacturing sites (semi + heavy)
+  jepx_spot_daily.csv          # day-aggregated area prices + load windows
+  jepx_spot_halfhourly.csv     # raw 48 half-hour slots
+  jma_temp_daily.csv           # daily temps at 13 stations
+  merged_analysis.csv          # area join + calendar flags
+  raw_temp/                    # Open-Meteo JSON provenance
 output/
-  correlation_results.json   # Pearson + OLS + quadratic/piecewise35 (machine-readable)
+  correlation_results.json     # 8-area Pearson / OLS / nonlinear
+  site_exposure.json           # per-site risk metrics (core v3 deliverable)
+  reserve_margin_context.json  # 2026 summer 供給予備率 (hand-entered)
 README.md
 ```
 
-## Data sources
+## Version changelog
 
-| File | Source | Fetched |
-|------|--------|---------|
-| JEPX spot | [JEPX spot market](https://www.jepx.jp/electricpower/market-data/spot/) via `POST https://www.jepx.jp/_download.php` (`dir=spot_summary`, `file=spot_summary_YYYY.csv`) | 2026-08-01; files 2025+2026 |
-| Temp | [Open-Meteo Historical Weather API](https://archive-api.open-meteo.com/v1/archive) daily `temperature_2m_max/min/mean` at station lat/lon, `timezone=Asia/Tokyo` | 2026-08-01; range 2025-04-01 → 2026-08-01 |
+| version | highlight |
+|---------|-----------|
+| v1 | JEPX + synthetic temp; 4 areas; peak 13–16 |
+| v2 | real Open-Meteo temps; CDD24; peak 09–16; nonlinear 35°C |
+| **v3** | **site_master 17拠点; load-profile prices; 8 areas; fixed station map; site_exposure + reserve margin** |
 
-### JEPX re-download
+## Area → station map (v3 fixes)
 
-- Encoding on wire: **Shift_JIS** → convert to UTF-8
-- Do **not** use system price alone for plant-level work — always area columns
+| jepx_area | primary_station | why |
+|-----------|-----------------|-----|
+| tokyo | tokyo | metro reference; Hitachi *sites* use **mito** |
+| tohoku | **morioka** | was tokyo — キオクシア北上 |
+| chubu | nagoya | + **yokkaichi** site station for キオクシア四日市 |
+| kansai | **kobe** | was osaka — MHI/KHI 兵庫群 |
+| chugoku | **hiroshima** | was osaka — 日立笠戸 |
+| shikoku | **takamatsu** | was nagasaki — 川崎坂出 |
+| kyushu | **kumamoto** | JASM/Sony 菊陽集群; MHI 長崎 site uses nagasaki |
+| hokkaido | **chitose** | was sapporo — Rapidus 千歳 |
+| hokuriku | nagoya | proxy |
+| system | tokyo | reference only — **never use for plant risk** |
 
-### Temperature notes (important)
+### Stations (13)
 
-- **Not official JMA 観測所 CSV.** Same recommended cities (tokyo/osaka/nagoya/kobe/nagasaki/kumamoto/sapporo) via reanalysis grid points.
-- `tavg` = **true daily mean** (`temperature_2m_mean`), **not** `(tmax+tmin)/2`.
-- To swap in real JMA obsdl export: overwrite `data/jma_temp_daily.csv` keeping the header; recompute merge + `output/correlation_results.json`.
+| station | lat | lon | purpose |
+|---------|-----|-----|---------|
+| tokyo | 35.6895 | 139.6917 | tokyo area |
+| mito | 36.3418 | 140.4468 | 日立 日立/大みか |
+| morioka | 39.7036 | 141.1527 | キオクシア北上 |
+| nagoya | 35.1815 | 136.9066 | chubu / MHI aero |
+| yokkaichi | 34.9650 | 136.6244 | キオクシア四日市 |
+| kobe | 34.6901 | 135.1955 | kansai 兵庫群 |
+| osaka | 34.6937 | 135.5023 | retained |
+| hiroshima | 34.3853 | 132.4553 | 日立笠戸 |
+| takamatsu | 34.3401 | 134.0434 | 川崎坂出 |
+| nagasaki | 32.7503 | 129.8779 | MHI 長崎 |
+| kumamoto | 32.8032 | 130.7079 | JASM / Sony |
+| chitose | 42.8221 | 141.6521 | Rapidus |
+| sapporo | 43.0618 | 141.3545 | retained contrast |
 
-### Optional enrichments (not yet ingested)
+Temps: Open-Meteo archive (`temperature_2m_max/min/mean`), **not** official JMA obsdl. Schema is drop-in replaceable.
 
-- OCCTO エリア需給実績
-- 関西電力送配電 需給実績
+## Load-profile prices (core v3)
 
-## Date coverage
+`data/jepx_spot_daily.csv` columns:
 
-- JEPX half-hourly / daily: **2025/04/01 → 2026/08/02**
-- Temp join / merged: **2025/04/01 → 2026/08/01** (archive lag; 2026/08/02 dropped from merge)
-- Areas: `system`, `hokkaido`, `tohoku`, `tokyo`, `chubu`, `hokuriku`, `kansai`, `chugoku`, `shikoku`, `kyushu`
+| column | window | used by |
+|--------|--------|---------|
+| baseload_price | all 48 slots | **semi** `baseload_24h` |
+| daytime_price | time_code **17–36** (08:00–18:00) | **heavy** `daytime_shift` |
+| night_price | **45–48 + 1–14** (22:00–07:00) | night exposure |
+| solar_crush_price | **21–30** (10:00–15:00) | Kyushu PV dump window |
+| peak_price | **19–32** (09:00–16:00) | legacy / general peak |
+| avg_price | same as baseload | back-compat alias |
+| max_price / min_price | 48-slot extreme | tail risk |
 
-## Field dictionaries
+**Why this matters:** Kyushu midday can print ~0.01 円/kWh. JASM is 24h baseload — true cost sits in **night_price**, not solar_crush / peak. Using peak alone **systematically understates** fab power cost.
 
-### `data/jepx_spot_daily.csv`
+`night_day_spread = night_price − solar_crush_price` (summer weekday mean) is a key JASM risk indicator (should be **positive** in Kyushu).
 
-| column | definition |
-|--------|------------|
-| date | 受渡日 `YYYY/MM/DD` |
-| area | area code |
-| avg_price | mean of 48 half-hour prices (円/kWh) |
-| peak_price | mean of time_code **19–32** (**09:00–16:00 JST**) |
-| max_price / min_price | max/min of 48 slots |
+## `data/site_master.csv`
 
-### `data/jepx_spot_halfhourly.csv`
+| field | definition |
+|-------|------------|
+| site_id | stable key |
+| company | TSMC / Sony / Rapidus / Kioxia / MHI / KHI / Hitachi |
+| site_name | Japanese plant name |
+| city, prefecture | location |
+| jepx_area | JEPX pricing area |
+| primary_station | temperature station for *this site* |
+| sector | `semi` \| `heavy` |
+| load_profile | `baseload_24h` \| `daytime_shift` |
+| status | operating / construction / pilot |
+| capex_jpy_oku | announced capex (億円), blank if n/a |
+| note | free text |
 
-| column | definition |
-|--------|------------|
-| date, time_code (1–48), time_label, area, price | raw slots; code 1 = 00:00–00:30 |
+**17 sites:** 6 semi (JASM×2, Sony TEC, Rapidus, Kioxia 四日市/北上) + 11 heavy (MHI×4, KHI×4, Hitachi×3).
 
-### `data/jma_temp_daily.csv`
+## `output/site_exposure.json`
 
-| column | definition |
-|--------|------------|
-| date, station | tokyo / osaka / **nagoya** / kobe / nagasaki / kumamoto / sapporo |
-| tmax, tmin | daily max/min °C |
-| tavg | true daily mean °C (API mean, not midrange) |
-| cdd24 | **primary** cooling degree-day: `max(0, tavg − 24)` |
-| cdd26 | legacy comparison: `max(0, tavg − 26)` |
+Per `site_id`:
 
-### `data/merged_analysis.csv`
+1. Correlations / OLS: **cdd24 & tmax vs load price** (baseload or daytime)
+2. **piecewise35** + quadratic nonlinear models
+3. Summer-weekday quantiles: **p50 / p75 / p90 / p95 / max / mean**
+4. **spike_frequency**: fraction of summer weekdays with load price **> 30 円/kWh**
+5. **night_day_spread** stats (mean, p50, p90)
+6. Rankings: by spike, by p95, by night_day_spread
 
-| column | definition |
-|--------|------------|
-| date, area, avg/peak/max/min_price | from daily JEPX |
-| station | primary station for area |
-| tmax, tmin, tavg, cdd24, cdd26 | from temp file |
-| is_weekend | 1 if Sat/Sun |
-| is_obon | 1 if Aug 13–16 |
+## `output/reserve_margin_context.json`
 
-### Area → station map
+2026 summer 供給予備率 (METI/OCCTO, hand-entered):
 
-| area | station |
-|------|---------|
-| tokyo, tohoku, system | tokyo |
-| **chubu, hokuriku** | **nagoya** |
-| kansai, chugoku | osaka |
-| kyushu, shikoku | nagasaki |
-| hokkaido | sapporo |
-
-(kobe / kumamoto available in temp file for alternate joins)
-
-## Peak window change log
-
-| version | peak window | time_code |
-|---------|-------------|-----------|
-| v1 (initial) | 13:00–16:00 | 27–32 |
-| **v2 (current)** | **09:00–16:00** | **19–32** |
-
-## CDD definition change log
-
-| version | formula |
-|---------|---------|
-| v1 | `cdd26 = max(0, (tmax+tmin)/2 − 26)` synthetic |
-| **v2** | **`cdd24 = max(0, tavg − 24)` with real daily mean** (+ `cdd26` kept for A/B) |
-
-## Missing / special value policy
-
-1. Non-numeric JEPX cells dropped at parse.
-2. If peak window empty, `peak_price` falls back to `avg_price`.
-3. Days without temp join excluded from `merged_analysis.csv` and correlations.
-4. No cross-day imputation. Prices tax-excluded 円/kWh as published.
-
-## Modeling rules
-
-1. Aggregate time_code → daily avg / peak / max / min **before** analytics.
-2. Filter calendar: drop `is_obon=1`; prefer `is_weekend=0` for industrial demand.
-3. Use **area** prices (Kyushu midday can print ~0.01 円/kWh from solar while Tokyo is tight).
-4. Under low reserve, risk is **right-skewed** — prefer `peak_price` / `max_price`.
-5. Summer **linear** correlation often collapses; use **quadratic** or **piecewise at 35°C** (see JSON).
+- **tokyo Aug 0.9%** — only sub-1% area; Hitachi 日立/大みか in this zone
+- hokkaido min ~6.1–8.3%
+- Implications block links sites ↔ reserve risk
 
 ## `output/correlation_results.json`
 
-Machine-readable (recompute/cross-check without charts):
+8 focus areas (tokyo, kansai, kyushu, chubu, **tohoku, chugoku, shikoku, hokkaido**):
 
-- `meta` — sources, peak window, CDD definition, station coords
-- `sample_definitions` — `all` / `weekday_only` / `summer_weekday` / `heat_days_weekday`
-- `summary_summer_weekday` — descriptive stats + count of `tmax≥35` days
-- `r2_comparison_summer_weekday` — linear vs quadratic vs piecewise35 lift
-- `correlations[sample][area]` — Pearson `r` + `n`
-- `regressions[sample][area]` — OLS slope / intercept / r²
-- `nonlinear[sample][area]`:
-  - `quadratic_peak_on_tmax`: `peak = a + b·tmax + c·tmax²`
-  - `piecewise35_peak_on_tmax`: `peak = a + b·tmax + c·max(tmax−35, 0)`
-  - `quadratic_peak_on_cdd24`
-- `scenario_model` — dashboard stress multipliers (documented, not OLS-fitted)
-- `verification_hints` — exact filters to recompute
+- samples: all / weekday_only / summer_weekday / heat_days_weekday
+- correlations & regressions for peak / baseload / daytime
+- nonlinear quadratic + piecewise35
+- `r2_comparison_summer_weekday`
 
-### Headline check (summer_weekday, after v2 rebuild)
+## Modeling rules (unchanged)
 
-| area | linear R² (peak~tmax) | quadratic R² | piecewise35 R² |
-|------|----------------------:|-------------:|---------------:|
-| tokyo | ~0.00 | ~0.11 | ~0.08 |
-| kansai | ~0.06 | ~0.14 | ~0.08 |
-| chubu | ~0.01 | ~0.08 | ~0.04 |
-| kyushu | ~0.01 | ~0.03 | ~0.01 |
+1. Aggregate time codes **before** daily analytics
+2. Exclude `is_obon=1`; prefer `is_weekend=0`
+3. **Area prices only** — never system alone for plants
+4. Summer linear collapse → trust **quadratic / piecewise35**
+5. CDD: `cdd24 = max(0, tavg − 24)` with true daily mean
 
-Tokyo piecewise interpretation (summer weekday): slope ≈ flat/negative below 35°C; **+~1.8 円/kWh per °C above 35°C** on peak_price (see JSON for exact coefs).
+## Date coverage
 
-### Recompute examples
+- JEPX: 2025/04/01 → 2026/08/02
+- Temp join: 2025/04/01 → 2026/08/01
+- Encoding: UTF-8, LF, no BOM
+
+## Recompute recipes
 
 ```python
-import pandas as pd
-df = pd.read_csv("data/merged_analysis.csv")
-s = df.query("area=='tokyo' and is_weekend==0 and is_obon==0 and date >= '2025/06/01' and date <= '2025/09/30' or area=='tokyo' and is_weekend==0 and is_obon==0")
-# simpler summer filter:
-s = df[(df.area=="tokyo") & (df.is_weekend==0) & (df.is_obon==0)]
-s = s[s.date.str[5:7].isin(["06","07","08","09"])]
-print(s["tmax"].corr(s["peak_price"]))          # linear Pearson
-print(s["cdd24"].corr(s["peak_price"]))
+import pandas as pd, json
+sites = pd.read_csv("data/site_master.csv")
+daily = pd.read_csv("data/jepx_spot_daily.csv")
+merged = pd.read_csv("data/merged_analysis.csv")
+exp = json.load(open("output/site_exposure.json"))
 
-# piecewise 35
-import statsmodels.api as sm
-x = s[["tmax"]].copy()
-x["hinge35"] = (s["tmax"] - 35).clip(lower=0)
-print(sm.OLS(s["peak_price"], sm.add_constant(x)).fit().summary())
+# JASM night-day spread vs baseload
+j = [s for s in exp["sites"] if s["site_id"]=="jasm_fab1"][0]
+print(j["night_day_spread_summer_weekday"])
+print(j["price_quantiles_summer_weekday"])
+
+# Hitachi in thin reserve zone
+h = [s for s in exp["sites"] if s["site_id"]=="hitachi_hitachi"][0]
+print(h["spike_frequency"], h["price_quantiles_summer_weekday"]["p95"])
 ```
 
-## Fuel lag / subsidy (earnings mapping, not time series here)
+## Sources
 
-- Fuel cost adjustment lag **3–5 months** → summer price spikes hit **Q4** statements.
-- Usage subsidy phase-out is a **calendar-hard** cost step around **October**.
+- JEPX spot: https://www.jepx.jp/electricpower/market-data/spot/
+- Open-Meteo archive: https://archive-api.open-meteo.com/v1/archive
+- Reserve margins: 経産省 / OCCTO 2026 summer outlook (manual entry)
 
-## License / usage
+## License
 
-JEPX data subject to JEPX terms. Temperature via Open-Meteo (non-commercial friendly; check their license for redistribution). Replace with JMA official exports for regulatory-grade work.
+JEPX subject to JEPX terms. Open-Meteo temps for analysis; replace with JMA official for regulatory work.

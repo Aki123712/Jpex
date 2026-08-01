@@ -1,0 +1,1936 @@
+{
+  "meta": {
+    "version": "v3",
+    "generated_at": "2026-08-01T13:17:34.961Z",
+    "n_sites": 17,
+    "sample": "summer_weekday = Jun-Sep & is_weekend=0 & is_obon=0",
+    "load_price_rule": {
+      "baseload_24h": "baseload_price (48-slot mean) — semiconductor fabs",
+      "daytime_shift": "daytime_price (08:00-18:00) — heavy industry"
+    },
+    "kink_celsius": 35
+  },
+  "rankings": {
+    "by_spike_frequency_gt_30": [
+      {
+        "site_id": "hitachi_hitachi",
+        "fraction": 0.0233,
+        "area": "tokyo",
+        "price_column": "daytime_price"
+      },
+      {
+        "site_id": "hitachi_omika",
+        "fraction": 0.0233,
+        "area": "tokyo",
+        "price_column": "daytime_price"
+      },
+      {
+        "site_id": "mhi_kobe",
+        "fraction": 0.0078,
+        "area": "kansai",
+        "price_column": "daytime_price"
+      },
+      {
+        "site_id": "mhi_takasago",
+        "fraction": 0.0078,
+        "area": "kansai",
+        "price_column": "daytime_price"
+      },
+      {
+        "site_id": "mhi_nagoya_aero",
+        "fraction": 0.0078,
+        "area": "chubu",
+        "price_column": "daytime_price"
+      },
+      {
+        "site_id": "khi_kobe",
+        "fraction": 0.0078,
+        "area": "kansai",
+        "price_column": "daytime_price"
+      },
+      {
+        "site_id": "khi_akashi",
+        "fraction": 0.0078,
+        "area": "kansai",
+        "price_column": "daytime_price"
+      },
+      {
+        "site_id": "khi_harima",
+        "fraction": 0.0078,
+        "area": "kansai",
+        "price_column": "daytime_price"
+      },
+      {
+        "site_id": "jasm_fab1",
+        "fraction": 0,
+        "area": "kyushu",
+        "price_column": "baseload_price"
+      },
+      {
+        "site_id": "jasm_fab2",
+        "fraction": 0,
+        "area": "kyushu",
+        "price_column": "baseload_price"
+      },
+      {
+        "site_id": "sony_tec_kumamoto",
+        "fraction": 0,
+        "area": "kyushu",
+        "price_column": "baseload_price"
+      },
+      {
+        "site_id": "rapidus_iim1",
+        "fraction": 0,
+        "area": "hokkaido",
+        "price_column": "baseload_price"
+      },
+      {
+        "site_id": "kioxia_yokkaichi",
+        "fraction": 0,
+        "area": "chubu",
+        "price_column": "baseload_price"
+      },
+      {
+        "site_id": "kioxia_kitakami",
+        "fraction": 0,
+        "area": "tohoku",
+        "price_column": "baseload_price"
+      },
+      {
+        "site_id": "mhi_nagasaki",
+        "fraction": 0,
+        "area": "kyushu",
+        "price_column": "daytime_price"
+      },
+      {
+        "site_id": "khi_sakaide",
+        "fraction": 0,
+        "area": "shikoku",
+        "price_column": "daytime_price"
+      },
+      {
+        "site_id": "hitachi_kasado",
+        "fraction": 0,
+        "area": "chugoku",
+        "price_column": "daytime_price"
+      }
+    ],
+    "by_p95_load_price": [
+      {
+        "site_id": "hitachi_hitachi",
+        "p95": 27.01,
+        "price_column": "daytime_price",
+        "area": "tokyo"
+      },
+      {
+        "site_id": "hitachi_omika",
+        "p95": 27.01,
+        "price_column": "daytime_price",
+        "area": "tokyo"
+      },
+      {
+        "site_id": "mhi_nagoya_aero",
+        "p95": 25.656,
+        "price_column": "daytime_price",
+        "area": "chubu"
+      },
+      {
+        "site_id": "mhi_kobe",
+        "p95": 24.578,
+        "price_column": "daytime_price",
+        "area": "kansai"
+      },
+      {
+        "site_id": "mhi_takasago",
+        "p95": 24.578,
+        "price_column": "daytime_price",
+        "area": "kansai"
+      },
+      {
+        "site_id": "khi_kobe",
+        "p95": 24.578,
+        "price_column": "daytime_price",
+        "area": "kansai"
+      },
+      {
+        "site_id": "khi_akashi",
+        "p95": 24.578,
+        "price_column": "daytime_price",
+        "area": "kansai"
+      },
+      {
+        "site_id": "khi_harima",
+        "p95": 24.578,
+        "price_column": "daytime_price",
+        "area": "kansai"
+      },
+      {
+        "site_id": "kioxia_yokkaichi",
+        "p95": 23.074,
+        "price_column": "baseload_price",
+        "area": "chubu"
+      },
+      {
+        "site_id": "kioxia_kitakami",
+        "p95": 21.384,
+        "price_column": "baseload_price",
+        "area": "tohoku"
+      },
+      {
+        "site_id": "hitachi_kasado",
+        "p95": 20.586,
+        "price_column": "daytime_price",
+        "area": "chugoku"
+      },
+      {
+        "site_id": "rapidus_iim1",
+        "p95": 18.934,
+        "price_column": "baseload_price",
+        "area": "hokkaido"
+      },
+      {
+        "site_id": "mhi_nagasaki",
+        "p95": 18.634,
+        "price_column": "daytime_price",
+        "area": "kyushu"
+      },
+      {
+        "site_id": "jasm_fab1",
+        "p95": 18.468,
+        "price_column": "baseload_price",
+        "area": "kyushu"
+      },
+      {
+        "site_id": "jasm_fab2",
+        "p95": 18.468,
+        "price_column": "baseload_price",
+        "area": "kyushu"
+      },
+      {
+        "site_id": "sony_tec_kumamoto",
+        "p95": 18.468,
+        "price_column": "baseload_price",
+        "area": "kyushu"
+      },
+      {
+        "site_id": "khi_sakaide",
+        "p95": 17.262,
+        "price_column": "daytime_price",
+        "area": "shikoku"
+      }
+    ],
+    "by_night_day_spread": [
+      {
+        "site_id": "rapidus_iim1",
+        "night_day_spread": 2.836,
+        "area": "hokkaido"
+      },
+      {
+        "site_id": "kioxia_kitakami",
+        "night_day_spread": 2.771,
+        "area": "tohoku"
+      },
+      {
+        "site_id": "khi_sakaide",
+        "night_day_spread": 2.274,
+        "area": "shikoku"
+      },
+      {
+        "site_id": "jasm_fab1",
+        "night_day_spread": 1.185,
+        "area": "kyushu"
+      },
+      {
+        "site_id": "jasm_fab2",
+        "night_day_spread": 1.185,
+        "area": "kyushu"
+      },
+      {
+        "site_id": "sony_tec_kumamoto",
+        "night_day_spread": 1.185,
+        "area": "kyushu"
+      },
+      {
+        "site_id": "mhi_nagasaki",
+        "night_day_spread": 1.185,
+        "area": "kyushu"
+      },
+      {
+        "site_id": "hitachi_kasado",
+        "night_day_spread": 0.899,
+        "area": "chugoku"
+      },
+      {
+        "site_id": "kioxia_yokkaichi",
+        "night_day_spread": -2.082,
+        "area": "chubu"
+      },
+      {
+        "site_id": "mhi_nagoya_aero",
+        "night_day_spread": -2.082,
+        "area": "chubu"
+      },
+      {
+        "site_id": "hitachi_hitachi",
+        "night_day_spread": -2.806,
+        "area": "tokyo"
+      },
+      {
+        "site_id": "hitachi_omika",
+        "night_day_spread": -2.806,
+        "area": "tokyo"
+      },
+      {
+        "site_id": "mhi_kobe",
+        "night_day_spread": -3.599,
+        "area": "kansai"
+      },
+      {
+        "site_id": "mhi_takasago",
+        "night_day_spread": -3.599,
+        "area": "kansai"
+      },
+      {
+        "site_id": "khi_kobe",
+        "night_day_spread": -3.599,
+        "area": "kansai"
+      },
+      {
+        "site_id": "khi_akashi",
+        "night_day_spread": -3.599,
+        "area": "kansai"
+      },
+      {
+        "site_id": "khi_harima",
+        "night_day_spread": -3.599,
+        "area": "kansai"
+      }
+    ]
+  },
+  "sites": [
+    {
+      "site_id": "jasm_fab1",
+      "company": "TSMC",
+      "site_name": "JASM第1工場",
+      "jepx_area": "kyushu",
+      "primary_station": "kumamoto",
+      "sector": "semi",
+      "load_profile": "baseload_24h",
+      "price_column": "baseload_price",
+      "status": "operating",
+      "capex_jpy_oku": 9800,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.594637,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": 0.43964,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.721958,
+          "intercept": 9.714598,
+          "r2": 0.353593,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.336122,
+          "intercept": 1.600733,
+          "r2": 0.193283,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 2.327445,
+          "b": 0.310268,
+          "c": 0.333566,
+          "kink_celsius": 35,
+          "r2": 0.196169,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": 0.310268,
+            "slope_above_35": 0.643834,
+            "extra_per_degree_above_35": 0.333566
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 33.472439,
+          "b": -1.81437,
+          "c": 0.035604,
+          "r2": 0.234555,
+          "n": 129,
+          "parabola_vertex": 25.48
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 11.44,
+        "p75": 13.32,
+        "p90": 17.096,
+        "p95": 18.468,
+        "max": 22.1,
+        "mean": 11.969,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": 1.185,
+        "p50": 1.06,
+        "p90": 6.35,
+        "night_mean": 10.466,
+        "solar_crush_mean": 9.281,
+        "note": "九州白天太阳能压价→spread显著为正；24h基荷(JASM)真实暴露在夜间价"
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 11.969,
+        "daytime_mean": 11.41,
+        "peak_mean": 9.919,
+        "night_mean": 10.466,
+        "solar_crush_mean": 9.281
+      }
+    },
+    {
+      "site_id": "jasm_fab2",
+      "company": "TSMC",
+      "site_name": "JASM第2工場",
+      "jepx_area": "kyushu",
+      "primary_station": "kumamoto",
+      "sector": "semi",
+      "load_profile": "baseload_24h",
+      "price_column": "baseload_price",
+      "status": "construction",
+      "capex_jpy_oku": 20850,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.594637,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": 0.43964,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.721958,
+          "intercept": 9.714598,
+          "r2": 0.353593,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.336122,
+          "intercept": 1.600733,
+          "r2": 0.193283,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 2.327445,
+          "b": 0.310268,
+          "c": 0.333566,
+          "kink_celsius": 35,
+          "r2": 0.196169,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": 0.310268,
+            "slope_above_35": 0.643834,
+            "extra_per_degree_above_35": 0.333566
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 33.472439,
+          "b": -1.81437,
+          "c": 0.035604,
+          "r2": 0.234555,
+          "n": 129,
+          "parabola_vertex": 25.48
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 11.44,
+        "p75": 13.32,
+        "p90": 17.096,
+        "p95": 18.468,
+        "max": 22.1,
+        "mean": 11.969,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": 1.185,
+        "p50": 1.06,
+        "p90": 6.35,
+        "night_mean": 10.466,
+        "solar_crush_mean": 9.281,
+        "note": "九州白天太阳能压价→spread显著为正；24h基荷(JASM)真实暴露在夜间价"
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 11.969,
+        "daytime_mean": 11.41,
+        "peak_mean": 9.919,
+        "night_mean": 10.466,
+        "solar_crush_mean": 9.281
+      }
+    },
+    {
+      "site_id": "sony_tec_kumamoto",
+      "company": "Sony",
+      "site_name": "ソニーセミコン熊本(TEC)",
+      "jepx_area": "kyushu",
+      "primary_station": "kumamoto",
+      "sector": "semi",
+      "load_profile": "baseload_24h",
+      "price_column": "baseload_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.594637,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": 0.43964,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.721958,
+          "intercept": 9.714598,
+          "r2": 0.353593,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.336122,
+          "intercept": 1.600733,
+          "r2": 0.193283,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 2.327445,
+          "b": 0.310268,
+          "c": 0.333566,
+          "kink_celsius": 35,
+          "r2": 0.196169,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": 0.310268,
+            "slope_above_35": 0.643834,
+            "extra_per_degree_above_35": 0.333566
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 33.472439,
+          "b": -1.81437,
+          "c": 0.035604,
+          "r2": 0.234555,
+          "n": 129,
+          "parabola_vertex": 25.48
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 11.44,
+        "p75": 13.32,
+        "p90": 17.096,
+        "p95": 18.468,
+        "max": 22.1,
+        "mean": 11.969,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": 1.185,
+        "p50": 1.06,
+        "p90": 6.35,
+        "night_mean": 10.466,
+        "solar_crush_mean": 9.281,
+        "note": "九州白天太阳能压价→spread显著为正；24h基荷(JASM)真实暴露在夜间价"
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 11.969,
+        "daytime_mean": 11.41,
+        "peak_mean": 9.919,
+        "night_mean": 10.466,
+        "solar_crush_mean": 9.281
+      }
+    },
+    {
+      "site_id": "rapidus_iim1",
+      "company": "Rapidus",
+      "site_name": "Rapidus IIM-1",
+      "jepx_area": "hokkaido",
+      "primary_station": "chitose",
+      "sector": "semi",
+      "load_profile": "baseload_24h",
+      "price_column": "baseload_price",
+      "status": "pilot",
+      "capex_jpy_oku": null,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": -0.111618,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": 0.201758,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": -0.593268,
+          "intercept": 13.720338,
+          "r2": 0.012459,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.157957,
+          "intercept": 9.86614,
+          "r2": 0.040706,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "coef": null,
+          "r2": null,
+          "n": 129,
+          "note": "singular"
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 7.603274,
+          "b": 0.354017,
+          "c": -0.004139,
+          "r2": 0.041404,
+          "n": 129,
+          "parabola_vertex": 42.766
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 13.71,
+        "p75": 15.53,
+        "p90": 17.35,
+        "p95": 18.934,
+        "max": 20.49,
+        "mean": 13.648,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": 2.836,
+        "p50": 2.57,
+        "p90": 7.548,
+        "night_mean": 12.553,
+        "solar_crush_mean": 9.718,
+        "note": null
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 13.648,
+        "daytime_mean": 12.53,
+        "peak_mean": 10.471,
+        "night_mean": 12.553,
+        "solar_crush_mean": 9.718
+      }
+    },
+    {
+      "site_id": "kioxia_yokkaichi",
+      "company": "Kioxia",
+      "site_name": "キオクシア四日市",
+      "jepx_area": "chubu",
+      "primary_station": "yokkaichi",
+      "sector": "semi",
+      "load_profile": "baseload_24h",
+      "price_column": "baseload_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.22681,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": 0.181857,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.35658,
+          "intercept": 14.575345,
+          "r2": 0.051443,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.178149,
+          "intercept": 10.332341,
+          "r2": 0.033072,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 12.702339,
+          "b": 0.091035,
+          "c": 2.567225,
+          "kink_celsius": 35,
+          "r2": 0.080155,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": 0.091035,
+            "slope_above_35": 2.65826,
+            "extra_per_degree_above_35": 2.567225
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 63.387348,
+          "b": -3.545511,
+          "c": 0.064023,
+          "r2": 0.111765,
+          "n": 129,
+          "parabola_vertex": 27.689
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 15.03,
+        "p75": 17.92,
+        "p90": 21.49,
+        "p95": 23.074,
+        "max": 24.79,
+        "mean": 15.59,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": -2.082,
+        "p50": -1.39,
+        "p90": 1.85,
+        "night_mean": 12.989,
+        "solar_crush_mean": 15.071,
+        "note": null
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 15.59,
+        "daytime_mean": 16.718,
+        "peak_mean": 15.656,
+        "night_mean": 12.989,
+        "solar_crush_mean": 15.071
+      }
+    },
+    {
+      "site_id": "kioxia_kitakami",
+      "company": "Kioxia",
+      "site_name": "キオクシア北上",
+      "jepx_area": "tohoku",
+      "primary_station": "morioka",
+      "sector": "semi",
+      "load_profile": "baseload_24h",
+      "price_column": "baseload_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.10605,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": 0.093144,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.249451,
+          "intercept": 14.028231,
+          "r2": 0.011247,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.078798,
+          "intercept": 12.076951,
+          "r2": 0.008676,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 11.667412,
+          "b": 0.094716,
+          "c": -1.245564,
+          "kink_celsius": 35,
+          "r2": 0.01118,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": 0.094716,
+            "slope_above_35": -1.150848,
+            "extra_per_degree_above_35": -1.245564
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 4.725613,
+          "b": 0.625466,
+          "c": -0.009924,
+          "r2": 0.01203,
+          "n": 129,
+          "parabola_vertex": 31.513
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 13.57,
+        "p75": 15.65,
+        "p90": 19.938,
+        "p95": 21.384,
+        "max": 23.9,
+        "mean": 14.281,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": 2.771,
+        "p50": 2.55,
+        "p90": 9.392,
+        "night_mean": 13.41,
+        "solar_crush_mean": 10.64,
+        "note": null
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 14.281,
+        "daytime_mean": 13.461,
+        "peak_mean": 11.538,
+        "night_mean": 13.41,
+        "solar_crush_mean": 10.64
+      }
+    },
+    {
+      "site_id": "mhi_nagasaki",
+      "company": "MHI",
+      "site_name": "三菱重工長崎造船所",
+      "jepx_area": "kyushu",
+      "primary_station": "nagasaki",
+      "sector": "heavy",
+      "load_profile": "daytime_shift",
+      "price_column": "daytime_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.408468,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": 0.255769,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.823816,
+          "intercept": 9.382797,
+          "r2": 0.166846,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.31348,
+          "intercept": 2.237185,
+          "r2": 0.065418,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 2.48531,
+          "b": 0.304515,
+          "c": 1.144555,
+          "kink_celsius": 35,
+          "r2": 0.066289,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": 0.304515,
+            "slope_above_35": 1.44907,
+            "extra_per_degree_above_35": 1.144555
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 44.579062,
+          "b": -2.71244,
+          "c": 0.053303,
+          "r2": 0.094877,
+          "n": 129,
+          "parabola_vertex": 25.444
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 10.97,
+        "p75": 13.12,
+        "p90": 16.792,
+        "p95": 18.634,
+        "max": 22.79,
+        "mean": 11.41,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": 1.185,
+        "p50": 1.06,
+        "p90": 6.35,
+        "night_mean": 10.466,
+        "solar_crush_mean": 9.281,
+        "note": "九州白天太阳能压价→spread显著为正；24h基荷(JASM)真实暴露在夜间价"
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 11.969,
+        "daytime_mean": 11.41,
+        "peak_mean": 9.919,
+        "night_mean": 10.466,
+        "solar_crush_mean": 9.281
+      }
+    },
+    {
+      "site_id": "mhi_kobe",
+      "company": "MHI",
+      "site_name": "三菱重工神戸造船所",
+      "jepx_area": "kansai",
+      "primary_station": "kobe",
+      "sector": "heavy",
+      "load_profile": "daytime_shift",
+      "price_column": "daytime_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.470452,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": 0.382224,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.957124,
+          "intercept": 13.202643,
+          "r2": 0.221325,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.485171,
+          "intercept": 1.561877,
+          "r2": 0.146095,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 4.476197,
+          "b": 0.377983,
+          "c": 5.668251,
+          "kink_celsius": 35,
+          "r2": 0.190687,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": 0.377983,
+            "slope_above_35": 6.046234,
+            "extra_per_degree_above_35": 5.668251
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 94.584035,
+          "b": -6.054986,
+          "c": 0.112918,
+          "r2": 0.275355,
+          "n": 129,
+          "parabola_vertex": 26.811
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 15.44,
+        "p75": 18.64,
+        "p90": 22.19,
+        "p95": 24.578,
+        "max": 30.01,
+        "mean": 15.847,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 1,
+        "n_days": 129,
+        "fraction": 0.0078
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": -3.599,
+        "p50": -3.41,
+        "p90": 0.13,
+        "night_mean": 10.942,
+        "solar_crush_mean": 14.541,
+        "note": null
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 14.121,
+        "daytime_mean": 15.847,
+        "peak_mean": 15.01,
+        "night_mean": 10.942,
+        "solar_crush_mean": 14.541
+      }
+    },
+    {
+      "site_id": "mhi_takasago",
+      "company": "MHI",
+      "site_name": "三菱重工高砂製作所",
+      "jepx_area": "kansai",
+      "primary_station": "kobe",
+      "sector": "heavy",
+      "load_profile": "daytime_shift",
+      "price_column": "daytime_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.470452,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": 0.382224,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.957124,
+          "intercept": 13.202643,
+          "r2": 0.221325,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.485171,
+          "intercept": 1.561877,
+          "r2": 0.146095,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 4.476197,
+          "b": 0.377983,
+          "c": 5.668251,
+          "kink_celsius": 35,
+          "r2": 0.190687,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": 0.377983,
+            "slope_above_35": 6.046234,
+            "extra_per_degree_above_35": 5.668251
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 94.584035,
+          "b": -6.054986,
+          "c": 0.112918,
+          "r2": 0.275355,
+          "n": 129,
+          "parabola_vertex": 26.811
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 15.44,
+        "p75": 18.64,
+        "p90": 22.19,
+        "p95": 24.578,
+        "max": 30.01,
+        "mean": 15.847,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 1,
+        "n_days": 129,
+        "fraction": 0.0078
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": -3.599,
+        "p50": -3.41,
+        "p90": 0.13,
+        "night_mean": 10.942,
+        "solar_crush_mean": 14.541,
+        "note": null
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 14.121,
+        "daytime_mean": 15.847,
+        "peak_mean": 15.01,
+        "night_mean": 10.942,
+        "solar_crush_mean": 14.541
+      }
+    },
+    {
+      "site_id": "mhi_nagoya_aero",
+      "company": "MHI",
+      "site_name": "三菱重工名古屋航空宇宙",
+      "jepx_area": "chubu",
+      "primary_station": "nagoya",
+      "sector": "heavy",
+      "load_profile": "daytime_shift",
+      "price_column": "daytime_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.332943,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": 0.227594,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.530506,
+          "intercept": 14.935316,
+          "r2": 0.110851,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.235674,
+          "intercept": 9.300531,
+          "r2": 0.051799,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 15.373382,
+          "b": 0.020732,
+          "c": 1.011208,
+          "kink_celsius": 35,
+          "r2": 0.091108,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": 0.020732,
+            "slope_above_35": 1.03194,
+            "extra_per_degree_above_35": 1.011208
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 61.620585,
+          "b": -3.175697,
+          "c": 0.054318,
+          "r2": 0.127518,
+          "n": 129,
+          "parabola_vertex": 29.232
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 16.08,
+        "p75": 19.82,
+        "p90": 23.372,
+        "p95": 25.656,
+        "max": 30.01,
+        "mean": 16.718,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 1,
+        "n_days": 129,
+        "fraction": 0.0078
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": -2.082,
+        "p50": -1.39,
+        "p90": 1.85,
+        "night_mean": 12.989,
+        "solar_crush_mean": 15.071,
+        "note": null
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 15.59,
+        "daytime_mean": 16.718,
+        "peak_mean": 15.656,
+        "night_mean": 12.989,
+        "solar_crush_mean": 15.071
+      }
+    },
+    {
+      "site_id": "khi_kobe",
+      "company": "KHI",
+      "site_name": "川崎重工神戸工場",
+      "jepx_area": "kansai",
+      "primary_station": "kobe",
+      "sector": "heavy",
+      "load_profile": "daytime_shift",
+      "price_column": "daytime_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.470452,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": 0.382224,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.957124,
+          "intercept": 13.202643,
+          "r2": 0.221325,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.485171,
+          "intercept": 1.561877,
+          "r2": 0.146095,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 4.476197,
+          "b": 0.377983,
+          "c": 5.668251,
+          "kink_celsius": 35,
+          "r2": 0.190687,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": 0.377983,
+            "slope_above_35": 6.046234,
+            "extra_per_degree_above_35": 5.668251
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 94.584035,
+          "b": -6.054986,
+          "c": 0.112918,
+          "r2": 0.275355,
+          "n": 129,
+          "parabola_vertex": 26.811
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 15.44,
+        "p75": 18.64,
+        "p90": 22.19,
+        "p95": 24.578,
+        "max": 30.01,
+        "mean": 15.847,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 1,
+        "n_days": 129,
+        "fraction": 0.0078
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": -3.599,
+        "p50": -3.41,
+        "p90": 0.13,
+        "night_mean": 10.942,
+        "solar_crush_mean": 14.541,
+        "note": null
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 14.121,
+        "daytime_mean": 15.847,
+        "peak_mean": 15.01,
+        "night_mean": 10.942,
+        "solar_crush_mean": 14.541
+      }
+    },
+    {
+      "site_id": "khi_akashi",
+      "company": "KHI",
+      "site_name": "川崎重工明石工場",
+      "jepx_area": "kansai",
+      "primary_station": "kobe",
+      "sector": "heavy",
+      "load_profile": "daytime_shift",
+      "price_column": "daytime_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.470452,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": 0.382224,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.957124,
+          "intercept": 13.202643,
+          "r2": 0.221325,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.485171,
+          "intercept": 1.561877,
+          "r2": 0.146095,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 4.476197,
+          "b": 0.377983,
+          "c": 5.668251,
+          "kink_celsius": 35,
+          "r2": 0.190687,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": 0.377983,
+            "slope_above_35": 6.046234,
+            "extra_per_degree_above_35": 5.668251
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 94.584035,
+          "b": -6.054986,
+          "c": 0.112918,
+          "r2": 0.275355,
+          "n": 129,
+          "parabola_vertex": 26.811
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 15.44,
+        "p75": 18.64,
+        "p90": 22.19,
+        "p95": 24.578,
+        "max": 30.01,
+        "mean": 15.847,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 1,
+        "n_days": 129,
+        "fraction": 0.0078
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": -3.599,
+        "p50": -3.41,
+        "p90": 0.13,
+        "night_mean": 10.942,
+        "solar_crush_mean": 14.541,
+        "note": null
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 14.121,
+        "daytime_mean": 15.847,
+        "peak_mean": 15.01,
+        "night_mean": 10.942,
+        "solar_crush_mean": 14.541
+      }
+    },
+    {
+      "site_id": "khi_harima",
+      "company": "KHI",
+      "site_name": "川崎重工播磨工場",
+      "jepx_area": "kansai",
+      "primary_station": "kobe",
+      "sector": "heavy",
+      "load_profile": "daytime_shift",
+      "price_column": "daytime_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.470452,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": 0.382224,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.957124,
+          "intercept": 13.202643,
+          "r2": 0.221325,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.485171,
+          "intercept": 1.561877,
+          "r2": 0.146095,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 4.476197,
+          "b": 0.377983,
+          "c": 5.668251,
+          "kink_celsius": 35,
+          "r2": 0.190687,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": 0.377983,
+            "slope_above_35": 6.046234,
+            "extra_per_degree_above_35": 5.668251
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 94.584035,
+          "b": -6.054986,
+          "c": 0.112918,
+          "r2": 0.275355,
+          "n": 129,
+          "parabola_vertex": 26.811
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 15.44,
+        "p75": 18.64,
+        "p90": 22.19,
+        "p95": 24.578,
+        "max": 30.01,
+        "mean": 15.847,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 1,
+        "n_days": 129,
+        "fraction": 0.0078
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": -3.599,
+        "p50": -3.41,
+        "p90": 0.13,
+        "night_mean": 10.942,
+        "solar_crush_mean": 14.541,
+        "note": null
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 14.121,
+        "daytime_mean": 15.847,
+        "peak_mean": 15.01,
+        "night_mean": 10.942,
+        "solar_crush_mean": 14.541
+      }
+    },
+    {
+      "site_id": "khi_sakaide",
+      "company": "KHI",
+      "site_name": "川崎重工坂出工場",
+      "jepx_area": "shikoku",
+      "primary_station": "takamatsu",
+      "sector": "heavy",
+      "load_profile": "daytime_shift",
+      "price_column": "daytime_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.301604,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": 0.20511,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.46472,
+          "intercept": 7.472687,
+          "r2": 0.090965,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.209004,
+          "intercept": 2.724816,
+          "r2": 0.04207,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 3.886304,
+          "b": 0.166685,
+          "c": 0.704156,
+          "kink_celsius": 35,
+          "r2": 0.047006,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": 0.166685,
+            "slope_above_35": 0.870841,
+            "extra_per_degree_above_35": 0.704156
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 45.086331,
+          "b": -2.699427,
+          "c": 0.048774,
+          "r2": 0.082648,
+          "n": 129,
+          "parabola_vertex": 27.673
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 8.83,
+        "p75": 11.58,
+        "p90": 15.364,
+        "p95": 17.262,
+        "max": 20.84,
+        "mean": 9.176,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": 2.274,
+        "p50": 2.11,
+        "p90": 7.602,
+        "night_mean": 9.629,
+        "solar_crush_mean": 7.356,
+        "note": null
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 10.227,
+        "daytime_mean": 9.176,
+        "peak_mean": 7.892,
+        "night_mean": 9.629,
+        "solar_crush_mean": 7.356
+      }
+    },
+    {
+      "site_id": "hitachi_hitachi",
+      "company": "Hitachi",
+      "site_name": "日立日立事業所",
+      "jepx_area": "tokyo",
+      "primary_station": "mito",
+      "sector": "heavy",
+      "load_profile": "daytime_shift",
+      "price_column": "daytime_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.016,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": -0.0665,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.038053,
+          "intercept": 17.705936,
+          "r2": 0.000256,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": -0.076683,
+          "intercept": 20.008267,
+          "r2": 0.004422,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 20.722611,
+          "b": -0.103894,
+          "c": 1.066048,
+          "kink_celsius": 35,
+          "r2": 0.007117,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": -0.103894,
+            "slope_above_35": 0.962154,
+            "extra_per_degree_above_35": 1.066048
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 60.831271,
+          "b": -3.000893,
+          "c": 0.051107,
+          "r2": 0.042608,
+          "n": 129,
+          "parabola_vertex": 29.359
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 16.58,
+        "p75": 20.21,
+        "p90": 25.254,
+        "p95": 27.01,
+        "max": 32.37,
+        "mean": 17.786,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 3,
+        "n_days": 129,
+        "fraction": 0.0233
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": -2.806,
+        "p50": -2.2,
+        "p90": 0.738,
+        "night_mean": 13.617,
+        "solar_crush_mean": 16.423,
+        "note": null
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 16.3,
+        "daytime_mean": 17.786,
+        "peak_mean": 16.936,
+        "night_mean": 13.617,
+        "solar_crush_mean": 16.423
+      }
+    },
+    {
+      "site_id": "hitachi_omika",
+      "company": "Hitachi",
+      "site_name": "日立大みか事業所",
+      "jepx_area": "tokyo",
+      "primary_station": "mito",
+      "sector": "heavy",
+      "load_profile": "daytime_shift",
+      "price_column": "daytime_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.016,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": -0.0665,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.038053,
+          "intercept": 17.705936,
+          "r2": 0.000256,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": -0.076683,
+          "intercept": 20.008267,
+          "r2": 0.004422,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 20.722611,
+          "b": -0.103894,
+          "c": 1.066048,
+          "kink_celsius": 35,
+          "r2": 0.007117,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": -0.103894,
+            "slope_above_35": 0.962154,
+            "extra_per_degree_above_35": 1.066048
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 60.831271,
+          "b": -3.000893,
+          "c": 0.051107,
+          "r2": 0.042608,
+          "n": 129,
+          "parabola_vertex": 29.359
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 16.58,
+        "p75": 20.21,
+        "p90": 25.254,
+        "p95": 27.01,
+        "max": 32.37,
+        "mean": 17.786,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 3,
+        "n_days": 129,
+        "fraction": 0.0233
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": -2.806,
+        "p50": -2.2,
+        "p90": 0.738,
+        "night_mean": 13.617,
+        "solar_crush_mean": 16.423,
+        "note": null
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 16.3,
+        "daytime_mean": 17.786,
+        "peak_mean": 16.936,
+        "night_mean": 13.617,
+        "solar_crush_mean": 16.423
+      }
+    },
+    {
+      "site_id": "hitachi_kasado",
+      "company": "Hitachi",
+      "site_name": "日立笠戸事業所",
+      "jepx_area": "chugoku",
+      "primary_station": "hiroshima",
+      "sector": "heavy",
+      "load_profile": "daytime_shift",
+      "price_column": "daytime_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "samples": {
+        "summer_weekday_n": 129,
+        "weekday_n": 346
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.515478,
+          "n": 129
+        },
+        "tmax_vs_load_price": {
+          "r": 0.37045,
+          "n": 129
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.976406,
+          "intercept": 9.502458,
+          "r2": 0.265718,
+          "n": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.404904,
+          "intercept": -0.134175,
+          "r2": 0.137233,
+          "n": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "a": 2.550754,
+          "b": 0.305404,
+          "c": 6.9655,
+          "kink_celsius": 35,
+          "r2": 0.203587,
+          "n": 129,
+          "interpretation": {
+            "slope_below_35": 0.305404,
+            "slope_above_35": 7.270904,
+            "extra_per_degree_above_35": 6.9655
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 82.453595,
+          "b": -5.444302,
+          "c": 0.101463,
+          "r2": 0.28467,
+          "n": 129,
+          "parabola_vertex": 26.829
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 11.23,
+        "p75": 13.57,
+        "p90": 18.498,
+        "p95": 20.586,
+        "max": 24.67,
+        "mean": 11.847,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": 0.899,
+        "p50": 0.95,
+        "p90": 5.316,
+        "night_mean": 10.758,
+        "solar_crush_mean": 9.859,
+        "note": null
+      },
+      "baseload_vs_daytime_summer": {
+        "baseload_mean": 12.29,
+        "daytime_mean": 11.847,
+        "peak_mean": 10.44,
+        "night_mean": 10.758,
+        "solar_crush_mean": 9.859
+      }
+    }
+  ]
+}

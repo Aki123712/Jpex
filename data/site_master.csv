@@ -1,0 +1,18 @@
+site_id,company,site_name,city,prefecture,jepx_area,primary_station,sector,load_profile,status,capex_jpy_oku,note
+jasm_fab1,TSMC,JASM第1工場,菊陽町,熊本県,kyushu,kumamoto,semi,baseload_24h,operating,9800,2024-12量産開始; 24h基荷→暴露在夜间价非太阳能压价窗口
+jasm_fab2,TSMC,JASM第2工場,菊陽町(第1隣接),熊本県,kyushu,kumamoto,semi,baseload_24h,construction,20850,2027末目標; 与Fab1同区域同负荷曲线
+sony_tec_kumamoto,Sony,ソニーセミコン熊本(TEC),菊陽町,熊本県,kyushu,kumamoto,semi,baseload_24h,operating,,菊陽町集群; CMOS image sensor
+rapidus_iim1,Rapidus,Rapidus IIM-1,千歳市,北海道,hokkaido,chitose,semi,baseload_24h,pilot,,2027量産目標; 千歳≠札幌气候
+kioxia_yokkaichi,Kioxia,キオクシア四日市,四日市市,三重県,chubu,yokkaichi,semi,baseload_24h,operating,,NAND fab; 中部价受东京连系线影响
+kioxia_kitakami,Kioxia,キオクシア北上,北上市,岩手県,tohoku,morioka,semi,baseload_24h,operating,,東北エリア; 用morioka而非tokyo
+mhi_nagasaki,MHI,三菱重工長崎造船所,長崎市,長崎県,kyushu,nagasaki,heavy,daytime_shift,operating,,造船/エネルギー機器
+mhi_kobe,MHI,三菱重工神戸造船所,神戸市,兵庫県,kansai,kobe,heavy,daytime_shift,operating,,兵庫拠点群
+mhi_takasago,MHI,三菱重工高砂製作所,高砂市,兵庫県,kansai,kobe,heavy,daytime_shift,operating,,ガスタービン=電力逼迫の受益側
+mhi_nagoya_aero,MHI,三菱重工名古屋航空宇宙,名古屋市・飛島,愛知県,chubu,nagoya,heavy,daytime_shift,operating,,航空宇宙
+khi_kobe,KHI,川崎重工神戸工場,神戸市,兵庫県,kansai,kobe,heavy,daytime_shift,operating,,兵庫拠点群
+khi_akashi,KHI,川崎重工明石工場,明石市,兵庫県,kansai,kobe,heavy,daytime_shift,operating,,兵庫拠点群
+khi_harima,KHI,川崎重工播磨工場,播磨町,兵庫県,kansai,kobe,heavy,daytime_shift,operating,,兵庫拠点群
+khi_sakaide,KHI,川崎重工坂出工場,坂出市,香川県,shikoku,takamatsu,heavy,daytime_shift,operating,,四国エリア; 用takamatsu
+hitachi_hitachi,Hitachi,日立日立事業所,日立市,茨城県,tokyo,mito,heavy,daytime_shift,operating,,東京管区; 予備率最薄エリア
+hitachi_omika,Hitachi,日立大みか事業所,日立市大みか町,茨城県,tokyo,mito,heavy,daytime_shift,operating,,電力系統制御; 東京管区
+hitachi_kasado,Hitachi,日立笠戸事業所,下松市,山口県,chugoku,hiroshima,heavy,daytime_shift,operating,,中国エリア; 用hiroshima

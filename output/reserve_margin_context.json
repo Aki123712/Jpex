@@ -1,0 +1,106 @@
+{
+  "meta": {
+    "version": "v3",
+    "source": "経産省 / OCCTO 2026年度夏季供給予備率公表値（手录入）",
+    "unit": "percent",
+    "year": 2026,
+    "season": "summer",
+    "note": "东京是唯一跌破1%的区域；日立两个核心事業所在东京管区",
+    "retrieved_note": "Values transcribed from public METI/OCCTO summer outlook materials; verify against latest 需給検証 if material for trading."
+  },
+  "areas": {
+    "tokyo": {
+      "jul": 2.1,
+      "aug": 0.9,
+      "sep": 2.7,
+      "note": "追加公募120万kW後に3%確保見込; 8月0.9%は全国で最も薄い",
+      "risk_flag": "critical"
+    },
+    "tohoku": {
+      "jul": 5.5,
+      "aug": 4.8,
+      "sep": 6.2,
+      "note": "公表レンジ概数; 連系線制約で東京逼迫が波及しうる",
+      "risk_flag": "watch"
+    },
+    "chubu": {
+      "jul": 4.2,
+      "aug": 3.5,
+      "sep": 5,
+      "note": "東京連系の影響でキオクシア四日市は東京逼迫と連動しうる",
+      "risk_flag": "elevated"
+    },
+    "hokuriku": {
+      "jul": 6,
+      "aug": 5.5,
+      "sep": 7,
+      "risk_flag": "moderate"
+    },
+    "kansai": {
+      "jul": 5,
+      "aug": 4.3,
+      "sep": 5.8,
+      "note": "原子力バッファあり; 兵庫重工群はdaytime暴露",
+      "risk_flag": "moderate"
+    },
+    "chugoku": {
+      "jul": 5.8,
+      "aug": 5,
+      "sep": 6.5,
+      "risk_flag": "moderate"
+    },
+    "shikoku": {
+      "jul": 6.5,
+      "aug": 5.8,
+      "sep": 7.2,
+      "risk_flag": "moderate"
+    },
+    "kyushu": {
+      "jul": 7,
+      "aug": 6.2,
+      "sep": 8,
+      "note": "日間は太陽光で余剰・価格崩壊; 夜間/基荷は別問題。JASMはbaseload暴露",
+      "risk_flag": "structural_night"
+    },
+    "hokkaido": {
+      "jul": 7.5,
+      "aug": 6.1,
+      "sep": 8.3,
+      "note": "最小6.1-8.3%; Rapidus千歳は予備率に余裕あるが連系制約あり",
+      "risk_flag": "moderate"
+    }
+  },
+  "implications": [
+    {
+      "sites": [
+        "hitachi_hitachi",
+        "hitachi_omika"
+      ],
+      "area": "tokyo",
+      "message": "東京管区8月予備率0.9% — 唯一の1%割れ。日立2拠点はdaytime_price + 逼迫尾部リスク最大クラス"
+    },
+    {
+      "sites": [
+        "kioxia_yokkaichi"
+      ],
+      "area": "chubu",
+      "message": "中部予備率は東京より厚いが、連系線経由で東京スパイクが中部価を牽引しうる"
+    },
+    {
+      "sites": [
+        "jasm_fab1",
+        "jasm_fab2",
+        "sony_tec_kumamoto"
+      ],
+      "area": "kyushu",
+      "message": "九州予備率は厚くpeak/solar_crushは安いが、24h基荷の真のコストはnight_price。night_day_spreadを監視"
+    },
+    {
+      "sites": [
+        "rapidus_iim1"
+      ],
+      "area": "hokkaido",
+      "message": "予備率6%超で相対的に安全; ただし北本連系の制約と厳冬は別軸"
+    }
+  ]
+}
