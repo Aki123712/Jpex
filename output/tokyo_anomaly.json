@@ -1,0 +1,350 @@
+{
+  "meta": {
+    "version": "v4",
+    "generated_at": "2026-08-01T13:34:23.084Z",
+    "thesis": "Tokyo area shows near-zero summer weekday linear temp-price correlation but highest national tail (p95/spike). Reserve margin Aug 0.9% is structural scarcity, not weather-driven on average days.",
+    "sample": "summer_weekday Jun-Sep is_weekend=0 is_obon=0"
+  },
+  "area_level": {
+    "reserve_margin_aug_pct": 0.9,
+    "correlations": {
+      "n_obs": 129,
+      "station": "tokyo",
+      "cdd24_vs_peak_price": {
+        "r": 0.046182,
+        "n_obs": 129,
+        "p_value": 0.603276
+      },
+      "tmax_vs_peak_price": {
+        "r": -0.010428,
+        "n_obs": 129,
+        "p_value": 0.906627
+      },
+      "cdd24_vs_baseload_price": {
+        "r": 0.14749,
+        "n_obs": 129,
+        "p_value": 0.095316
+      },
+      "tmax_vs_baseload_price": {
+        "r": 0.105501,
+        "n_obs": 129,
+        "p_value": 0.234078
+      },
+      "cdd24_vs_daytime_price": {
+        "r": 0.155296,
+        "n_obs": 129,
+        "p_value": 0.078862
+      },
+      "tmax_vs_daytime_price": {
+        "r": 0.102277,
+        "n_obs": 129,
+        "p_value": 0.24876
+      },
+      "tmax_vs_max_price": {
+        "r": 0.198198,
+        "n_obs": 129,
+        "p_value": 0.024349
+      }
+    },
+    "summary": {
+      "n_days": 129,
+      "n_days_tmax_ge_35": 33,
+      "station": "tokyo",
+      "baseload_mean": 16.3,
+      "daytime_mean": 17.786,
+      "night_mean": 13.617,
+      "solar_crush_mean": 16.423,
+      "night_day_spread_mean": -2.806,
+      "peak_mean": 16.936,
+      "peak_max": 34.32,
+      "max_price_p95": 45.556,
+      "spike_frac_daytime_gt30": 0.0233,
+      "spike_frac_baseload_gt30": 0,
+      "tmax_mean": 30.813,
+      "cdd24_mean": 3.316
+    },
+    "piecewise35_peak": {
+      "form": "price = a + b*tmax + c*max(tmax-35,0)",
+      "kink_celsius": 35,
+      "n_obs": 129,
+      "n_above_35": 33,
+      "n_below_35": 96,
+      "low_confidence": false,
+      "a": 23.951515,
+      "b": -0.25618,
+      "c": 2.015579,
+      "r2": 0.075913,
+      "interpretation": {
+        "slope_below_35": -0.25618,
+        "slope_above_35": 1.759399,
+        "extra_per_degree_above_35": 2.015579
+      }
+    },
+    "piecewise35_baseload": {
+      "form": "price = a + b*tmax + c*max(tmax-35,0)",
+      "kink_celsius": 35,
+      "n_obs": 129,
+      "n_above_35": 33,
+      "n_below_35": 96,
+      "low_confidence": false,
+      "a": 20.008463,
+      "b": -0.147513,
+      "c": 1.920069,
+      "r2": 0.129372,
+      "interpretation": {
+        "slope_below_35": -0.147513,
+        "slope_above_35": 1.772556,
+        "extra_per_degree_above_35": 1.920069
+      }
+    },
+    "piecewise35_daytime": {
+      "form": "price = a + b*tmax + c*max(tmax-35,0)",
+      "kink_celsius": 35,
+      "n_obs": 129,
+      "n_above_35": 33,
+      "n_below_35": 96,
+      "low_confidence": false,
+      "a": 21.654429,
+      "b": -0.156222,
+      "c": 2.168751,
+      "r2": 0.101121,
+      "interpretation": {
+        "slope_below_35": -0.156222,
+        "slope_above_35": 2.012529,
+        "extra_per_degree_above_35": 2.168751
+      }
+    },
+    "cross_area_daytime_p95": {
+      "tokyo": 27.01,
+      "kansai": 24.578,
+      "kyushu": 18.634,
+      "chubu": 25.656,
+      "tohoku": 23.644,
+      "chugoku": 20.586,
+      "shikoku": 17.262,
+      "hokkaido": 18.346
+    },
+    "cross_area_spike_frac_daytime_gt30": {
+      "tokyo": 0.0233,
+      "kansai": 0.0078,
+      "kyushu": 0,
+      "chubu": 0.0078,
+      "tohoku": 0.0078,
+      "chugoku": 0,
+      "shikoku": 0,
+      "hokkaido": 0
+    }
+  },
+  "sites_in_tokyo_area": {
+    "hoya_hachioji": {
+      "site_id": "hoya_hachioji",
+      "company": "HOYA",
+      "primary_station": "hachioji",
+      "price_column": "baseload_price",
+      "correlations": {
+        "cdd24_vs_load_price": {
+          "r": 0.135011,
+          "n_obs": 129,
+          "p_value": 0.127134
+        },
+        "tmax_vs_load_price": {
+          "r": 0.077975,
+          "n_obs": 129,
+          "p_value": 0.37976
+        }
+      },
+      "piecewise35": {
+        "form": "price = a + b*tmax + c*max(tmax-35,0)",
+        "kink_celsius": 35,
+        "n_obs": 129,
+        "n_above_35": 38,
+        "n_below_35": 91,
+        "low_confidence": false,
+        "a": 19.509821,
+        "b": -0.128048,
+        "c": 1.197211,
+        "r2": 0.073216,
+        "interpretation": {
+          "slope_below_35": -0.128048,
+          "slope_above_35": 1.069163,
+          "extra_per_degree_above_35": 1.197211
+        }
+      },
+      "quantiles": {
+        "p50": 15.25,
+        "p75": 19.01,
+        "p90": 22.774,
+        "p95": 23.716,
+        "max": 27.38,
+        "mean": 16.3,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "interpretation": "Same tokyo-area price series; station differs (hachioji/kofu vs mito). Temp-price linear corr remains weak; tail risk elevated vs other areas."
+    },
+    "hoya_nagasaka": {
+      "site_id": "hoya_nagasaka",
+      "company": "HOYA",
+      "primary_station": "kofu",
+      "price_column": "baseload_price",
+      "correlations": {
+        "cdd24_vs_load_price": {
+          "r": 0.247518,
+          "n_obs": 129,
+          "p_value": 0.004683
+        },
+        "tmax_vs_load_price": {
+          "r": 0.138181,
+          "n_obs": 129,
+          "p_value": 0.118369
+        }
+      },
+      "piecewise35": {
+        "form": "price = a + b*tmax + c*max(tmax-35,0)",
+        "kink_celsius": 35,
+        "n_obs": 129,
+        "n_above_35": 19,
+        "n_below_35": 110,
+        "low_confidence": false,
+        "a": 15.442137,
+        "b": 0.018649,
+        "c": 1.33392,
+        "r2": 0.05313,
+        "interpretation": {
+          "slope_below_35": 0.018649,
+          "slope_above_35": 1.352569,
+          "extra_per_degree_above_35": 1.33392
+        }
+      },
+      "quantiles": {
+        "p50": 15.25,
+        "p75": 19.01,
+        "p90": 22.774,
+        "p95": 23.716,
+        "max": 27.38,
+        "mean": 16.3,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "interpretation": "Same tokyo-area price series; station differs (hachioji/kofu vs mito). Temp-price linear corr remains weak; tail risk elevated vs other areas."
+    },
+    "hitachi_hitachi": {
+      "site_id": "hitachi_hitachi",
+      "company": "Hitachi",
+      "primary_station": "mito",
+      "price_column": "daytime_price",
+      "correlations": {
+        "cdd24_vs_load_price": {
+          "r": 0.016,
+          "n_obs": 129,
+          "p_value": 0.857175
+        },
+        "tmax_vs_load_price": {
+          "r": -0.0665,
+          "n_obs": 129,
+          "p_value": 0.453994
+        }
+      },
+      "piecewise35": {
+        "form": "price = a + b*tmax + c*max(tmax-35,0)",
+        "kink_celsius": 35,
+        "n_obs": 129,
+        "n_above_35": 12,
+        "n_below_35": 117,
+        "low_confidence": false,
+        "a": 20.722611,
+        "b": -0.103894,
+        "c": 1.066048,
+        "r2": 0.007117,
+        "interpretation": {
+          "slope_below_35": -0.103894,
+          "slope_above_35": 0.962154,
+          "extra_per_degree_above_35": 1.066048
+        }
+      },
+      "quantiles": {
+        "p50": 16.58,
+        "p75": 20.21,
+        "p90": 25.254,
+        "p95": 27.01,
+        "max": 32.37,
+        "mean": 17.786,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 3,
+        "n_days": 129,
+        "fraction": 0.0233
+      },
+      "interpretation": "Same tokyo-area price series; station differs (hachioji/kofu vs mito). Temp-price linear corr remains weak; tail risk elevated vs other areas."
+    },
+    "hitachi_omika": {
+      "site_id": "hitachi_omika",
+      "company": "Hitachi",
+      "primary_station": "mito",
+      "price_column": "daytime_price",
+      "correlations": {
+        "cdd24_vs_load_price": {
+          "r": 0.016,
+          "n_obs": 129,
+          "p_value": 0.857175
+        },
+        "tmax_vs_load_price": {
+          "r": -0.0665,
+          "n_obs": 129,
+          "p_value": 0.453994
+        }
+      },
+      "piecewise35": {
+        "form": "price = a + b*tmax + c*max(tmax-35,0)",
+        "kink_celsius": 35,
+        "n_obs": 129,
+        "n_above_35": 12,
+        "n_below_35": 117,
+        "low_confidence": false,
+        "a": 20.722611,
+        "b": -0.103894,
+        "c": 1.066048,
+        "r2": 0.007117,
+        "interpretation": {
+          "slope_below_35": -0.103894,
+          "slope_above_35": 0.962154,
+          "extra_per_degree_above_35": 1.066048
+        }
+      },
+      "quantiles": {
+        "p50": 16.58,
+        "p75": 20.21,
+        "p90": 25.254,
+        "p95": 27.01,
+        "max": 32.37,
+        "mean": 17.786,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 3,
+        "n_days": 129,
+        "fraction": 0.0233
+      },
+      "interpretation": "Same tokyo-area price series; station differs (hachioji/kofu vs mito). Temp-price linear corr remains weak; tail risk elevated vs other areas."
+    }
+  },
+  "conclusions": [
+    "Linear r(tmax, price) ≈ 0 on summer weekdays — heat is not a good average-day price predictor in Tokyo in this sample.",
+    "Daytime/baseload p95 and spike frequency remain among the highest of 8 areas — scarcity/reserve channel dominates.",
+    "HOYA 八王子/長坂 sit in the same JEPX tokyo price area as Hitachi Ibaraki plants; baseload materials face the same wholesale tails.",
+    "piecewise35 above-35 slopes must be read with n_above_35 and low_confidence flags (small-sample inflation risk documented since v3)."
+  ]
+}

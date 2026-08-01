@@ -1,18 +1,27 @@
-site_id,company,site_name,city,prefecture,jepx_area,primary_station,sector,load_profile,status,capex_jpy_oku,note
-jasm_fab1,TSMC,JASM第1工場,菊陽町,熊本県,kyushu,kumamoto,semi,baseload_24h,operating,9800,2024-12量産開始; 24h基荷→暴露在夜间价非太阳能压价窗口
-jasm_fab2,TSMC,JASM第2工場,菊陽町(第1隣接),熊本県,kyushu,kumamoto,semi,baseload_24h,construction,20850,2027末目標; 与Fab1同区域同负荷曲线
-sony_tec_kumamoto,Sony,ソニーセミコン熊本(TEC),菊陽町,熊本県,kyushu,kumamoto,semi,baseload_24h,operating,,菊陽町集群; CMOS image sensor
-rapidus_iim1,Rapidus,Rapidus IIM-1,千歳市,北海道,hokkaido,chitose,semi,baseload_24h,pilot,,2027量産目標; 千歳≠札幌气候
-kioxia_yokkaichi,Kioxia,キオクシア四日市,四日市市,三重県,chubu,yokkaichi,semi,baseload_24h,operating,,NAND fab; 中部价受东京连系线影响
-kioxia_kitakami,Kioxia,キオクシア北上,北上市,岩手県,tohoku,morioka,semi,baseload_24h,operating,,東北エリア; 用morioka而非tokyo
-mhi_nagasaki,MHI,三菱重工長崎造船所,長崎市,長崎県,kyushu,nagasaki,heavy,daytime_shift,operating,,造船/エネルギー機器
-mhi_kobe,MHI,三菱重工神戸造船所,神戸市,兵庫県,kansai,kobe,heavy,daytime_shift,operating,,兵庫拠点群
-mhi_takasago,MHI,三菱重工高砂製作所,高砂市,兵庫県,kansai,kobe,heavy,daytime_shift,operating,,ガスタービン=電力逼迫の受益側
-mhi_nagoya_aero,MHI,三菱重工名古屋航空宇宙,名古屋市・飛島,愛知県,chubu,nagoya,heavy,daytime_shift,operating,,航空宇宙
-khi_kobe,KHI,川崎重工神戸工場,神戸市,兵庫県,kansai,kobe,heavy,daytime_shift,operating,,兵庫拠点群
-khi_akashi,KHI,川崎重工明石工場,明石市,兵庫県,kansai,kobe,heavy,daytime_shift,operating,,兵庫拠点群
-khi_harima,KHI,川崎重工播磨工場,播磨町,兵庫県,kansai,kobe,heavy,daytime_shift,operating,,兵庫拠点群
-khi_sakaide,KHI,川崎重工坂出工場,坂出市,香川県,shikoku,takamatsu,heavy,daytime_shift,operating,,四国エリア; 用takamatsu
-hitachi_hitachi,Hitachi,日立日立事業所,日立市,茨城県,tokyo,mito,heavy,daytime_shift,operating,,東京管区; 予備率最薄エリア
-hitachi_omika,Hitachi,日立大みか事業所,日立市大みか町,茨城県,tokyo,mito,heavy,daytime_shift,operating,,電力系統制御; 東京管区
-hitachi_kasado,Hitachi,日立笠戸事業所,下松市,山口県,chugoku,hiroshima,heavy,daytime_shift,operating,,中国エリア; 用hiroshima
+site_id,company,site_name,city,prefecture,jepx_area,primary_station,sector,load_profile,status,capex_jpy_oku,supply_chain_tier,note
+jasm_fab1,TSMC,JASM第1工場,菊陽町,熊本県,kyushu,kumamoto,semi,baseload_24h,operating,9800,fab_leading,2024-12量産; 24h基荷→暴露在夜间价
+jasm_fab2,TSMC,JASM第2工場,菊陽町(第1隣接),熊本県,kyushu,kumamoto,semi,baseload_24h,construction,20850,fab_leading,2027末目標
+sony_tec_kumamoto,Sony,ソニーセミコン熊本(TEC),菊陽町,熊本県,kyushu,kumamoto,semi,baseload_24h,operating,,fab_leading,菊陽町集群 CMOS
+rapidus_iim1,Rapidus,Rapidus IIM-1,千歳市,北海道,hokkaido,chitose,semi,baseload_24h,pilot,,fab_leading,2027量産目標; 千歳
+kioxia_yokkaichi,Kioxia,キオクシア四日市,四日市市,三重県,chubu,yokkaichi,semi,baseload_24h,operating,,fab_memory,NAND fab
+kioxia_kitakami,Kioxia,キオクシア北上,北上市,岩手県,tohoku,morioka,semi,baseload_24h,operating,,fab_memory,東北; morioka
+mhi_nagasaki,MHI,三菱重工長崎造船所,長崎市,長崎県,kyushu,nagasaki,heavy,daytime_shift,operating,,heavy,造船/エネルギー
+mhi_kobe,MHI,三菱重工神戸造船所,神戸市,兵庫県,kansai,kobe,heavy,daytime_shift,operating,,heavy,兵庫拠点群
+mhi_takasago,MHI,三菱重工高砂製作所,高砂市,兵庫県,kansai,kobe,heavy,daytime_shift,operating,,heavy,ガスタービン=逼迫受益側
+mhi_nagoya_aero,MHI,三菱重工名古屋航空宇宙,名古屋市・飛島,愛知県,chubu,nagoya,heavy,daytime_shift,operating,,heavy,航空宇宙
+khi_kobe,KHI,川崎重工神戸工場,神戸市,兵庫県,kansai,kobe,heavy,daytime_shift,operating,,heavy,兵庫拠点群
+khi_akashi,KHI,川崎重工明石工場,明石市,兵庫県,kansai,kobe,heavy,daytime_shift,operating,,heavy,兵庫拠点群
+khi_harima,KHI,川崎重工播磨工場,播磨町,兵庫県,kansai,kobe,heavy,daytime_shift,operating,,heavy,兵庫拠点群
+khi_sakaide,KHI,川崎重工坂出工場,坂出市,香川県,shikoku,takamatsu,heavy,daytime_shift,operating,,heavy,四国
+hitachi_hitachi,Hitachi,日立日立事業所,日立市,茨城県,tokyo,mito,heavy,daytime_shift,operating,,heavy,東京管区予備率最薄
+hitachi_omika,Hitachi,日立大みか事業所,日立市大みか町,茨城県,tokyo,mito,heavy,daytime_shift,operating,,heavy,電力系統制御; 東京管区
+hitachi_kasado,Hitachi,日立笠戸事業所,下松市,山口県,chugoku,hiroshima,heavy,daytime_shift,operating,,heavy,中国エリア
+agc_koriyama,AGC,AGCエレクトロニクス 郡山事業所,郡山市,福島県,tohoku,fukushima,material,baseload_24h,operating,,tier1_material,EUVマスクブランクス; 世界2社寡占; 2024-01新ライン; 2025能力+30%; 公式:郡山市待池台1-8
+agc_motomiya,AGC,AGCエレクトロニクス 本宮事業所,本宮市,福島県,tohoku,fukushima,material,baseload_24h,operating,,tier1_material,EUVブランクス製造開発; 公式:本宮市荒井字恵向121-3
+hoya_hachioji,HOYA,HOYA 八王子工場,八王子市,東京都,tokyo,hachioji,material,baseload_24h,operating,,tier1_material,FPD/マスクブランクス; 公式:八王子市川口町1375; 東京8月予備率0.9%
+hoya_nagasaka,HOYA,HOYA 長坂工場,北杜市長坂町,山梨県,tokyo,kofu,material,baseload_24h,operating,,tier1_material,LSIマスクブランクス/EUV技術; 公式:北杜市長坂町中丸3280; 世界シェア1位級; 東京管区
+hoya_mishima,HOYA,HOYA 三島工場,三島市,静岡県,chubu,mishima,material,baseload_24h,unverified,,tier1_material,公式拠点一覧(hoya.com/company/network/japan)に半導体マスクブランクス拠点として未掲載; 座標・稼働未一次確認のためunverified
+sumitomo_chem_ehime,Sumitomo Chemical,住友化学 愛媛工場,新居浜市,愛媛県,shikoku,matsuyama,material,baseload_24h,operating,,tier1_material,高純度化学品; 一次:住友化学拠点一覧
+sumitomo_chem_oita,Sumitomo Chemical,住友化学 大分工場,大分市,大分県,kyushu,oita,material,baseload_24h,operating,,tier1_material,高純度化学品
+sumitomo_bakelite_amagasaki,Sumitomo Bakelite,住友ベークライト 尼崎,尼崎市,兵庫県,kansai,kobe,material,baseload_24h,operating,,tier2_component,半導体封止材
+panasonic_koriyama,Panasonic Industry,パナソニック インダストリー 郡山,郡山市,福島県,tohoku,fukushima,material,baseload_24h,operating,,tier2_component,MEGTRON国内生産は郡山(電材/Dempa報道); 増設は海外(タイアユタヤ2027/11・広州2027/04)。旧称Niigata仮説は不採用。耗電量公開値なし=null

@@ -1,12 +1,13 @@
 {
   "meta": {
-    "version": "v3",
+    "version": "v4",
     "source": "経産省 / OCCTO 2026年度夏季供給予備率公表値（手录入）",
     "unit": "percent",
     "year": 2026,
     "season": "summer",
     "note": "东京是唯一跌破1%的区域；日立两个核心事業所在东京管区",
-    "retrieved_note": "Values transcribed from public METI/OCCTO summer outlook materials; verify against latest 需給検証 if material for trading."
+    "retrieved_note": "Values transcribed from public METI/OCCTO summer outlook materials; verify against latest 需給検証 if material for trading.",
+    "updated_for": "v4 chokepoint linkage"
   },
   "areas": {
     "tokyo": {

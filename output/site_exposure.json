@@ -1,311 +1,14 @@
 {
   "meta": {
-    "version": "v3",
-    "generated_at": "2026-08-01T13:17:34.961Z",
-    "n_sites": 17,
+    "version": "v4",
+    "generated_at": "2026-08-01T13:34:23.083Z",
+    "n_sites": 26,
     "sample": "summer_weekday = Jun-Sep & is_weekend=0 & is_obon=0",
     "load_price_rule": {
-      "baseload_24h": "baseload_price (48-slot mean) — semiconductor fabs",
-      "daytime_shift": "daytime_price (08:00-18:00) — heavy industry"
+      "material_and_semi": "baseload_price",
+      "heavy": "daytime_price"
     },
-    "kink_celsius": 35
-  },
-  "rankings": {
-    "by_spike_frequency_gt_30": [
-      {
-        "site_id": "hitachi_hitachi",
-        "fraction": 0.0233,
-        "area": "tokyo",
-        "price_column": "daytime_price"
-      },
-      {
-        "site_id": "hitachi_omika",
-        "fraction": 0.0233,
-        "area": "tokyo",
-        "price_column": "daytime_price"
-      },
-      {
-        "site_id": "mhi_kobe",
-        "fraction": 0.0078,
-        "area": "kansai",
-        "price_column": "daytime_price"
-      },
-      {
-        "site_id": "mhi_takasago",
-        "fraction": 0.0078,
-        "area": "kansai",
-        "price_column": "daytime_price"
-      },
-      {
-        "site_id": "mhi_nagoya_aero",
-        "fraction": 0.0078,
-        "area": "chubu",
-        "price_column": "daytime_price"
-      },
-      {
-        "site_id": "khi_kobe",
-        "fraction": 0.0078,
-        "area": "kansai",
-        "price_column": "daytime_price"
-      },
-      {
-        "site_id": "khi_akashi",
-        "fraction": 0.0078,
-        "area": "kansai",
-        "price_column": "daytime_price"
-      },
-      {
-        "site_id": "khi_harima",
-        "fraction": 0.0078,
-        "area": "kansai",
-        "price_column": "daytime_price"
-      },
-      {
-        "site_id": "jasm_fab1",
-        "fraction": 0,
-        "area": "kyushu",
-        "price_column": "baseload_price"
-      },
-      {
-        "site_id": "jasm_fab2",
-        "fraction": 0,
-        "area": "kyushu",
-        "price_column": "baseload_price"
-      },
-      {
-        "site_id": "sony_tec_kumamoto",
-        "fraction": 0,
-        "area": "kyushu",
-        "price_column": "baseload_price"
-      },
-      {
-        "site_id": "rapidus_iim1",
-        "fraction": 0,
-        "area": "hokkaido",
-        "price_column": "baseload_price"
-      },
-      {
-        "site_id": "kioxia_yokkaichi",
-        "fraction": 0,
-        "area": "chubu",
-        "price_column": "baseload_price"
-      },
-      {
-        "site_id": "kioxia_kitakami",
-        "fraction": 0,
-        "area": "tohoku",
-        "price_column": "baseload_price"
-      },
-      {
-        "site_id": "mhi_nagasaki",
-        "fraction": 0,
-        "area": "kyushu",
-        "price_column": "daytime_price"
-      },
-      {
-        "site_id": "khi_sakaide",
-        "fraction": 0,
-        "area": "shikoku",
-        "price_column": "daytime_price"
-      },
-      {
-        "site_id": "hitachi_kasado",
-        "fraction": 0,
-        "area": "chugoku",
-        "price_column": "daytime_price"
-      }
-    ],
-    "by_p95_load_price": [
-      {
-        "site_id": "hitachi_hitachi",
-        "p95": 27.01,
-        "price_column": "daytime_price",
-        "area": "tokyo"
-      },
-      {
-        "site_id": "hitachi_omika",
-        "p95": 27.01,
-        "price_column": "daytime_price",
-        "area": "tokyo"
-      },
-      {
-        "site_id": "mhi_nagoya_aero",
-        "p95": 25.656,
-        "price_column": "daytime_price",
-        "area": "chubu"
-      },
-      {
-        "site_id": "mhi_kobe",
-        "p95": 24.578,
-        "price_column": "daytime_price",
-        "area": "kansai"
-      },
-      {
-        "site_id": "mhi_takasago",
-        "p95": 24.578,
-        "price_column": "daytime_price",
-        "area": "kansai"
-      },
-      {
-        "site_id": "khi_kobe",
-        "p95": 24.578,
-        "price_column": "daytime_price",
-        "area": "kansai"
-      },
-      {
-        "site_id": "khi_akashi",
-        "p95": 24.578,
-        "price_column": "daytime_price",
-        "area": "kansai"
-      },
-      {
-        "site_id": "khi_harima",
-        "p95": 24.578,
-        "price_column": "daytime_price",
-        "area": "kansai"
-      },
-      {
-        "site_id": "kioxia_yokkaichi",
-        "p95": 23.074,
-        "price_column": "baseload_price",
-        "area": "chubu"
-      },
-      {
-        "site_id": "kioxia_kitakami",
-        "p95": 21.384,
-        "price_column": "baseload_price",
-        "area": "tohoku"
-      },
-      {
-        "site_id": "hitachi_kasado",
-        "p95": 20.586,
-        "price_column": "daytime_price",
-        "area": "chugoku"
-      },
-      {
-        "site_id": "rapidus_iim1",
-        "p95": 18.934,
-        "price_column": "baseload_price",
-        "area": "hokkaido"
-      },
-      {
-        "site_id": "mhi_nagasaki",
-        "p95": 18.634,
-        "price_column": "daytime_price",
-        "area": "kyushu"
-      },
-      {
-        "site_id": "jasm_fab1",
-        "p95": 18.468,
-        "price_column": "baseload_price",
-        "area": "kyushu"
-      },
-      {
-        "site_id": "jasm_fab2",
-        "p95": 18.468,
-        "price_column": "baseload_price",
-        "area": "kyushu"
-      },
-      {
-        "site_id": "sony_tec_kumamoto",
-        "p95": 18.468,
-        "price_column": "baseload_price",
-        "area": "kyushu"
-      },
-      {
-        "site_id": "khi_sakaide",
-        "p95": 17.262,
-        "price_column": "daytime_price",
-        "area": "shikoku"
-      }
-    ],
-    "by_night_day_spread": [
-      {
-        "site_id": "rapidus_iim1",
-        "night_day_spread": 2.836,
-        "area": "hokkaido"
-      },
-      {
-        "site_id": "kioxia_kitakami",
-        "night_day_spread": 2.771,
-        "area": "tohoku"
-      },
-      {
-        "site_id": "khi_sakaide",
-        "night_day_spread": 2.274,
-        "area": "shikoku"
-      },
-      {
-        "site_id": "jasm_fab1",
-        "night_day_spread": 1.185,
-        "area": "kyushu"
-      },
-      {
-        "site_id": "jasm_fab2",
-        "night_day_spread": 1.185,
-        "area": "kyushu"
-      },
-      {
-        "site_id": "sony_tec_kumamoto",
-        "night_day_spread": 1.185,
-        "area": "kyushu"
-      },
-      {
-        "site_id": "mhi_nagasaki",
-        "night_day_spread": 1.185,
-        "area": "kyushu"
-      },
-      {
-        "site_id": "hitachi_kasado",
-        "night_day_spread": 0.899,
-        "area": "chugoku"
-      },
-      {
-        "site_id": "kioxia_yokkaichi",
-        "night_day_spread": -2.082,
-        "area": "chubu"
-      },
-      {
-        "site_id": "mhi_nagoya_aero",
-        "night_day_spread": -2.082,
-        "area": "chubu"
-      },
-      {
-        "site_id": "hitachi_hitachi",
-        "night_day_spread": -2.806,
-        "area": "tokyo"
-      },
-      {
-        "site_id": "hitachi_omika",
-        "night_day_spread": -2.806,
-        "area": "tokyo"
-      },
-      {
-        "site_id": "mhi_kobe",
-        "night_day_spread": -3.599,
-        "area": "kansai"
-      },
-      {
-        "site_id": "mhi_takasago",
-        "night_day_spread": -3.599,
-        "area": "kansai"
-      },
-      {
-        "site_id": "khi_kobe",
-        "night_day_spread": -3.599,
-        "area": "kansai"
-      },
-      {
-        "site_id": "khi_akashi",
-        "night_day_spread": -3.599,
-        "area": "kansai"
-      },
-      {
-        "site_id": "khi_harima",
-        "night_day_spread": -3.599,
-        "area": "kansai"
-      }
-    ]
+    "power_consumption_policy": "null when not publicly disclosed — never estimated"
   },
   "sites": [
     {
@@ -316,21 +19,24 @@
       "primary_station": "kumamoto",
       "sector": "semi",
       "load_profile": "baseload_24h",
+      "supply_chain_tier": "fab_leading",
       "price_column": "baseload_price",
       "status": "operating",
       "capex_jpy_oku": 9800,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.594637,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0
         },
         "tmax_vs_load_price": {
           "r": 0.43964,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0
         }
       },
       "regressions_summer_weekday": {
@@ -338,24 +44,27 @@
           "slope": 0.721958,
           "intercept": 9.714598,
           "r2": 0.353593,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": 0.336122,
           "intercept": 1.600733,
           "r2": 0.193283,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 23,
+          "n_below_35": 106,
+          "low_confidence": false,
           "a": 2.327445,
           "b": 0.310268,
           "c": 0.333566,
-          "kink_celsius": 35,
           "r2": 0.196169,
-          "n": 129,
           "interpretation": {
             "slope_below_35": 0.310268,
             "slope_above_35": 0.643834,
@@ -368,7 +77,7 @@
           "b": -1.81437,
           "c": 0.035604,
           "r2": 0.234555,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 25.48
         }
       },
@@ -392,14 +101,6 @@
         "mean": 1.185,
         "p50": 1.06,
         "p90": 6.35,
-        "night_mean": 10.466,
-        "solar_crush_mean": 9.281,
-        "note": "九州白天太阳能压价→spread显著为正；24h基荷(JASM)真实暴露在夜间价"
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 11.969,
-        "daytime_mean": 11.41,
-        "peak_mean": 9.919,
         "night_mean": 10.466,
         "solar_crush_mean": 9.281
       }
@@ -412,21 +113,24 @@
       "primary_station": "kumamoto",
       "sector": "semi",
       "load_profile": "baseload_24h",
+      "supply_chain_tier": "fab_leading",
       "price_column": "baseload_price",
       "status": "construction",
       "capex_jpy_oku": 20850,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.594637,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0
         },
         "tmax_vs_load_price": {
           "r": 0.43964,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0
         }
       },
       "regressions_summer_weekday": {
@@ -434,24 +138,27 @@
           "slope": 0.721958,
           "intercept": 9.714598,
           "r2": 0.353593,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": 0.336122,
           "intercept": 1.600733,
           "r2": 0.193283,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 23,
+          "n_below_35": 106,
+          "low_confidence": false,
           "a": 2.327445,
           "b": 0.310268,
           "c": 0.333566,
-          "kink_celsius": 35,
           "r2": 0.196169,
-          "n": 129,
           "interpretation": {
             "slope_below_35": 0.310268,
             "slope_above_35": 0.643834,
@@ -464,7 +171,7 @@
           "b": -1.81437,
           "c": 0.035604,
           "r2": 0.234555,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 25.48
         }
       },
@@ -488,14 +195,6 @@
         "mean": 1.185,
         "p50": 1.06,
         "p90": 6.35,
-        "night_mean": 10.466,
-        "solar_crush_mean": 9.281,
-        "note": "九州白天太阳能压价→spread显著为正；24h基荷(JASM)真实暴露在夜间价"
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 11.969,
-        "daytime_mean": 11.41,
-        "peak_mean": 9.919,
         "night_mean": 10.466,
         "solar_crush_mean": 9.281
       }
@@ -508,21 +207,24 @@
       "primary_station": "kumamoto",
       "sector": "semi",
       "load_profile": "baseload_24h",
+      "supply_chain_tier": "fab_leading",
       "price_column": "baseload_price",
       "status": "operating",
       "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.594637,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0
         },
         "tmax_vs_load_price": {
           "r": 0.43964,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0
         }
       },
       "regressions_summer_weekday": {
@@ -530,24 +232,27 @@
           "slope": 0.721958,
           "intercept": 9.714598,
           "r2": 0.353593,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": 0.336122,
           "intercept": 1.600733,
           "r2": 0.193283,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 23,
+          "n_below_35": 106,
+          "low_confidence": false,
           "a": 2.327445,
           "b": 0.310268,
           "c": 0.333566,
-          "kink_celsius": 35,
           "r2": 0.196169,
-          "n": 129,
           "interpretation": {
             "slope_below_35": 0.310268,
             "slope_above_35": 0.643834,
@@ -560,7 +265,7 @@
           "b": -1.81437,
           "c": 0.035604,
           "r2": 0.234555,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 25.48
         }
       },
@@ -585,14 +290,6 @@
         "p50": 1.06,
         "p90": 6.35,
         "night_mean": 10.466,
-        "solar_crush_mean": 9.281,
-        "note": "九州白天太阳能压价→spread显著为正；24h基荷(JASM)真实暴露在夜间价"
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 11.969,
-        "daytime_mean": 11.41,
-        "peak_mean": 9.919,
-        "night_mean": 10.466,
         "solar_crush_mean": 9.281
       }
     },
@@ -604,21 +301,24 @@
       "primary_station": "chitose",
       "sector": "semi",
       "load_profile": "baseload_24h",
+      "supply_chain_tier": "fab_leading",
       "price_column": "baseload_price",
       "status": "pilot",
       "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": -0.111618,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.207909
         },
         "tmax_vs_load_price": {
           "r": 0.201758,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.021856
         }
       },
       "regressions_summer_weekday": {
@@ -626,20 +326,27 @@
           "slope": -0.593268,
           "intercept": 13.720338,
           "r2": 0.012459,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": 0.157957,
           "intercept": 9.86614,
           "r2": 0.040706,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
-          "coef": null,
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 0,
+          "n_below_35": 129,
+          "low_confidence": true,
+          "a": null,
+          "b": null,
+          "c": null,
           "r2": null,
-          "n": 129,
           "note": "singular"
         },
         "quadratic_load_on_tmax": {
@@ -648,7 +355,7 @@
           "b": 0.354017,
           "c": -0.004139,
           "r2": 0.041404,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 42.766
         }
       },
@@ -673,14 +380,6 @@
         "p50": 2.57,
         "p90": 7.548,
         "night_mean": 12.553,
-        "solar_crush_mean": 9.718,
-        "note": null
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 13.648,
-        "daytime_mean": 12.53,
-        "peak_mean": 10.471,
-        "night_mean": 12.553,
         "solar_crush_mean": 9.718
       }
     },
@@ -692,21 +391,24 @@
       "primary_station": "yokkaichi",
       "sector": "semi",
       "load_profile": "baseload_24h",
+      "supply_chain_tier": "fab_memory",
       "price_column": "baseload_price",
       "status": "operating",
       "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.22681,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.009744
         },
         "tmax_vs_load_price": {
           "r": 0.181857,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.039148
         }
       },
       "regressions_summer_weekday": {
@@ -714,24 +416,27 @@
           "slope": 0.35658,
           "intercept": 14.575345,
           "r2": 0.051443,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": 0.178149,
           "intercept": 10.332341,
           "r2": 0.033072,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 8,
+          "n_below_35": 121,
+          "low_confidence": true,
           "a": 12.702339,
           "b": 0.091035,
           "c": 2.567225,
-          "kink_celsius": 35,
           "r2": 0.080155,
-          "n": 129,
           "interpretation": {
             "slope_below_35": 0.091035,
             "slope_above_35": 2.65826,
@@ -744,7 +449,7 @@
           "b": -3.545511,
           "c": 0.064023,
           "r2": 0.111765,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 27.689
         }
       },
@@ -769,14 +474,6 @@
         "p50": -1.39,
         "p90": 1.85,
         "night_mean": 12.989,
-        "solar_crush_mean": 15.071,
-        "note": null
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 15.59,
-        "daytime_mean": 16.718,
-        "peak_mean": 15.656,
-        "night_mean": 12.989,
         "solar_crush_mean": 15.071
       }
     },
@@ -788,21 +485,24 @@
       "primary_station": "morioka",
       "sector": "semi",
       "load_profile": "baseload_24h",
+      "supply_chain_tier": "fab_memory",
       "price_column": "baseload_price",
       "status": "operating",
       "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.10605,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.231637
         },
         "tmax_vs_load_price": {
           "r": 0.093144,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.293766
         }
       },
       "regressions_summer_weekday": {
@@ -810,24 +510,27 @@
           "slope": 0.249451,
           "intercept": 14.028231,
           "r2": 0.011247,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": 0.078798,
           "intercept": 12.076951,
           "r2": 0.008676,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 6,
+          "n_below_35": 123,
+          "low_confidence": true,
           "a": 11.667412,
           "b": 0.094716,
           "c": -1.245564,
-          "kink_celsius": 35,
           "r2": 0.01118,
-          "n": 129,
           "interpretation": {
             "slope_below_35": 0.094716,
             "slope_above_35": -1.150848,
@@ -840,7 +543,7 @@
           "b": 0.625466,
           "c": -0.009924,
           "r2": 0.01203,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 31.513
         }
       },
@@ -865,14 +568,6 @@
         "p50": 2.55,
         "p90": 9.392,
         "night_mean": 13.41,
-        "solar_crush_mean": 10.64,
-        "note": null
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 14.281,
-        "daytime_mean": 13.461,
-        "peak_mean": 11.538,
-        "night_mean": 13.41,
         "solar_crush_mean": 10.64
       }
     },
@@ -884,21 +579,24 @@
       "primary_station": "nagasaki",
       "sector": "heavy",
       "load_profile": "daytime_shift",
+      "supply_chain_tier": "heavy",
       "price_column": "daytime_price",
       "status": "operating",
       "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.408468,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.000002
         },
         "tmax_vs_load_price": {
           "r": 0.255769,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.003439
         }
       },
       "regressions_summer_weekday": {
@@ -906,24 +604,27 @@
           "slope": 0.823816,
           "intercept": 9.382797,
           "r2": 0.166846,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": 0.31348,
           "intercept": 2.237185,
           "r2": 0.065418,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 2,
+          "n_below_35": 127,
+          "low_confidence": true,
           "a": 2.48531,
           "b": 0.304515,
           "c": 1.144555,
-          "kink_celsius": 35,
           "r2": 0.066289,
-          "n": 129,
           "interpretation": {
             "slope_below_35": 0.304515,
             "slope_above_35": 1.44907,
@@ -936,7 +637,7 @@
           "b": -2.71244,
           "c": 0.053303,
           "r2": 0.094877,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 25.444
         }
       },
@@ -961,14 +662,6 @@
         "p50": 1.06,
         "p90": 6.35,
         "night_mean": 10.466,
-        "solar_crush_mean": 9.281,
-        "note": "九州白天太阳能压价→spread显著为正；24h基荷(JASM)真实暴露在夜间价"
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 11.969,
-        "daytime_mean": 11.41,
-        "peak_mean": 9.919,
-        "night_mean": 10.466,
         "solar_crush_mean": 9.281
       }
     },
@@ -980,21 +673,24 @@
       "primary_station": "kobe",
       "sector": "heavy",
       "load_profile": "daytime_shift",
+      "supply_chain_tier": "heavy",
       "price_column": "daytime_price",
       "status": "operating",
       "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.470452,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0
         },
         "tmax_vs_load_price": {
           "r": 0.382224,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.000008
         }
       },
       "regressions_summer_weekday": {
@@ -1002,24 +698,27 @@
           "slope": 0.957124,
           "intercept": 13.202643,
           "r2": 0.221325,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": 0.485171,
           "intercept": 1.561877,
           "r2": 0.146095,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 10,
+          "n_below_35": 119,
+          "low_confidence": false,
           "a": 4.476197,
           "b": 0.377983,
           "c": 5.668251,
-          "kink_celsius": 35,
           "r2": 0.190687,
-          "n": 129,
           "interpretation": {
             "slope_below_35": 0.377983,
             "slope_above_35": 6.046234,
@@ -1032,7 +731,7 @@
           "b": -6.054986,
           "c": 0.112918,
           "r2": 0.275355,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 26.811
         }
       },
@@ -1056,14 +755,6 @@
         "mean": -3.599,
         "p50": -3.41,
         "p90": 0.13,
-        "night_mean": 10.942,
-        "solar_crush_mean": 14.541,
-        "note": null
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 14.121,
-        "daytime_mean": 15.847,
-        "peak_mean": 15.01,
         "night_mean": 10.942,
         "solar_crush_mean": 14.541
       }
@@ -1076,21 +767,24 @@
       "primary_station": "kobe",
       "sector": "heavy",
       "load_profile": "daytime_shift",
+      "supply_chain_tier": "heavy",
       "price_column": "daytime_price",
       "status": "operating",
       "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.470452,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0
         },
         "tmax_vs_load_price": {
           "r": 0.382224,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.000008
         }
       },
       "regressions_summer_weekday": {
@@ -1098,24 +792,27 @@
           "slope": 0.957124,
           "intercept": 13.202643,
           "r2": 0.221325,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": 0.485171,
           "intercept": 1.561877,
           "r2": 0.146095,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 10,
+          "n_below_35": 119,
+          "low_confidence": false,
           "a": 4.476197,
           "b": 0.377983,
           "c": 5.668251,
-          "kink_celsius": 35,
           "r2": 0.190687,
-          "n": 129,
           "interpretation": {
             "slope_below_35": 0.377983,
             "slope_above_35": 6.046234,
@@ -1128,7 +825,7 @@
           "b": -6.054986,
           "c": 0.112918,
           "r2": 0.275355,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 26.811
         }
       },
@@ -1153,14 +850,6 @@
         "p50": -3.41,
         "p90": 0.13,
         "night_mean": 10.942,
-        "solar_crush_mean": 14.541,
-        "note": null
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 14.121,
-        "daytime_mean": 15.847,
-        "peak_mean": 15.01,
-        "night_mean": 10.942,
         "solar_crush_mean": 14.541
       }
     },
@@ -1172,21 +861,24 @@
       "primary_station": "nagoya",
       "sector": "heavy",
       "load_profile": "daytime_shift",
+      "supply_chain_tier": "heavy",
       "price_column": "daytime_price",
       "status": "operating",
       "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.332943,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.000116
         },
         "tmax_vs_load_price": {
           "r": 0.227594,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.009488
         }
       },
       "regressions_summer_weekday": {
@@ -1194,24 +886,27 @@
           "slope": 0.530506,
           "intercept": 14.935316,
           "r2": 0.110851,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": 0.235674,
           "intercept": 9.300531,
           "r2": 0.051799,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 34,
+          "n_below_35": 95,
+          "low_confidence": false,
           "a": 15.373382,
           "b": 0.020732,
           "c": 1.011208,
-          "kink_celsius": 35,
           "r2": 0.091108,
-          "n": 129,
           "interpretation": {
             "slope_below_35": 0.020732,
             "slope_above_35": 1.03194,
@@ -1224,7 +919,7 @@
           "b": -3.175697,
           "c": 0.054318,
           "r2": 0.127518,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 29.232
         }
       },
@@ -1249,14 +944,6 @@
         "p50": -1.39,
         "p90": 1.85,
         "night_mean": 12.989,
-        "solar_crush_mean": 15.071,
-        "note": null
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 15.59,
-        "daytime_mean": 16.718,
-        "peak_mean": 15.656,
-        "night_mean": 12.989,
         "solar_crush_mean": 15.071
       }
     },
@@ -1268,21 +955,24 @@
       "primary_station": "kobe",
       "sector": "heavy",
       "load_profile": "daytime_shift",
+      "supply_chain_tier": "heavy",
       "price_column": "daytime_price",
       "status": "operating",
       "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.470452,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0
         },
         "tmax_vs_load_price": {
           "r": 0.382224,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.000008
         }
       },
       "regressions_summer_weekday": {
@@ -1290,24 +980,27 @@
           "slope": 0.957124,
           "intercept": 13.202643,
           "r2": 0.221325,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": 0.485171,
           "intercept": 1.561877,
           "r2": 0.146095,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 10,
+          "n_below_35": 119,
+          "low_confidence": false,
           "a": 4.476197,
           "b": 0.377983,
           "c": 5.668251,
-          "kink_celsius": 35,
           "r2": 0.190687,
-          "n": 129,
           "interpretation": {
             "slope_below_35": 0.377983,
             "slope_above_35": 6.046234,
@@ -1320,7 +1013,7 @@
           "b": -6.054986,
           "c": 0.112918,
           "r2": 0.275355,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 26.811
         }
       },
@@ -1344,14 +1037,6 @@
         "mean": -3.599,
         "p50": -3.41,
         "p90": 0.13,
-        "night_mean": 10.942,
-        "solar_crush_mean": 14.541,
-        "note": null
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 14.121,
-        "daytime_mean": 15.847,
-        "peak_mean": 15.01,
         "night_mean": 10.942,
         "solar_crush_mean": 14.541
       }
@@ -1364,21 +1049,24 @@
       "primary_station": "kobe",
       "sector": "heavy",
       "load_profile": "daytime_shift",
+      "supply_chain_tier": "heavy",
       "price_column": "daytime_price",
       "status": "operating",
       "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.470452,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0
         },
         "tmax_vs_load_price": {
           "r": 0.382224,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.000008
         }
       },
       "regressions_summer_weekday": {
@@ -1386,24 +1074,27 @@
           "slope": 0.957124,
           "intercept": 13.202643,
           "r2": 0.221325,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": 0.485171,
           "intercept": 1.561877,
           "r2": 0.146095,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 10,
+          "n_below_35": 119,
+          "low_confidence": false,
           "a": 4.476197,
           "b": 0.377983,
           "c": 5.668251,
-          "kink_celsius": 35,
           "r2": 0.190687,
-          "n": 129,
           "interpretation": {
             "slope_below_35": 0.377983,
             "slope_above_35": 6.046234,
@@ -1416,7 +1107,7 @@
           "b": -6.054986,
           "c": 0.112918,
           "r2": 0.275355,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 26.811
         }
       },
@@ -1440,14 +1131,6 @@
         "mean": -3.599,
         "p50": -3.41,
         "p90": 0.13,
-        "night_mean": 10.942,
-        "solar_crush_mean": 14.541,
-        "note": null
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 14.121,
-        "daytime_mean": 15.847,
-        "peak_mean": 15.01,
         "night_mean": 10.942,
         "solar_crush_mean": 14.541
       }
@@ -1460,21 +1143,24 @@
       "primary_station": "kobe",
       "sector": "heavy",
       "load_profile": "daytime_shift",
+      "supply_chain_tier": "heavy",
       "price_column": "daytime_price",
       "status": "operating",
       "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.470452,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0
         },
         "tmax_vs_load_price": {
           "r": 0.382224,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.000008
         }
       },
       "regressions_summer_weekday": {
@@ -1482,24 +1168,27 @@
           "slope": 0.957124,
           "intercept": 13.202643,
           "r2": 0.221325,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": 0.485171,
           "intercept": 1.561877,
           "r2": 0.146095,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 10,
+          "n_below_35": 119,
+          "low_confidence": false,
           "a": 4.476197,
           "b": 0.377983,
           "c": 5.668251,
-          "kink_celsius": 35,
           "r2": 0.190687,
-          "n": 129,
           "interpretation": {
             "slope_below_35": 0.377983,
             "slope_above_35": 6.046234,
@@ -1512,7 +1201,7 @@
           "b": -6.054986,
           "c": 0.112918,
           "r2": 0.275355,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 26.811
         }
       },
@@ -1537,14 +1226,6 @@
         "p50": -3.41,
         "p90": 0.13,
         "night_mean": 10.942,
-        "solar_crush_mean": 14.541,
-        "note": null
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 14.121,
-        "daytime_mean": 15.847,
-        "peak_mean": 15.01,
-        "night_mean": 10.942,
         "solar_crush_mean": 14.541
       }
     },
@@ -1556,21 +1237,24 @@
       "primary_station": "takamatsu",
       "sector": "heavy",
       "load_profile": "daytime_shift",
+      "supply_chain_tier": "heavy",
       "price_column": "daytime_price",
       "status": "operating",
       "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.301604,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.000514
         },
         "tmax_vs_load_price": {
           "r": 0.20511,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.019713
         }
       },
       "regressions_summer_weekday": {
@@ -1578,24 +1262,27 @@
           "slope": 0.46472,
           "intercept": 7.472687,
           "r2": 0.090965,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": 0.209004,
           "intercept": 2.724816,
           "r2": 0.04207,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 30,
+          "n_below_35": 99,
+          "low_confidence": false,
           "a": 3.886304,
           "b": 0.166685,
           "c": 0.704156,
-          "kink_celsius": 35,
           "r2": 0.047006,
-          "n": 129,
           "interpretation": {
             "slope_below_35": 0.166685,
             "slope_above_35": 0.870841,
@@ -1608,7 +1295,7 @@
           "b": -2.699427,
           "c": 0.048774,
           "r2": 0.082648,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 27.673
         }
       },
@@ -1633,14 +1320,6 @@
         "p50": 2.11,
         "p90": 7.602,
         "night_mean": 9.629,
-        "solar_crush_mean": 7.356,
-        "note": null
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 10.227,
-        "daytime_mean": 9.176,
-        "peak_mean": 7.892,
-        "night_mean": 9.629,
         "solar_crush_mean": 7.356
       }
     },
@@ -1652,21 +1331,24 @@
       "primary_station": "mito",
       "sector": "heavy",
       "load_profile": "daytime_shift",
+      "supply_chain_tier": "heavy",
       "price_column": "daytime_price",
       "status": "operating",
       "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.016,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.857175
         },
         "tmax_vs_load_price": {
           "r": -0.0665,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.453994
         }
       },
       "regressions_summer_weekday": {
@@ -1674,24 +1356,27 @@
           "slope": 0.038053,
           "intercept": 17.705936,
           "r2": 0.000256,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": -0.076683,
           "intercept": 20.008267,
           "r2": 0.004422,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 12,
+          "n_below_35": 117,
+          "low_confidence": false,
           "a": 20.722611,
           "b": -0.103894,
           "c": 1.066048,
-          "kink_celsius": 35,
           "r2": 0.007117,
-          "n": 129,
           "interpretation": {
             "slope_below_35": -0.103894,
             "slope_above_35": 0.962154,
@@ -1704,7 +1389,7 @@
           "b": -3.000893,
           "c": 0.051107,
           "r2": 0.042608,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 29.359
         }
       },
@@ -1728,14 +1413,6 @@
         "mean": -2.806,
         "p50": -2.2,
         "p90": 0.738,
-        "night_mean": 13.617,
-        "solar_crush_mean": 16.423,
-        "note": null
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 16.3,
-        "daytime_mean": 17.786,
-        "peak_mean": 16.936,
         "night_mean": 13.617,
         "solar_crush_mean": 16.423
       }
@@ -1748,21 +1425,24 @@
       "primary_station": "mito",
       "sector": "heavy",
       "load_profile": "daytime_shift",
+      "supply_chain_tier": "heavy",
       "price_column": "daytime_price",
       "status": "operating",
       "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.016,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.857175
         },
         "tmax_vs_load_price": {
           "r": -0.0665,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.453994
         }
       },
       "regressions_summer_weekday": {
@@ -1770,24 +1450,27 @@
           "slope": 0.038053,
           "intercept": 17.705936,
           "r2": 0.000256,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": -0.076683,
           "intercept": 20.008267,
           "r2": 0.004422,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 12,
+          "n_below_35": 117,
+          "low_confidence": false,
           "a": 20.722611,
           "b": -0.103894,
           "c": 1.066048,
-          "kink_celsius": 35,
           "r2": 0.007117,
-          "n": 129,
           "interpretation": {
             "slope_below_35": -0.103894,
             "slope_above_35": 0.962154,
@@ -1800,7 +1483,7 @@
           "b": -3.000893,
           "c": 0.051107,
           "r2": 0.042608,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 29.359
         }
       },
@@ -1825,14 +1508,6 @@
         "p50": -2.2,
         "p90": 0.738,
         "night_mean": 13.617,
-        "solar_crush_mean": 16.423,
-        "note": null
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 16.3,
-        "daytime_mean": 17.786,
-        "peak_mean": 16.936,
-        "night_mean": 13.617,
         "solar_crush_mean": 16.423
       }
     },
@@ -1844,21 +1519,24 @@
       "primary_station": "hiroshima",
       "sector": "heavy",
       "load_profile": "daytime_shift",
+      "supply_chain_tier": "heavy",
       "price_column": "daytime_price",
       "status": "operating",
       "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
       "samples": {
-        "summer_weekday_n": 129,
-        "weekday_n": 346
+        "summer_weekday_n": 129
       },
       "correlations_summer_weekday": {
         "cdd24_vs_load_price": {
           "r": 0.515478,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0
         },
         "tmax_vs_load_price": {
           "r": 0.37045,
-          "n": 129
+          "n_obs": 129,
+          "p_value": 0.000016
         }
       },
       "regressions_summer_weekday": {
@@ -1866,24 +1544,27 @@
           "slope": 0.976406,
           "intercept": 9.502458,
           "r2": 0.265718,
-          "n": 129
+          "n_obs": 129
         },
         "load_on_tmax": {
           "slope": 0.404904,
           "intercept": -0.134175,
           "r2": 0.137233,
-          "n": 129
+          "n_obs": 129
         }
       },
       "nonlinear_summer_weekday": {
         "piecewise35_load_on_tmax": {
           "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 11,
+          "n_below_35": 118,
+          "low_confidence": false,
           "a": 2.550754,
           "b": 0.305404,
           "c": 6.9655,
-          "kink_celsius": 35,
           "r2": 0.203587,
-          "n": 129,
           "interpretation": {
             "slope_below_35": 0.305404,
             "slope_above_35": 7.270904,
@@ -1896,7 +1577,7 @@
           "b": -5.444302,
           "c": 0.101463,
           "r2": 0.28467,
-          "n": 129,
+          "n_obs": 129,
           "parabola_vertex": 26.829
         }
       },
@@ -1921,15 +1602,774 @@
         "p50": 0.95,
         "p90": 5.316,
         "night_mean": 10.758,
-        "solar_crush_mean": 9.859,
-        "note": null
-      },
-      "baseload_vs_daytime_summer": {
-        "baseload_mean": 12.29,
-        "daytime_mean": 11.847,
-        "peak_mean": 10.44,
-        "night_mean": 10.758,
         "solar_crush_mean": 9.859
+      }
+    },
+    {
+      "site_id": "agc_koriyama",
+      "company": "AGC",
+      "site_name": "AGCエレクトロニクス 郡山事業所",
+      "jepx_area": "tohoku",
+      "primary_station": "fukushima",
+      "sector": "material",
+      "load_profile": "baseload_24h",
+      "supply_chain_tier": "tier1_material",
+      "price_column": "baseload_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
+      "samples": {
+        "summer_weekday_n": 129
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.189795,
+          "n_obs": 129,
+          "p_value": 0.031217
+        },
+        "tmax_vs_load_price": {
+          "r": 0.05498,
+          "n_obs": 129,
+          "p_value": 0.53602
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.409351,
+          "intercept": 13.752498,
+          "r2": 0.036022,
+          "n_obs": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.045091,
+          "intercept": 13.01159,
+          "r2": 0.003023,
+          "n_obs": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 7,
+          "n_below_35": 122,
+          "low_confidence": true,
+          "a": 12.591072,
+          "b": 0.061437,
+          "c": -1.191152,
+          "r2": 0.005834,
+          "interpretation": {
+            "slope_below_35": 0.061437,
+            "slope_above_35": -1.129715,
+            "extra_per_degree_above_35": -1.191152
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 31.121567,
+          "b": -1.303591,
+          "c": 0.024476,
+          "r2": 0.024886,
+          "n_obs": 129,
+          "parabola_vertex": 26.63
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 13.57,
+        "p75": 15.65,
+        "p90": 19.938,
+        "p95": 21.384,
+        "max": 23.9,
+        "mean": 14.281,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": 2.771,
+        "p50": 2.55,
+        "p90": 9.392,
+        "night_mean": 13.41,
+        "solar_crush_mean": 10.64
+      }
+    },
+    {
+      "site_id": "agc_motomiya",
+      "company": "AGC",
+      "site_name": "AGCエレクトロニクス 本宮事業所",
+      "jepx_area": "tohoku",
+      "primary_station": "fukushima",
+      "sector": "material",
+      "load_profile": "baseload_24h",
+      "supply_chain_tier": "tier1_material",
+      "price_column": "baseload_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
+      "samples": {
+        "summer_weekday_n": 129
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.189795,
+          "n_obs": 129,
+          "p_value": 0.031217
+        },
+        "tmax_vs_load_price": {
+          "r": 0.05498,
+          "n_obs": 129,
+          "p_value": 0.53602
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.409351,
+          "intercept": 13.752498,
+          "r2": 0.036022,
+          "n_obs": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.045091,
+          "intercept": 13.01159,
+          "r2": 0.003023,
+          "n_obs": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 7,
+          "n_below_35": 122,
+          "low_confidence": true,
+          "a": 12.591072,
+          "b": 0.061437,
+          "c": -1.191152,
+          "r2": 0.005834,
+          "interpretation": {
+            "slope_below_35": 0.061437,
+            "slope_above_35": -1.129715,
+            "extra_per_degree_above_35": -1.191152
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 31.121567,
+          "b": -1.303591,
+          "c": 0.024476,
+          "r2": 0.024886,
+          "n_obs": 129,
+          "parabola_vertex": 26.63
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 13.57,
+        "p75": 15.65,
+        "p90": 19.938,
+        "p95": 21.384,
+        "max": 23.9,
+        "mean": 14.281,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": 2.771,
+        "p50": 2.55,
+        "p90": 9.392,
+        "night_mean": 13.41,
+        "solar_crush_mean": 10.64
+      }
+    },
+    {
+      "site_id": "hoya_hachioji",
+      "company": "HOYA",
+      "site_name": "HOYA 八王子工場",
+      "jepx_area": "tokyo",
+      "primary_station": "hachioji",
+      "sector": "material",
+      "load_profile": "baseload_24h",
+      "supply_chain_tier": "tier1_material",
+      "price_column": "baseload_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
+      "samples": {
+        "summer_weekday_n": 129
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.135011,
+          "n_obs": 129,
+          "p_value": 0.127134
+        },
+        "tmax_vs_load_price": {
+          "r": 0.077975,
+          "n_obs": 129,
+          "p_value": 0.37976
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.183416,
+          "intercept": 15.742539,
+          "r2": 0.018228,
+          "n_obs": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.058215,
+          "intercept": 14.506804,
+          "r2": 0.00608,
+          "n_obs": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 38,
+          "n_below_35": 91,
+          "low_confidence": false,
+          "a": 19.509821,
+          "b": -0.128048,
+          "c": 1.197211,
+          "r2": 0.073216,
+          "interpretation": {
+            "slope_below_35": -0.128048,
+            "slope_above_35": 1.069163,
+            "extra_per_degree_above_35": 1.197211
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 59.362519,
+          "b": -2.985863,
+          "c": 0.050071,
+          "r2": 0.116474,
+          "n_obs": 129,
+          "parabola_vertex": 29.816
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 15.25,
+        "p75": 19.01,
+        "p90": 22.774,
+        "p95": 23.716,
+        "max": 27.38,
+        "mean": 16.3,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": -2.806,
+        "p50": -2.2,
+        "p90": 0.738,
+        "night_mean": 13.617,
+        "solar_crush_mean": 16.423
+      }
+    },
+    {
+      "site_id": "hoya_nagasaka",
+      "company": "HOYA",
+      "site_name": "HOYA 長坂工場",
+      "jepx_area": "tokyo",
+      "primary_station": "kofu",
+      "sector": "material",
+      "load_profile": "baseload_24h",
+      "supply_chain_tier": "tier1_material",
+      "price_column": "baseload_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
+      "samples": {
+        "summer_weekday_n": 129
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.247518,
+          "n_obs": 129,
+          "p_value": 0.004683
+        },
+        "tmax_vs_load_price": {
+          "r": 0.138181,
+          "n_obs": 129,
+          "p_value": 0.118369
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.414347,
+          "intercept": 15.402502,
+          "r2": 0.061265,
+          "n_obs": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.11629,
+          "intercept": 12.822646,
+          "r2": 0.019094,
+          "n_obs": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 19,
+          "n_below_35": 110,
+          "low_confidence": false,
+          "a": 15.442137,
+          "b": 0.018649,
+          "c": 1.33392,
+          "r2": 0.05313,
+          "interpretation": {
+            "slope_below_35": 0.018649,
+            "slope_above_35": 1.352569,
+            "extra_per_degree_above_35": 1.33392
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 49.903226,
+          "b": -2.464139,
+          "c": 0.043746,
+          "r2": 0.075253,
+          "n_obs": 129,
+          "parabola_vertex": 28.164
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 15.25,
+        "p75": 19.01,
+        "p90": 22.774,
+        "p95": 23.716,
+        "max": 27.38,
+        "mean": 16.3,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": -2.806,
+        "p50": -2.2,
+        "p90": 0.738,
+        "night_mean": 13.617,
+        "solar_crush_mean": 16.423
+      }
+    },
+    {
+      "site_id": "hoya_mishima",
+      "company": "HOYA",
+      "site_name": "HOYA 三島工場",
+      "jepx_area": "chubu",
+      "primary_station": "mishima",
+      "sector": "material",
+      "load_profile": "baseload_24h",
+      "supply_chain_tier": "tier1_material",
+      "status": "unverified",
+      "note": "公式拠点一覧(hoya.com/company/network/japan)に半導体マスクブランクス拠点として未掲載; 座標・稼働未一次確認のためunverified",
+      "power_consumption_mwh": null,
+      "exposure": null,
+      "reason": "Site location/operations not verified against primary source; metrics withheld"
+    },
+    {
+      "site_id": "sumitomo_chem_ehime",
+      "company": "Sumitomo Chemical",
+      "site_name": "住友化学 愛媛工場",
+      "jepx_area": "shikoku",
+      "primary_station": "matsuyama",
+      "sector": "material",
+      "load_profile": "baseload_24h",
+      "supply_chain_tier": "tier1_material",
+      "price_column": "baseload_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
+      "samples": {
+        "summer_weekday_n": 129
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.515851,
+          "n_obs": 129,
+          "p_value": 0
+        },
+        "tmax_vs_load_price": {
+          "r": 0.453541,
+          "n_obs": 129,
+          "p_value": 0
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.815396,
+          "intercept": 8.061592,
+          "r2": 0.266103,
+          "n_obs": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.450832,
+          "intercept": -2.709643,
+          "r2": 0.205699,
+          "n_obs": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 2,
+          "n_below_35": 127,
+          "low_confidence": true,
+          "a": -3.463572,
+          "b": 0.479275,
+          "c": -16.060197,
+          "r2": 0.222918,
+          "interpretation": {
+            "slope_below_35": 0.479275,
+            "slope_above_35": -15.580922,
+            "extra_per_degree_above_35": -16.060197
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 11.315905,
+          "b": -0.574435,
+          "c": 0.018376,
+          "r2": 0.211386,
+          "n_obs": 129,
+          "parabola_vertex": 15.63
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 9.73,
+        "p75": 11.61,
+        "p90": 15.01,
+        "p95": 18.46,
+        "max": 21.71,
+        "mean": 10.227,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": 2.274,
+        "p50": 2.11,
+        "p90": 7.602,
+        "night_mean": 9.629,
+        "solar_crush_mean": 7.356
+      }
+    },
+    {
+      "site_id": "sumitomo_chem_oita",
+      "company": "Sumitomo Chemical",
+      "site_name": "住友化学 大分工場",
+      "jepx_area": "kyushu",
+      "primary_station": "oita",
+      "sector": "material",
+      "load_profile": "baseload_24h",
+      "supply_chain_tier": "tier1_material",
+      "price_column": "baseload_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
+      "samples": {
+        "summer_weekday_n": 129
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.578115,
+          "n_obs": 129,
+          "p_value": 0
+        },
+        "tmax_vs_load_price": {
+          "r": 0.392007,
+          "n_obs": 129,
+          "p_value": 0.000004
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.732271,
+          "intercept": 9.691472,
+          "r2": 0.334217,
+          "n_obs": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.301552,
+          "intercept": 2.873092,
+          "r2": 0.153669,
+          "n_obs": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 10,
+          "n_below_35": 119,
+          "low_confidence": false,
+          "a": 3.179005,
+          "b": 0.290498,
+          "c": 0.399292,
+          "r2": 0.155313,
+          "interpretation": {
+            "slope_below_35": 0.290498,
+            "slope_above_35": 0.68979,
+            "extra_per_degree_above_35": 0.399292
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 23.573305,
+          "b": -1.148989,
+          "c": 0.024893,
+          "r2": 0.171944,
+          "n_obs": 129,
+          "parabola_vertex": 23.079
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 11.44,
+        "p75": 13.32,
+        "p90": 17.096,
+        "p95": 18.468,
+        "max": 22.1,
+        "mean": 11.969,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": 1.185,
+        "p50": 1.06,
+        "p90": 6.35,
+        "night_mean": 10.466,
+        "solar_crush_mean": 9.281
+      }
+    },
+    {
+      "site_id": "sumitomo_bakelite_amagasaki",
+      "company": "Sumitomo Bakelite",
+      "site_name": "住友ベークライト 尼崎",
+      "jepx_area": "kansai",
+      "primary_station": "kobe",
+      "sector": "material",
+      "load_profile": "baseload_24h",
+      "supply_chain_tier": "tier2_component",
+      "price_column": "baseload_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
+      "samples": {
+        "summer_weekday_n": 129
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.509,
+          "n_obs": 129,
+          "p_value": 0
+        },
+        "tmax_vs_load_price": {
+          "r": 0.442524,
+          "n_obs": 129,
+          "p_value": 0
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.809225,
+          "intercept": 11.88552,
+          "r2": 0.259081,
+          "n_obs": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.438947,
+          "intercept": 1.197146,
+          "r2": 0.195827,
+          "n_obs": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 10,
+          "n_below_35": 119,
+          "low_confidence": false,
+          "a": 4.015638,
+          "b": 0.335283,
+          "c": 5.481868,
+          "r2": 0.264126,
+          "interpretation": {
+            "slope_below_35": 0.335283,
+            "slope_above_35": 5.817151,
+            "extra_per_degree_above_35": 5.481868
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 77.347269,
+          "b": -4.91498,
+          "c": 0.092437,
+          "r2": 0.337679,
+          "n_obs": 129,
+          "parabola_vertex": 26.586
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 13.46,
+        "p75": 16.4,
+        "p90": 19.474,
+        "p95": 21.894,
+        "max": 25.36,
+        "mean": 14.121,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": -3.599,
+        "p50": -3.41,
+        "p90": 0.13,
+        "night_mean": 10.942,
+        "solar_crush_mean": 14.541
+      }
+    },
+    {
+      "site_id": "panasonic_koriyama",
+      "company": "Panasonic Industry",
+      "site_name": "パナソニック インダストリー 郡山",
+      "jepx_area": "tohoku",
+      "primary_station": "fukushima",
+      "sector": "material",
+      "load_profile": "baseload_24h",
+      "supply_chain_tier": "tier2_component",
+      "price_column": "baseload_price",
+      "status": "operating",
+      "capex_jpy_oku": null,
+      "power_consumption_mwh": null,
+      "samples": {
+        "summer_weekday_n": 129
+      },
+      "correlations_summer_weekday": {
+        "cdd24_vs_load_price": {
+          "r": 0.189795,
+          "n_obs": 129,
+          "p_value": 0.031217
+        },
+        "tmax_vs_load_price": {
+          "r": 0.05498,
+          "n_obs": 129,
+          "p_value": 0.53602
+        }
+      },
+      "regressions_summer_weekday": {
+        "load_on_cdd24": {
+          "slope": 0.409351,
+          "intercept": 13.752498,
+          "r2": 0.036022,
+          "n_obs": 129
+        },
+        "load_on_tmax": {
+          "slope": 0.045091,
+          "intercept": 13.01159,
+          "r2": 0.003023,
+          "n_obs": 129
+        }
+      },
+      "nonlinear_summer_weekday": {
+        "piecewise35_load_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 7,
+          "n_below_35": 122,
+          "low_confidence": true,
+          "a": 12.591072,
+          "b": 0.061437,
+          "c": -1.191152,
+          "r2": 0.005834,
+          "interpretation": {
+            "slope_below_35": 0.061437,
+            "slope_above_35": -1.129715,
+            "extra_per_degree_above_35": -1.191152
+          }
+        },
+        "quadratic_load_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 31.121567,
+          "b": -1.303591,
+          "c": 0.024476,
+          "r2": 0.024886,
+          "n_obs": 129,
+          "parabola_vertex": 26.63
+        }
+      },
+      "price_quantiles_summer_weekday": {
+        "p50": 13.57,
+        "p75": 15.65,
+        "p90": 19.938,
+        "p95": 21.384,
+        "max": 23.9,
+        "mean": 14.281,
+        "n": 129
+      },
+      "spike_frequency": {
+        "threshold_yen_per_kwh": 30,
+        "days_above": 0,
+        "n_days": 129,
+        "fraction": 0
+      },
+      "night_day_spread_summer_weekday": {
+        "definition": "night_price - solar_crush_price",
+        "mean": 2.771,
+        "p50": 2.55,
+        "p90": 9.392,
+        "night_mean": 13.41,
+        "solar_crush_mean": 10.64
       }
     }
   ]

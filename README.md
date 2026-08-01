@@ -1,172 +1,113 @@
-# Jpex — 工厂级电力风险地图（v3）
+# Jpex — 产业链电力风险地图（v4）
 
-Public dataset: **JEPX regional spot prices × site-level temperature × manufacturing load profiles**.
+Public dataset: **JEPX area prices × site-level weather × semiconductor supply-chain nodes**.
 
-分析主体是**日本先进制造产能所在地**，不是行政区。
+分析主体是**先进制造与半导体上游材料/部材的工厂所在地**，不是行政区。
 
 ## Structure
 
 ```
 data/
-  site_master.csv              # 17 manufacturing sites (semi + heavy)
-  jepx_spot_daily.csv          # day-aggregated area prices + load windows
-  jepx_spot_halfhourly.csv     # raw 48 half-hour slots
-  jma_temp_daily.csv           # daily temps at 13 stations
-  merged_analysis.csv          # area join + calendar flags
-  raw_temp/                    # Open-Meteo JSON provenance
+  site_master.csv              # 26 sites (fab + heavy + materials)
+  jepx_spot_daily.csv          # load-window prices
+  jepx_spot_halfhourly.csv     # 48 half-hour slots
+  jma_temp_daily.csv           # 20 stations
+  merged_analysis.csv
+  raw_temp/*.json              # Open-Meteo provenance
 output/
-  correlation_results.json     # 8-area Pearson / OLS / nonlinear
-  site_exposure.json           # per-site risk metrics (core v3 deliverable)
-  reserve_margin_context.json  # 2026 summer 供給予備率 (hand-entered)
+  correlation_results.json     # 8 areas; n_obs + p_value; piecewise confidence
+  site_exposure.json           # per-site load-price risk
+  chokepoint_risk.json         # NEW: oligopoly × reserve tightness heuristic
+  tokyo_anomaly.json           # NEW: tokyo near-zero r but high tails + HOYA/Hitachi
+  reserve_margin_context.json
 README.md
 ```
 
-## Version changelog
+## Version
 
 | version | highlight |
 |---------|-----------|
-| v1 | JEPX + synthetic temp; 4 areas; peak 13–16 |
-| v2 | real Open-Meteo temps; CDD24; peak 09–16; nonlinear 35°C |
-| **v3** | **site_master 17拠点; load-profile prices; 8 areas; fixed station map; site_exposure + reserve margin** |
+| v3 | 17 terminal plants; load prices; 8 areas |
+| **v4** | **+materials chain; supply_chain_tier; chokepoint_risk; tokyo_anomaly; stats confidence flags** |
 
-## Area → station map (v3 fixes)
+## `supply_chain_tier` (site_master)
 
-| jepx_area | primary_station | why |
-|-----------|-----------------|-----|
-| tokyo | tokyo | metro reference; Hitachi *sites* use **mito** |
-| tohoku | **morioka** | was tokyo — キオクシア北上 |
-| chubu | nagoya | + **yokkaichi** site station for キオクシア四日市 |
-| kansai | **kobe** | was osaka — MHI/KHI 兵庫群 |
-| chugoku | **hiroshima** | was osaka — 日立笠戸 |
-| shikoku | **takamatsu** | was nagasaki — 川崎坂出 |
-| kyushu | **kumamoto** | JASM/Sony 菊陽集群; MHI 長崎 site uses nagasaki |
-| hokkaido | **chitose** | was sapporo — Rapidus 千歳 |
-| hokuriku | nagoya | proxy |
-| system | tokyo | reference only — **never use for plant risk** |
+| tier | meaning | examples |
+|------|---------|----------|
+| `tier1_material` | マスクブランクス / 高純度化学品 / EUV blanks | AGC, HOYA, Sumitomo Chemical |
+| `tier2_component` | 基板材料 / 封止材 | Panasonic MEGTRON, Sumitomo Bakelite |
+| `fab_leading` | 先端ロジック / CIS | JASM, Rapidus, Sony TEC |
+| `fab_memory` | NAND | Kioxia |
+| `heavy` | 重工 | MHI, KHI, Hitachi |
 
-### Stations (13)
+Load-price rule: **material + semi → `baseload_price`**; **heavy → `daytime_price`**.
 
-| station | lat | lon | purpose |
-|---------|-----|-----|---------|
-| tokyo | 35.6895 | 139.6917 | tokyo area |
-| mito | 36.3418 | 140.4468 | 日立 日立/大みか |
-| morioka | 39.7036 | 141.1527 | キオクシア北上 |
-| nagoya | 35.1815 | 136.9066 | chubu / MHI aero |
-| yokkaichi | 34.9650 | 136.6244 | キオクシア四日市 |
-| kobe | 34.6901 | 135.1955 | kansai 兵庫群 |
-| osaka | 34.6937 | 135.5023 | retained |
-| hiroshima | 34.3853 | 132.4553 | 日立笠戸 |
-| takamatsu | 34.3401 | 134.0434 | 川崎坂出 |
-| nagasaki | 32.7503 | 129.8779 | MHI 長崎 |
-| kumamoto | 32.8032 | 130.7079 | JASM / Sony |
-| chitose | 42.8221 | 141.6521 | Rapidus |
-| sapporo | 43.0618 | 141.3545 | retained contrast |
+## Primary-source notes (v4)
 
-Temps: Open-Meteo archive (`temperature_2m_max/min/mean`), **not** official JMA obsdl. Schema is drop-in replaceable.
+| site | verification |
+|------|----------------|
+| AGC 郡山 / 本宮 | [agcel.co.jp](https://www.agcel.co.jp/company.html) addresses confirmed |
+| HOYA 八王子 / 長坂 | [hoya.com network](https://www.hoya.com/company/network/japan/) confirmed |
+| HOYA 三島 | **unverified** — not listed on official HOYA Japan network for mask blanks; metrics withheld |
+| Panasonic MEGTRON 国内 | **郡山** (not 新潟). Dempa: 日本（郡山）+ 海外増設（タイ/広州）. Registered as `panasonic_koriyama` |
+| 耗電量 | always `null` unless public — **never estimated** |
 
-## Load-profile prices (core v3)
+## Stations (20)
 
-`data/jepx_spot_daily.csv` columns:
+v3 set (13) + **fukushima, hachioji, kofu, mishima, matsuyama, oita, niigata**.
 
-| column | window | used by |
-|--------|--------|---------|
-| baseload_price | all 48 slots | **semi** `baseload_24h` |
-| daytime_price | time_code **17–36** (08:00–18:00) | **heavy** `daytime_shift` |
-| night_price | **45–48 + 1–14** (22:00–07:00) | night exposure |
-| solar_crush_price | **21–30** (10:00–15:00) | Kyushu PV dump window |
-| peak_price | **19–32** (09:00–16:00) | legacy / general peak |
-| avg_price | same as baseload | back-compat alias |
-| max_price / min_price | 48-slot extreme | tail risk |
+`niigata` kept for future use; no verified Panasonic Niigata MEGTRON plant registered.
 
-**Why this matters:** Kyushu midday can print ~0.01 円/kWh. JASM is 24h baseload — true cost sits in **night_price**, not solar_crush / peak. Using peak alone **systematically understates** fab power cost.
+## Stats hygiene (v4 mandatory)
 
-`night_day_spread = night_price − solar_crush_price` (summer weekday mean) is a key JASM risk indicator (should be **positive** in Kyushu).
+1. Every Pearson result: `{ r, n_obs, p_value }` (two-sided Student-t on r)
+2. Every `piecewise35`: `n_above_35`, `n_below_35`, `low_confidence: true` if `n_above_35 < 10`
+3. Large above-35 slopes with `low_confidence` are **not** treated as causal
 
-## `data/site_master.csv`
+## `output/chokepoint_risk.json`
 
-| field | definition |
-|-------|------------|
-| site_id | stable key |
-| company | TSMC / Sony / Rapidus / Kioxia / MHI / KHI / Hitachi |
-| site_name | Japanese plant name |
-| city, prefecture | location |
-| jepx_area | JEPX pricing area |
-| primary_station | temperature station for *this site* |
-| sector | `semi` \| `heavy` |
-| load_profile | `baseload_24h` \| `daytime_shift` |
-| status | operating / construction / pilot |
-| capex_jpy_oku | announced capex (億円), blank if n/a |
-| note | free text |
+Heuristic only (`meta.heuristic=true`):
 
-**17 sites:** 6 semi (JASM×2, Sony TEC, Rapidus, Kioxia 四日市/北上) + 11 heavy (MHI×4, KHI×4, Hitachi×3).
-
-## `output/site_exposure.json`
-
-Per `site_id`:
-
-1. Correlations / OLS: **cdd24 & tmax vs load price** (baseload or daytime)
-2. **piecewise35** + quadratic nonlinear models
-3. Summer-weekday quantiles: **p50 / p75 / p90 / p95 / max / mean**
-4. **spike_frequency**: fraction of summer weekdays with load price **> 30 円/kWh**
-5. **night_day_spread** stats (mean, p50, p90)
-6. Rankings: by spike, by p95, by night_day_spread
-
-## `output/reserve_margin_context.json`
-
-2026 summer 供給予備率 (METI/OCCTO, hand-entered):
-
-- **tokyo Aug 0.9%** — only sub-1% area; Hitachi 日立/大みか in this zone
-- hokkaido min ~6.1–8.3%
-- Implications block links sites ↔ reserve risk
-
-## `output/correlation_results.json`
-
-8 focus areas (tokyo, kansai, kyushu, chubu, **tohoku, chugoku, shikoku, hokkaido**):
-
-- samples: all / weekday_only / summer_weekday / heat_days_weekday
-- correlations & regressions for peak / baseload / daytime
-- nonlinear quadratic + piecewise35
-- `r2_comparison_summer_weekday`
-
-## Modeling rules (unchanged)
-
-1. Aggregate time codes **before** daily analytics
-2. Exclude `is_obon=1`; prefer `is_weekend=0`
-3. **Area prices only** — never system alone for plants
-4. Summer linear collapse → trust **quadratic / piecewise35**
-5. CDD: `cdd24 = max(0, tavg − 24)` with true daily mean
-
-## Date coverage
-
-- JEPX: 2025/04/01 → 2026/08/02
-- Temp join: 2025/04/01 → 2026/08/01
-- Encoding: UTF-8, LF, no BOM
-
-## Recompute recipes
-
-```python
-import pandas as pd, json
-sites = pd.read_csv("data/site_master.csv")
-daily = pd.read_csv("data/jepx_spot_daily.csv")
-merged = pd.read_csv("data/merged_analysis.csv")
-exp = json.load(open("output/site_exposure.json"))
-
-# JASM night-day spread vs baseload
-j = [s for s in exp["sites"] if s["site_id"]=="jasm_fab1"][0]
-print(j["night_day_spread_summer_weekday"])
-print(j["price_quantiles_summer_weekday"])
-
-# Hitachi in thin reserve zone
-h = [s for s in exp["sites"] if s["site_id"]=="hitachi_hitachi"][0]
-print(h["spike_frequency"], h["price_quantiles_summer_weekday"]["p95"])
 ```
+chokepoint_score = oligopoly_score(1–5, manual) × reserve_tightness
+tightness = (1 / aug_2026_reserve_margin) / max_over_areas(...)
+```
+
+Tokyo Aug **0.9%** → tightness = 1.0 → HOYA 八王子/長坂 top the ranking (oligopoly 5 × 1.0).
+
+## `output/tokyo_anomaly.json`
+
+Documents the v3 finding for **tokyo area** and HOYA/Hitachi sites:
+
+- summer weekday linear `r(tmax, peak) ≈ 0` (p large)
+- but daytime/baseload **p95 / spike** among highest of 8 areas
+- channel: **reserve scarcity**, not average heat correlation
+
+## Modeling rules
+
+- Exclude `is_obon=1`; prefer `is_weekend=0`
+- **Area prices only** (never system for plant risk)
+- Peak window 09:00–16:00 (`time_code` 19–32)
+- CDD24 with true daily mean
+- UTF-8 / LF / no BOM
+
+## Counts (v4)
+
+| item | n |
+|------|--:|
+| stations | 20 |
+| new stations this version | 7 |
+| sites in site_master | 26 |
+| new material sites | 9 (1 unverified) |
+| focus areas | 8 |
 
 ## Sources
 
-- JEPX spot: https://www.jepx.jp/electricpower/market-data/spot/
-- Open-Meteo archive: https://archive-api.open-meteo.com/v1/archive
-- Reserve margins: 経産省 / OCCTO 2026 summer outlook (manual entry)
+- JEPX spot market CSVs
+- Open-Meteo historical archive
+- METI/OCCTO summer reserve margins (hand-entered)
+- Company site lists / IR for plant addresses
 
 ## License
 
-JEPX subject to JEPX terms. Open-Meteo temps for analysis; replace with JMA official for regulatory work.
+JEPX per JEPX terms. Temps via Open-Meteo; replace with JMA for regulatory use.
