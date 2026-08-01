@@ -3,7 +3,8 @@
     "version": "v4",
     "generated_at": "2026-08-01T13:34:23.084Z",
     "thesis": "Tokyo area shows near-zero summer weekday linear temp-price correlation but highest national tail (p95/spike). Reserve margin Aug 0.9% is structural scarcity, not weather-driven on average days.",
-    "sample": "summer_weekday Jun-Sep is_weekend=0 is_obon=0"
+    "sample": "summer_weekday Jun-Sep is_weekend=0 is_obon=0",
+    "updated_with": "v5 pipeline"
   },
   "area_level": {
     "reserve_margin_aug_pct": 0.9,

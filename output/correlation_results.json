@@ -1,7 +1,7 @@
 {
   "meta": {
-    "version": "v4",
-    "generated_at": "2026-08-01T13:34:23.044Z",
+    "version": "v5",
+    "generated_at": "2026-08-01T13:39:59.590Z",
     "repo_visibility": "public",
     "jepx_date_range": {
       "min": "2025/04/01",
@@ -128,10 +128,53 @@
         "lon": 139.04698,
         "elevation_m": 4,
         "n_days": 488
+      },
+      "fukui": {
+        "lat": 36.098415,
+        "lon": 136.22568,
+        "elevation_m": 12,
+        "n_days": 488
+      },
+      "joetsu": {
+        "lat": 37.152897,
+        "lon": 138.21428,
+        "elevation_m": 9,
+        "n_days": 488
+      },
+      "maebashi": {
+        "lat": 36.379612,
+        "lon": 139.04825,
+        "elevation_m": 111,
+        "n_days": 488
+      },
+      "chiba": {
+        "lat": 35.606327,
+        "lon": 140.08997,
+        "elevation_m": 14,
+        "n_days": 488
+      },
+      "yokohama": {
+        "lat": 35.46573,
+        "lon": 139.61539,
+        "elevation_m": 6,
+        "n_days": 488
+      },
+      "saga": {
+        "lat": 33.286465,
+        "lon": 130.2836,
+        "elevation_m": 6,
+        "n_days": 488
+      },
+      "yamagata": {
+        "lat": 38.27768,
+        "lon": 140.35135,
+        "elevation_m": 196,
+        "n_days": 488
       }
     },
-    "n_stations": 20,
-    "n_sites": 26,
+    "n_stations": 27,
+    "n_sites": 37,
+    "n_focus_areas": 9,
     "area_station_map": {
       "tokyo": "tokyo",
       "tohoku": "morioka",
@@ -141,7 +184,7 @@
       "shikoku": "takamatsu",
       "kyushu": "kumamoto",
       "hokkaido": "chitose",
-      "hokuriku": "nagoya",
+      "hokuriku": "fukui",
       "system": "tokyo"
     },
     "focus_areas": [
@@ -152,12 +195,15 @@
       "tohoku",
       "chugoku",
       "shikoku",
-      "hokkaido"
+      "hokkaido",
+      "hokuriku"
+    ],
+    "mapping_fixes_v5": [
+      "hokuriku → fukui (removed chubu/hokuriku→nagoya legacy)"
     ],
     "stats_notes": [
-      "All correlations include n_obs and two-sided p_value (Student t on r)",
-      "piecewise35 includes n_above_35, n_below_35; low_confidence if n_above_35 < 10",
-      "Do not treat large above-35 slopes as causal when low_confidence=true"
+      "All correlations include n_obs and two-sided p_value",
+      "piecewise35 includes n_above_35, n_below_35; low_confidence if n_above_35 < 10"
     ],
     "peak_definition": "time_code 19-32 (09:00-16:00)",
     "load_price_windows": {
@@ -187,6 +233,8 @@
       "night_day_spread_mean": -2.806,
       "peak_mean": 16.936,
       "peak_max": 34.32,
+      "baseload_p95": 23.716,
+      "daytime_p95": 27.01,
       "max_price_p95": 45.556,
       "spike_frac_daytime_gt30": 0.0233,
       "spike_frac_baseload_gt30": 0,
@@ -204,6 +252,8 @@
       "night_day_spread_mean": -3.599,
       "peak_mean": 15.01,
       "peak_max": 31.18,
+      "baseload_p95": 21.894,
+      "daytime_p95": 24.578,
       "max_price_p95": 37.51,
       "spike_frac_daytime_gt30": 0.0078,
       "spike_frac_baseload_gt30": 0,
@@ -221,6 +271,8 @@
       "night_day_spread_mean": 1.185,
       "peak_mean": 9.919,
       "peak_max": 23.64,
+      "baseload_p95": 18.468,
+      "daytime_p95": 18.634,
       "max_price_p95": 35.498,
       "spike_frac_daytime_gt30": 0,
       "spike_frac_baseload_gt30": 0,
@@ -238,6 +290,8 @@
       "night_day_spread_mean": -2.082,
       "peak_mean": 15.656,
       "peak_max": 31.18,
+      "baseload_p95": 23.074,
+      "daytime_p95": 25.656,
       "max_price_p95": 39.004,
       "spike_frac_daytime_gt30": 0.0078,
       "spike_frac_baseload_gt30": 0,
@@ -255,6 +309,8 @@
       "night_day_spread_mean": 2.771,
       "peak_mean": 11.538,
       "peak_max": 34.32,
+      "baseload_p95": 21.384,
+      "daytime_p95": 23.644,
       "max_price_p95": 39.48,
       "spike_frac_daytime_gt30": 0.0078,
       "spike_frac_baseload_gt30": 0,
@@ -272,6 +328,8 @@
       "night_day_spread_mean": 0.899,
       "peak_mean": 10.44,
       "peak_max": 23.64,
+      "baseload_p95": 19.292,
+      "daytime_p95": 20.586,
       "max_price_p95": 35.498,
       "spike_frac_daytime_gt30": 0,
       "spike_frac_baseload_gt30": 0,
@@ -289,6 +347,8 @@
       "night_day_spread_mean": 2.274,
       "peak_mean": 7.892,
       "peak_max": 21.58,
+      "baseload_p95": 18.46,
+      "daytime_p95": 17.262,
       "max_price_p95": 35,
       "spike_frac_daytime_gt30": 0,
       "spike_frac_baseload_gt30": 0,
@@ -306,11 +366,32 @@
       "night_day_spread_mean": 2.836,
       "peak_mean": 10.471,
       "peak_max": 20.91,
+      "baseload_p95": 18.934,
+      "daytime_p95": 18.346,
       "max_price_p95": 42.472,
       "spike_frac_daytime_gt30": 0,
       "spike_frac_baseload_gt30": 0,
       "tmax_mean": 23.94,
       "cdd24_mean": 0.122
+    },
+    "hokuriku": {
+      "n_days": 129,
+      "n_days_tmax_ge_35": 9,
+      "station": "fukui",
+      "baseload_mean": 14.142,
+      "daytime_mean": 15.88,
+      "night_mean": 10.961,
+      "solar_crush_mean": 14.566,
+      "night_day_spread_mean": -3.605,
+      "peak_mean": 15.047,
+      "peak_max": 31.18,
+      "baseload_p95": 22.22,
+      "daytime_p95": 24.956,
+      "max_price_p95": 37.51,
+      "spike_frac_daytime_gt30": 0.0078,
+      "spike_frac_baseload_gt30": 0,
+      "tmax_mean": 29.722,
+      "cdd24_mean": 2.28
     }
   },
   "r2_comparison_summer_weekday": {
@@ -385,6 +466,15 @@
       "piecewise35_n_below_35": 129,
       "piecewise35_low_confidence": true,
       "delta_quad_vs_lin": 0.000019
+    },
+    "hokuriku": {
+      "linear_r2": 0.01705,
+      "quadratic_r2": 0.020325,
+      "piecewise35_r2": 0.017276,
+      "piecewise35_n_above_35": 9,
+      "piecewise35_n_below_35": 120,
+      "piecewise35_low_confidence": true,
+      "delta_quad_vs_lin": 0.003275
     }
   },
   "correlations": {
@@ -697,6 +787,45 @@
         },
         "tmax_vs_max_price": {
           "r": 0.226287,
+          "n_obs": 488,
+          "p_value": 0
+        }
+      },
+      "hokuriku": {
+        "n_obs": 488,
+        "station": "fukui",
+        "cdd24_vs_peak_price": {
+          "r": 0.327334,
+          "n_obs": 488,
+          "p_value": 0
+        },
+        "tmax_vs_peak_price": {
+          "r": 0.319993,
+          "n_obs": 488,
+          "p_value": 0
+        },
+        "cdd24_vs_baseload_price": {
+          "r": 0.336589,
+          "n_obs": 488,
+          "p_value": 0
+        },
+        "tmax_vs_baseload_price": {
+          "r": 0.247594,
+          "n_obs": 488,
+          "p_value": 0
+        },
+        "cdd24_vs_daytime_price": {
+          "r": 0.35818,
+          "n_obs": 488,
+          "p_value": 0
+        },
+        "tmax_vs_daytime_price": {
+          "r": 0.318896,
+          "n_obs": 488,
+          "p_value": 0
+        },
+        "tmax_vs_max_price": {
+          "r": 0.350468,
           "n_obs": 488,
           "p_value": 0
         }
@@ -1014,6 +1143,45 @@
           "n_obs": 346,
           "p_value": 0.000013
         }
+      },
+      "hokuriku": {
+        "n_obs": 346,
+        "station": "fukui",
+        "cdd24_vs_peak_price": {
+          "r": 0.359819,
+          "n_obs": 346,
+          "p_value": 0
+        },
+        "tmax_vs_peak_price": {
+          "r": 0.400872,
+          "n_obs": 346,
+          "p_value": 0
+        },
+        "cdd24_vs_baseload_price": {
+          "r": 0.367141,
+          "n_obs": 346,
+          "p_value": 0
+        },
+        "tmax_vs_baseload_price": {
+          "r": 0.314871,
+          "n_obs": 346,
+          "p_value": 0
+        },
+        "cdd24_vs_daytime_price": {
+          "r": 0.403819,
+          "n_obs": 346,
+          "p_value": 0
+        },
+        "tmax_vs_daytime_price": {
+          "r": 0.407925,
+          "n_obs": 346,
+          "p_value": 0
+        },
+        "tmax_vs_max_price": {
+          "r": 0.417735,
+          "n_obs": 346,
+          "p_value": 0
+        }
       }
     },
     "summer_weekday": {
@@ -1328,6 +1496,45 @@
           "n_obs": 129,
           "p_value": 0.00421
         }
+      },
+      "hokuriku": {
+        "n_obs": 129,
+        "station": "fukui",
+        "cdd24_vs_peak_price": {
+          "r": 0.238923,
+          "n_obs": 129,
+          "p_value": 0.006394
+        },
+        "tmax_vs_peak_price": {
+          "r": 0.130574,
+          "n_obs": 129,
+          "p_value": 0.140234
+        },
+        "cdd24_vs_baseload_price": {
+          "r": 0.366986,
+          "n_obs": 129,
+          "p_value": 0.000019
+        },
+        "tmax_vs_baseload_price": {
+          "r": 0.271331,
+          "n_obs": 129,
+          "p_value": 0.001869
+        },
+        "cdd24_vs_daytime_price": {
+          "r": 0.321898,
+          "n_obs": 129,
+          "p_value": 0.000199
+        },
+        "tmax_vs_daytime_price": {
+          "r": 0.219574,
+          "n_obs": 129,
+          "p_value": 0.012412
+        },
+        "tmax_vs_max_price": {
+          "r": 0.302622,
+          "n_obs": 129,
+          "p_value": 0.000491
+        }
       }
     },
     "heat_days_weekday": {
@@ -1607,6 +1814,45 @@
       "hokkaido": {
         "n_obs": 3,
         "note": "insufficient"
+      },
+      "hokuriku": {
+        "n_obs": 48,
+        "station": "fukui",
+        "cdd24_vs_peak_price": {
+          "r": 0.255679,
+          "n_obs": 48,
+          "p_value": 0.079432
+        },
+        "tmax_vs_peak_price": {
+          "r": 0.095538,
+          "n_obs": 48,
+          "p_value": 0.518318
+        },
+        "cdd24_vs_baseload_price": {
+          "r": 0.197068,
+          "n_obs": 48,
+          "p_value": 0.179419
+        },
+        "tmax_vs_baseload_price": {
+          "r": 0.021221,
+          "n_obs": 48,
+          "p_value": 0.886162
+        },
+        "cdd24_vs_daytime_price": {
+          "r": 0.225685,
+          "n_obs": 48,
+          "p_value": 0.122989
+        },
+        "tmax_vs_daytime_price": {
+          "r": 0.042715,
+          "n_obs": 48,
+          "p_value": 0.773143
+        },
+        "tmax_vs_max_price": {
+          "r": -0.074336,
+          "n_obs": 48,
+          "p_value": 0.61557
+        }
       }
     }
   },
@@ -1915,6 +2161,44 @@
           "r2": 0.001725,
           "n_obs": 488
         }
+      },
+      "hokuriku": {
+        "peak_on_tmax": {
+          "slope": 0.199982,
+          "intercept": 6.174736,
+          "r2": 0.102396,
+          "n_obs": 488
+        },
+        "peak_on_cdd24": {
+          "slope": 1.055204,
+          "intercept": 9.482761,
+          "r2": 0.107147,
+          "n_obs": 488
+        },
+        "baseload_on_tmax": {
+          "slope": 0.100176,
+          "intercept": 9.656001,
+          "r2": 0.061303,
+          "n_obs": 488
+        },
+        "baseload_on_cdd24": {
+          "slope": 0.70245,
+          "intercept": 11.161242,
+          "r2": 0.113292,
+          "n_obs": 488
+        },
+        "daytime_on_tmax": {
+          "slope": 0.191812,
+          "intercept": 7.277467,
+          "r2": 0.101694,
+          "n_obs": 488
+        },
+        "daytime_on_cdd24": {
+          "slope": 1.11128,
+          "intercept": 10.363737,
+          "r2": 0.128293,
+          "n_obs": 488
+        }
       }
     },
     "weekday_only": {
@@ -2219,6 +2503,44 @@
           "slope": 0.199567,
           "intercept": 11.340569,
           "r2": 0.000236,
+          "n_obs": 346
+        }
+      },
+      "hokuriku": {
+        "peak_on_tmax": {
+          "slope": 0.245927,
+          "intercept": 6.808358,
+          "r2": 0.160698,
+          "n_obs": 346
+        },
+        "peak_on_cdd24": {
+          "slope": 1.151874,
+          "intercept": 10.979809,
+          "r2": 0.12947,
+          "n_obs": 346
+        },
+        "baseload_on_tmax": {
+          "slope": 0.128327,
+          "intercept": 9.976739,
+          "r2": 0.099144,
+          "n_obs": 346
+        },
+        "baseload_on_cdd24": {
+          "slope": 0.780797,
+          "intercept": 12.000658,
+          "r2": 0.134792,
+          "n_obs": 346
+        },
+        "daytime_on_tmax": {
+          "slope": 0.240112,
+          "intercept": 7.860104,
+          "r2": 0.166403,
+          "n_obs": 346
+        },
+        "daytime_on_cdd24": {
+          "slope": 1.240334,
+          "intercept": 11.83456,
+          "r2": 0.16307,
           "n_obs": 346
         }
       }
@@ -2527,6 +2849,44 @@
           "r2": 0.001398,
           "n_obs": 129
         }
+      },
+      "hokuriku": {
+        "peak_on_tmax": {
+          "slope": 0.153272,
+          "intercept": 10.491151,
+          "r2": 0.01705,
+          "n_obs": 129
+        },
+        "peak_on_cdd24": {
+          "slope": 0.509693,
+          "intercept": 13.884646,
+          "r2": 0.057084,
+          "n_obs": 129
+        },
+        "baseload_on_tmax": {
+          "slope": 0.252139,
+          "intercept": 6.648014,
+          "r2": 0.07362,
+          "n_obs": 129
+        },
+        "baseload_on_cdd24": {
+          "slope": 0.619774,
+          "intercept": 12.729026,
+          "r2": 0.134679,
+          "n_obs": 129
+        },
+        "daytime_on_tmax": {
+          "slope": 0.261818,
+          "intercept": 8.098413,
+          "r2": 0.048213,
+          "n_obs": 129
+        },
+        "daytime_on_cdd24": {
+          "slope": 0.697557,
+          "intercept": 14.289756,
+          "r2": 0.103618,
+          "n_obs": 129
+        }
       }
     },
     "heat_days_weekday": {
@@ -2794,6 +3154,44 @@
           "intercept": 4.18658,
           "r2": 0.065551,
           "n_obs": 62
+        }
+      },
+      "hokuriku": {
+        "peak_on_tmax": {
+          "slope": 0.235857,
+          "intercept": 7.600063,
+          "r2": 0.009128,
+          "n_obs": 48
+        },
+        "peak_on_cdd24": {
+          "slope": 0.475973,
+          "intercept": 13.428563,
+          "r2": 0.065372,
+          "n_obs": 48
+        },
+        "baseload_on_tmax": {
+          "slope": 0.054117,
+          "intercept": 13.401178,
+          "r2": 0.00045,
+          "n_obs": 48
+        },
+        "baseload_on_cdd24": {
+          "slope": 0.378967,
+          "intercept": 13.517301,
+          "r2": 0.038836,
+          "n_obs": 48
+        },
+        "daytime_on_tmax": {
+          "slope": 0.120617,
+          "intercept": 12.869038,
+          "r2": 0.001825,
+          "n_obs": 48
+        },
+        "daytime_on_cdd24": {
+          "slope": 0.48056,
+          "intercept": 14.77613,
+          "r2": 0.050934,
+          "n_obs": 48
         }
       }
     }
@@ -3427,6 +3825,86 @@
           "r2": null,
           "note": "singular"
         }
+      },
+      "hokuriku": {
+        "quadratic_peak_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 9.781758,
+          "b": -0.270651,
+          "c": 0.011933,
+          "r2": 0.135304,
+          "n_obs": 488,
+          "parabola_vertex": 11.34
+        },
+        "piecewise35_peak_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 488,
+          "n_above_35": 16,
+          "n_below_35": 472,
+          "low_confidence": false,
+          "a": 6.164571,
+          "b": 0.200631,
+          "c": -0.11139,
+          "r2": 0.102413,
+          "interpretation": {
+            "slope_below_35": 0.200631,
+            "slope_above_35": 0.089241,
+            "extra_per_degree_above_35": -0.11139
+          }
+        },
+        "quadratic_baseload_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 12.515908,
+          "b": -0.272977,
+          "c": 0.009461,
+          "r2": 0.110662,
+          "n_obs": 488,
+          "parabola_vertex": 14.426
+        },
+        "piecewise35_baseload_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 488,
+          "n_above_35": 16,
+          "n_below_35": 472,
+          "low_confidence": false,
+          "a": 9.684614,
+          "b": 0.098349,
+          "c": 0.313542,
+          "r2": 0.06163,
+          "interpretation": {
+            "slope_below_35": 0.098349,
+            "slope_above_35": 0.411891,
+            "extra_per_degree_above_35": 0.313542
+          }
+        },
+        "quadratic_daytime_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 11.468495,
+          "b": -0.355021,
+          "c": 0.013865,
+          "r2": 0.149656,
+          "n_obs": 488,
+          "parabola_vertex": 12.803
+        },
+        "piecewise35_daytime_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 488,
+          "n_above_35": 16,
+          "n_below_35": 472,
+          "low_confidence": false,
+          "a": 7.270448,
+          "b": 0.19226,
+          "c": -0.076911,
+          "r2": 0.101703,
+          "interpretation": {
+            "slope_below_35": 0.19226,
+            "slope_above_35": 0.115349,
+            "extra_per_degree_above_35": -0.076911
+          }
+        }
       }
     },
     "weekday_only": {
@@ -4056,6 +4534,86 @@
           "c": null,
           "r2": null,
           "note": "singular"
+        }
+      },
+      "hokuriku": {
+        "quadratic_peak_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 9.839434,
+          "b": -0.150201,
+          "c": 0.010055,
+          "r2": 0.183695,
+          "n_obs": 346,
+          "parabola_vertex": 7.469
+        },
+        "piecewise35_peak_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 346,
+          "n_above_35": 9,
+          "n_below_35": 337,
+          "low_confidence": true,
+          "a": 6.807636,
+          "b": 0.245974,
+          "c": -0.011241,
+          "r2": 0.160699,
+          "interpretation": {
+            "slope_below_35": 0.245974,
+            "slope_above_35": 0.234733,
+            "extra_per_degree_above_35": -0.011241
+          }
+        },
+        "quadratic_baseload_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 12.80767,
+          "b": -0.241645,
+          "c": 0.009391,
+          "r2": 0.144596,
+          "n_obs": 346,
+          "parabola_vertex": 12.866
+        },
+        "piecewise35_baseload_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 346,
+          "n_above_35": 9,
+          "n_below_35": 337,
+          "low_confidence": true,
+          "a": 9.986719,
+          "b": 0.127681,
+          "c": 0.155262,
+          "r2": 0.099196,
+          "interpretation": {
+            "slope_below_35": 0.127681,
+            "slope_above_35": 0.282943,
+            "extra_per_degree_above_35": 0.155262
+          }
+        },
+        "quadratic_daytime_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 11.783493,
+          "b": -0.272632,
+          "c": 0.013015,
+          "r2": 0.208256,
+          "n_obs": 346,
+          "parabola_vertex": 10.474
+        },
+        "piecewise35_daytime_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 346,
+          "n_above_35": 9,
+          "n_below_35": 337,
+          "low_confidence": true,
+          "a": 7.861173,
+          "b": 0.240042,
+          "c": 0.016636,
+          "r2": 0.166403,
+          "interpretation": {
+            "slope_below_35": 0.240042,
+            "slope_above_35": 0.256678,
+            "extra_per_degree_above_35": 0.016636
+          }
         }
       }
     },
@@ -4687,6 +5245,86 @@
           "r2": null,
           "note": "singular"
         }
+      },
+      "hokuriku": {
+        "quadratic_peak_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 22.928126,
+          "b": -0.727247,
+          "c": 0.015255,
+          "r2": 0.020325,
+          "n_obs": 129,
+          "parabola_vertex": 23.836
+        },
+        "piecewise35_peak_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 9,
+          "n_below_35": 120,
+          "low_confidence": true,
+          "a": 10.314472,
+          "b": 0.159767,
+          "c": -0.267008,
+          "r2": 0.017276,
+          "interpretation": {
+            "slope_below_35": 0.159767,
+            "slope_above_35": -0.107241,
+            "extra_per_degree_above_35": -0.267008
+          }
+        },
+        "quadratic_baseload_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 14.452001,
+          "b": -0.300372,
+          "c": 0.009572,
+          "r2": 0.075678,
+          "n_obs": 129,
+          "parabola_vertex": 15.69
+        },
+        "piecewise35_baseload_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 9,
+          "n_below_35": 120,
+          "low_confidence": true,
+          "a": 6.114562,
+          "b": 0.271748,
+          "c": -0.806183,
+          "r2": 0.076914,
+          "interpretation": {
+            "slope_below_35": 0.271748,
+            "slope_above_35": -0.534435,
+            "extra_per_degree_above_35": -0.806183
+          }
+        },
+        "quadratic_daytime_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": 20.101284,
+          "b": -0.587968,
+          "c": 0.014722,
+          "r2": 0.051169,
+          "n_obs": 129,
+          "parabola_vertex": 19.969
+        },
+        "piecewise35_daytime_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 129,
+          "n_above_35": 9,
+          "n_below_35": 120,
+          "low_confidence": true,
+          "a": 7.546594,
+          "b": 0.282102,
+          "c": -0.833942,
+          "r2": 0.050353,
+          "interpretation": {
+            "slope_below_35": 0.282102,
+            "slope_above_35": -0.55184,
+            "extra_per_degree_above_35": -0.833942
+          }
+        }
       }
     },
     "heat_days_weekday": {
@@ -5247,6 +5885,86 @@
             "slope_below_35": 0.800876,
             "slope_above_35": 0.258311,
             "extra_per_degree_above_35": -0.542565
+          }
+        }
+      },
+      "hokuriku": {
+        "quadratic_peak_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": -131.088956,
+          "b": 8.354701,
+          "c": -0.118635,
+          "r2": 0.015166,
+          "n_obs": 48,
+          "parabola_vertex": 35.212
+        },
+        "piecewise35_peak_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 48,
+          "n_above_35": 9,
+          "n_below_35": 39,
+          "low_confidence": true,
+          "a": 1.582562,
+          "b": 0.417123,
+          "c": -0.716841,
+          "r2": 0.014192,
+          "interpretation": {
+            "slope_below_35": 0.417123,
+            "slope_above_35": -0.299718,
+            "extra_per_degree_above_35": -0.716841
+          }
+        },
+        "quadratic_baseload_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": -120.731753,
+          "b": 7.906248,
+          "c": -0.114737,
+          "r2": 0.005743,
+          "n_obs": 48,
+          "parabola_vertex": 34.454
+        },
+        "piecewise35_baseload_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 48,
+          "n_above_35": 9,
+          "n_below_35": 39,
+          "low_confidence": true,
+          "a": 6.396568,
+          "b": 0.265118,
+          "c": -0.834431,
+          "r2": 0.006881,
+          "interpretation": {
+            "slope_below_35": 0.265118,
+            "slope_above_35": -0.569313,
+            "extra_per_degree_above_35": -0.834431
+          }
+        },
+        "quadratic_daytime_on_tmax": {
+          "form": "price = a + b*tmax + c*tmax^2",
+          "a": -193.389977,
+          "b": 12.195004,
+          "c": -0.176434,
+          "r2": 0.012032,
+          "n_obs": 48,
+          "parabola_vertex": 34.56
+        },
+        "piecewise35_daytime_on_tmax": {
+          "form": "price = a + b*tmax + c*max(tmax-35,0)",
+          "kink_celsius": 35,
+          "n_obs": 48,
+          "n_above_35": 9,
+          "n_below_35": 39,
+          "low_confidence": true,
+          "a": 4.208367,
+          "b": 0.381504,
+          "c": -1.031711,
+          "r2": 0.009843,
+          "interpretation": {
+            "slope_below_35": 0.381504,
+            "slope_above_35": -0.650207,
+            "extra_per_degree_above_35": -1.031711
           }
         }
       }

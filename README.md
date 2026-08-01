@@ -1,24 +1,24 @@
-# Jpex — 产业链电力风险地图（v4）
+# Jpex — 产业链电力风险地图（v5）
 
-Public dataset: **JEPX area prices × site-level weather × semiconductor supply-chain nodes**.
-
-分析主体是**先进制造与半导体上游材料/部材的工厂所在地**，不是行政区。
+Public dataset: **JEPX area prices × semiconductor supply-chain plant sites × cluster & multi-site power redundancy**.
 
 ## Structure
 
 ```
 data/
-  site_master.csv              # 26 sites (fab + heavy + materials)
-  jepx_spot_daily.csv          # load-window prices
-  jepx_spot_halfhourly.csv     # 48 half-hour slots
-  jma_temp_daily.csv           # 20 stations
+  site_master.csv              # 37 sites
+  jepx_spot_daily.csv          # 9 areas × load windows (incl. hokuriku)
+  jepx_spot_halfhourly.csv
+  jma_temp_daily.csv           # 27 stations
   merged_analysis.csv
-  raw_temp/*.json              # Open-Meteo provenance
+  raw_temp/*.json
 output/
-  correlation_results.json     # 8 areas; n_obs + p_value; piecewise confidence
-  site_exposure.json           # per-site load-price risk
-  chokepoint_risk.json         # NEW: oligopoly × reserve tightness heuristic
-  tokyo_anomaly.json           # NEW: tokyo near-zero r but high tails + HOYA/Hitachi
+  correlation_results.json     # 9 areas; n_obs + p_value; piecewise confidence
+  site_exposure.json
+  chokepoint_risk.json         # v4 site-level (kept)
+  tokyo_anomaly.json           # v4 (kept)
+  cluster_risk.json            # NEW: area density × tail risk
+  redundancy_check.json        # NEW: multi-site power co-movement
   reserve_margin_context.json
 README.md
 ```
@@ -27,87 +27,99 @@ README.md
 
 | version | highlight |
 |---------|-----------|
-| v3 | 17 terminal plants; load prices; 8 areas |
-| **v4** | **+materials chain; supply_chain_tier; chokepoint_risk; tokyo_anomaly; stats confidence flags** |
+| v4 | materials tier; chokepoint; tokyo anomaly |
+| **v5** | **hokuriku 第9エリア; +11 sites (Shin-Etsu/JSR/TOK/Tosoh/SUMCO/Lasertec); cluster_risk; redundancy_check** |
 
-## `supply_chain_tier` (site_master)
+## 9 JEPX areas
 
-| tier | meaning | examples |
-|------|---------|----------|
-| `tier1_material` | マスクブランクス / 高純度化学品 / EUV blanks | AGC, HOYA, Sumitomo Chemical |
-| `tier2_component` | 基板材料 / 封止材 | Panasonic MEGTRON, Sumitomo Bakelite |
-| `fab_leading` | 先端ロジック / CIS | JASM, Rapidus, Sony TEC |
-| `fab_memory` | NAND | Kioxia |
-| `heavy` | 重工 | MHI, KHI, Hitachi |
+`hokkaido / tohoku / tokyo / chubu / **hokuriku** / kansai / chugoku / shikoku / kyushu`
 
-Load-price rule: **material + semi → `baseload_price`**; **heavy → `daytime_price`**.
+### Area → station (v5)
 
-## Primary-source notes (v4)
+| area | station | note |
+|------|---------|------|
+| hokuriku | **fukui** | was incorrectly lumped with nagoya; fixed |
+| tohoku | morioka | site stations: joetsu, yamagata, fukushima, … |
+| tokyo | tokyo | site stations: hachioji, kofu, maebashi, chiba, yokohama, mito |
+| others | (unchanged from v3/v4) | |
 
-| site | verification |
-|------|----------------|
-| AGC 郡山 / 本宮 | [agcel.co.jp](https://www.agcel.co.jp/company.html) addresses confirmed |
-| HOYA 八王子 / 長坂 | [hoya.com network](https://www.hoya.com/company/network/japan/) confirmed |
-| HOYA 三島 | **unverified** — not listed on official HOYA Japan network for mask blanks; metrics withheld |
-| Panasonic MEGTRON 国内 | **郡山** (not 新潟). Dempa: 日本（郡山）+ 海外増設（タイ/広州）. Registered as `panasonic_koriyama` |
-| 耗電量 | always `null` unless public — **never estimated** |
+## site_master additions (v5)
 
-## Stations (20)
+**+11 sites** (total **37**):
 
-v3 set (13) + **fukushima, hachioji, kofu, mishima, matsuyama, oita, niigata**.
+| company | sites |
+|---------|--------|
+| Shin-Etsu | 直江津(tohoku/joetsu), 武生(hokuriku/fukui), 伊勢崎(tokyo/maebashi) |
+| JSR | 四日市, 千葉(市原) |
+| TOK | 相模/寒川 (yokohama station) |
+| Tosoh | 南陽, 四日市 |
+| SUMCO | 伊万里(saga), 米沢(yamagata) |
+| Lasertec | 新横浜 **office_rnd 対照群** |
 
-`niigata` kept for future use; no verified Panasonic Niigata MEGTRON plant registered.
+`supply_chain_tier` values: `tier1_material` | `tier2_component` | `fab_leading` | `fab_memory` | `heavy` | **`equipment`**
 
-## Stats hygiene (v4 mandatory)
+Load price: material/semi → `baseload_price`; heavy & **office_rnd/equipment** → `daytime_price`.
 
-1. Every Pearson result: `{ r, n_obs, p_value }` (two-sided Student-t on r)
-2. Every `piecewise35`: `n_above_35`, `n_below_35`, `low_confidence: true` if `n_above_35 < 10`
-3. Large above-35 slopes with `low_confidence` are **not** treated as causal
+## New stations (v5)
 
-## `output/chokepoint_risk.json`
+`fukui, joetsu, maebashi, chiba, yokohama, saga, yamagata` (+ keep all prior) → **27** total.
 
-Heuristic only (`meta.heuristic=true`):
+## `output/cluster_risk.json`
+
+Area-level density (not site-level):
 
 ```
-chokepoint_score = oligopoly_score(1–5, manual) × reserve_tightness
-tightness = (1 / aug_2026_reserve_margin) / max_over_areas(...)
+chokepoint_density = tier1_material_count + fab_leading_count
+cluster_exposure = density × (spike_freq + 1) × (baseload_p95 / median_p95_across_9_areas)
 ```
 
-Tokyo Aug **0.9%** → tightness = 1.0 → HOYA 八王子/長坂 top the ranking (oligopoly 5 × 1.0).
+Focus clusters documented:
 
-## `output/tokyo_anomaly.json`
+1. **四日市 (chubu)** — Kioxia NAND + JSR resist + Tosoh  
+2. **東京** — HOYA / Shin-Etsu 伊勢崎 / TOK / JSR 千葉 / Hitachi + 0.9% reserve  
+3. **東北** — Kioxia 北上 + AGC + Shin-Etsu 直江津 + SUMCO 米沢  
 
-Documents the v3 finding for **tokyo area** and HOYA/Hitachi sites:
+## `output/redundancy_check.json` (core v5)
 
-- summer weekday linear `r(tmax, peak) ≈ 0` (p large)
-- but daytime/baseload **p95 / spike** among highest of 8 areas
-- channel: **reserve scarcity**, not average heat correlation
+Hypothesis: **multi-site geographic diversification fails if area power prices co-move.**
 
-## Modeling rules
+- Full **9×9** summer-weekday `baseload_price` correlation matrix  
+- Per multi-area company: pairwise r, `redundancy_score = 1 − mean(pairwise r)`  
+- Explicit Shin-Etsu **直江津(tohoku) vs 武生(hokuriku)** pair  
 
-- Exclude `is_obon=1`; prefer `is_weekend=0`
-- **Area prices only** (never system for plant risk)
-- Peak window 09:00–16:00 (`time_code` 19–32)
-- CDD24 with true daily mean
-- UTF-8 / LF / no BOM
+Interpretation guide:
 
-## Counts (v4)
+| mean pairwise r | redundancy_score | meaning |
+|----------------:|-----------------:|---------|
+| ~1.0 | ~0 | power shocks hit all sites together |
+| ~0.5 | ~0.5 | partial diversification |
+| ~0 | ~1 | true power-price diversification |
+
+## Stats hygiene (unchanged)
+
+- Pearson: `{ r, n_obs, p_value }`  
+- piecewise35: `n_above_35`, `n_below_35`, `low_confidence` if `n_above_35 < 10`  
+- Power consumption: always `null` if not public  
+- Unverified sites: metrics withheld  
+
+## Counts (v5)
 
 | item | n |
 |------|--:|
-| stations | 20 |
-| new stations this version | 7 |
-| sites in site_master | 26 |
-| new material sites | 9 (1 unverified) |
-| focus areas | 8 |
+| focus areas | **9** |
+| stations | **27** |
+| new stations this version | **7** |
+| sites | **37** |
+| new sites this version | **11** |
+
+## Modeling rules
+
+- `is_obon` excluded; prefer `is_weekend=0`  
+- Area prices only (never system for plant risk)  
+- Peak 09:00–16:00 (`time_code` 19–32)  
+- CDD24 with true daily mean  
+- UTF-8 / LF / no BOM  
 
 ## Sources
 
-- JEPX spot market CSVs
-- Open-Meteo historical archive
-- METI/OCCTO summer reserve margins (hand-entered)
-- Company site lists / IR for plant addresses
-
-## License
-
-JEPX per JEPX terms. Temps via Open-Meteo; replace with JMA for regulatory use.
+JEPX spot CSVs · Open-Meteo archive · METI/OCCTO reserve margins · company plant lists / IR

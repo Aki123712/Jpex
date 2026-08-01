@@ -25,3 +25,14 @@ sumitomo_chem_ehime,Sumitomo Chemical,住友化学 愛媛工場,新居浜市,愛
 sumitomo_chem_oita,Sumitomo Chemical,住友化学 大分工場,大分市,大分県,kyushu,oita,material,baseload_24h,operating,,tier1_material,高純度化学品
 sumitomo_bakelite_amagasaki,Sumitomo Bakelite,住友ベークライト 尼崎,尼崎市,兵庫県,kansai,kobe,material,baseload_24h,operating,,tier2_component,半導体封止材
 panasonic_koriyama,Panasonic Industry,パナソニック インダストリー 郡山,郡山市,福島県,tohoku,fukushima,material,baseload_24h,operating,,tier2_component,MEGTRON国内生産は郡山(電材/Dempa報道); 増設は海外(タイアユタヤ2027/11・広州2027/04)。旧称Niigata仮説は不採用。耗電量公開値なし=null
+shinetsu_naoetsu,Shin-Etsu,信越化学 直江津工場,上越市頸城区,新潟県,tohoku,joetsu,material,baseload_24h,operating,,tier1_material,公式:上越市頸城区西福島28-1 約56万㎡。合成石英・フォトレジスト・マスクブランクス(2009-)。2022/02新棟レジスト増強
+shinetsu_takefu,Shin-Etsu,信越化学 武生工場,越前市,福井県,hokuriku,fukui,material,baseload_24h,operating,,tier1_material,公式:越前市北府2-1-5 約40万㎡。先端ArF。信越半導体シリコンウエハ・レアアース磁石関連
+shinetsu_isesaki,Shin-Etsu,信越化学 伊勢崎工場,伊勢崎市,群馬県,tokyo,maebashi,material,baseload_24h,operating,,tier1_material,公式:伊勢崎市国領町88-1。半導体露光材料第4拠点
+jsr_yokkaichi,JSR,JSR 四日市工場,四日市市,三重県,chubu,yokkaichi,material,baseload_24h,operating,,tier1_material,川尻町100。KrF/ArF/EUVレジスト。キオクシア四日市と同一市
+jsr_chiba,JSR,JSR 千葉工場,市原市,千葉県,tokyo,chiba,material,baseload_24h,operating,,tier1_material,市原市千種海岸5
+tok_sagami,TOK,東京応化工業 相模工場(技術革新センター),寒川町,神奈川県,tokyo,yokohama,material,baseload_24h,operating,,tier1_material,公式国内拠点:高座郡寒川町田端1590。フォトレジスト製造+R&D。観測点yokohama近似
+tosoh_nanyo,Tosoh,東ソー 南陽事業所,周南市,山口県,chugoku,hiroshima,material,baseload_24h,operating,,tier2_component,周南市開成町4560。日立笠戸と同一中国エリア
+tosoh_yokkaichi,Tosoh,東ソー 四日市事業所,四日市市,三重県,chubu,yokkaichi,material,baseload_24h,operating,,tier2_component,四日市市霞1-8。四日市クラスタ
+sumco_imari,SUMCO,SUMCO 伊万里,伊万里市,佐賀県,kyushu,saga,material,baseload_24h,operating,,tier1_material,九州事業所(伊万里)。ウエハ。営業利益薄く電力弾性が高い優先検証対象
+sumco_yonezawa,SUMCO,SUMCO 米沢,米沢市,山形県,tohoku,yamagata,material,baseload_24h,operating,,tier1_material,公式:米沢市八幡原4-3146-12
+lasertec_yokohama,Lasertec,レーザーテック 新横浜,横浜市港北区,神奈川県,tokyo,yokohama,equipment,office_rnd,operating,,equipment,公式本社:港北区新横浜2-10-1。ファブライト/生産外注→電力暴露極小の対照群。daytime_price評価

@@ -1,0 +1,775 @@
+{
+  "meta": {
+    "version": "v5",
+    "generated_at": "2026-08-01T13:39:59.654Z",
+    "hypothesis": "Even if firms multi-site across regions for disaster diversification, high inter-area power-price correlation means power shocks hit all sites together — geographic redundancy fails for electricity cost risk.",
+    "price_series": "baseload_price",
+    "sample": "summer_weekday (Jun-Sep, is_weekend=0, is_obon=0)",
+    "areas": [
+      "tokyo",
+      "kansai",
+      "kyushu",
+      "chubu",
+      "tohoku",
+      "chugoku",
+      "shikoku",
+      "hokkaido",
+      "hokuriku"
+    ],
+    "n_areas": 9
+  },
+  "full_area_correlation_matrix_baseload_summer_weekday": {
+    "tokyo": {
+      "tokyo": {
+        "r": 1,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kansai": {
+        "r": 0.834722,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kyushu": {
+        "r": 0.634232,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chubu": {
+        "r": 0.967206,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "tohoku": {
+        "r": 0.878181,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chugoku": {
+        "r": 0.672671,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "shikoku": {
+        "r": 0.448096,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokkaido": {
+        "r": 0.580531,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokuriku": {
+        "r": 0.837735,
+        "n_obs": 129,
+        "p_value": 0
+      }
+    },
+    "kansai": {
+      "tokyo": {
+        "r": 0.834722,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kansai": {
+        "r": 1,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kyushu": {
+        "r": 0.870489,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chubu": {
+        "r": 0.898259,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "tohoku": {
+        "r": 0.872702,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chugoku": {
+        "r": 0.883153,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "shikoku": {
+        "r": 0.681892,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokkaido": {
+        "r": 0.573162,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokuriku": {
+        "r": 0.999502,
+        "n_obs": 129,
+        "p_value": 0
+      }
+    },
+    "kyushu": {
+      "tokyo": {
+        "r": 0.634232,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kansai": {
+        "r": 0.870489,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kyushu": {
+        "r": 1,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chubu": {
+        "r": 0.710562,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "tohoku": {
+        "r": 0.746907,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chugoku": {
+        "r": 0.988839,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "shikoku": {
+        "r": 0.833586,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokkaido": {
+        "r": 0.470106,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokuriku": {
+        "r": 0.870657,
+        "n_obs": 129,
+        "p_value": 0
+      }
+    },
+    "chubu": {
+      "tokyo": {
+        "r": 0.967206,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kansai": {
+        "r": 0.898259,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kyushu": {
+        "r": 0.710562,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chubu": {
+        "r": 1,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "tohoku": {
+        "r": 0.89099,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chugoku": {
+        "r": 0.741047,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "shikoku": {
+        "r": 0.506084,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokkaido": {
+        "r": 0.618135,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokuriku": {
+        "r": 0.900207,
+        "n_obs": 129,
+        "p_value": 0
+      }
+    },
+    "tohoku": {
+      "tokyo": {
+        "r": 0.878181,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kansai": {
+        "r": 0.872702,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kyushu": {
+        "r": 0.746907,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chubu": {
+        "r": 0.89099,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "tohoku": {
+        "r": 1,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chugoku": {
+        "r": 0.769621,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "shikoku": {
+        "r": 0.556793,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokkaido": {
+        "r": 0.689539,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokuriku": {
+        "r": 0.873132,
+        "n_obs": 129,
+        "p_value": 0
+      }
+    },
+    "chugoku": {
+      "tokyo": {
+        "r": 0.672671,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kansai": {
+        "r": 0.883153,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kyushu": {
+        "r": 0.988839,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chubu": {
+        "r": 0.741047,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "tohoku": {
+        "r": 0.769621,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chugoku": {
+        "r": 1,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "shikoku": {
+        "r": 0.83782,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokkaido": {
+        "r": 0.476127,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokuriku": {
+        "r": 0.883336,
+        "n_obs": 129,
+        "p_value": 0
+      }
+    },
+    "shikoku": {
+      "tokyo": {
+        "r": 0.448096,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kansai": {
+        "r": 0.681892,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kyushu": {
+        "r": 0.833586,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chubu": {
+        "r": 0.506084,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "tohoku": {
+        "r": 0.556793,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chugoku": {
+        "r": 0.83782,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "shikoku": {
+        "r": 1,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokkaido": {
+        "r": 0.261107,
+        "n_obs": 129,
+        "p_value": 0.002801
+      },
+      "hokuriku": {
+        "r": 0.682549,
+        "n_obs": 129,
+        "p_value": 0
+      }
+    },
+    "hokkaido": {
+      "tokyo": {
+        "r": 0.580531,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kansai": {
+        "r": 0.573162,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kyushu": {
+        "r": 0.470106,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chubu": {
+        "r": 0.618135,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "tohoku": {
+        "r": 0.689539,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chugoku": {
+        "r": 0.476127,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "shikoku": {
+        "r": 0.261107,
+        "n_obs": 129,
+        "p_value": 0.002801
+      },
+      "hokkaido": {
+        "r": 1,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokuriku": {
+        "r": 0.571695,
+        "n_obs": 129,
+        "p_value": 0
+      }
+    },
+    "hokuriku": {
+      "tokyo": {
+        "r": 0.837735,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kansai": {
+        "r": 0.999502,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "kyushu": {
+        "r": 0.870657,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chubu": {
+        "r": 0.900207,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "tohoku": {
+        "r": 0.873132,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "chugoku": {
+        "r": 0.883336,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "shikoku": {
+        "r": 0.682549,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokkaido": {
+        "r": 0.571695,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "hokuriku": {
+        "r": 1,
+        "n_obs": 129,
+        "p_value": 0
+      }
+    }
+  },
+  "companies": [
+    {
+      "company": "AGC",
+      "areas": [
+        "tohoku"
+      ],
+      "site_ids": [
+        "agc_koriyama",
+        "agc_motomiya"
+      ],
+      "priority": "normal",
+      "note": "同一エリア内のみ → 電力冗長性ゼロ",
+      "pairwise_baseload_correlations_summer_weekday": [],
+      "mean_pairwise_r": null,
+      "redundancy_score": 0,
+      "redundancy_score_def": "1 - mean(pairwise baseload_price correlations on summer weekdays)",
+      "interpretation": "single-area footprint: no geographic power diversification"
+    },
+    {
+      "company": "JSR",
+      "areas": [
+        "chubu",
+        "tokyo"
+      ],
+      "site_ids": [
+        "jsr_yokkaichi",
+        "jsr_chiba"
+      ],
+      "priority": "normal",
+      "note": null,
+      "pairwise_baseload_correlations_summer_weekday": [
+        {
+          "area_a": "chubu",
+          "area_b": "tokyo",
+          "r": 0.967206,
+          "n_obs": 129,
+          "p_value": 0
+        }
+      ],
+      "mean_pairwise_r": 0.967206,
+      "redundancy_score": 0.0328,
+      "redundancy_score_def": "1 - mean(pairwise baseload_price correlations on summer weekdays)",
+      "interpretation": "HIGH co-movement: geographic multi-site does NOT diversify power-price shock"
+    },
+    {
+      "company": "HOYA",
+      "areas": [
+        "tokyo",
+        "chubu"
+      ],
+      "site_ids": [
+        "hoya_hachioji",
+        "hoya_nagasaka",
+        "hoya_mishima"
+      ],
+      "priority": "normal",
+      "note": "三島はunverified; 相関はtokyo-chubu",
+      "pairwise_baseload_correlations_summer_weekday": [
+        {
+          "area_a": "tokyo",
+          "area_b": "chubu",
+          "r": 0.967206,
+          "n_obs": 129,
+          "p_value": 0
+        }
+      ],
+      "mean_pairwise_r": 0.967206,
+      "redundancy_score": 0.0328,
+      "redundancy_score_def": "1 - mean(pairwise baseload_price correlations on summer weekdays)",
+      "interpretation": "HIGH co-movement: geographic multi-site does NOT diversify power-price shock"
+    },
+    {
+      "company": "Kioxia",
+      "areas": [
+        "chubu",
+        "tohoku"
+      ],
+      "site_ids": [
+        "kioxia_yokkaichi",
+        "kioxia_kitakami"
+      ],
+      "priority": "normal",
+      "note": null,
+      "pairwise_baseload_correlations_summer_weekday": [
+        {
+          "area_a": "chubu",
+          "area_b": "tohoku",
+          "r": 0.89099,
+          "n_obs": 129,
+          "p_value": 0
+        }
+      ],
+      "mean_pairwise_r": 0.89099,
+      "redundancy_score": 0.109,
+      "redundancy_score_def": "1 - mean(pairwise baseload_price correlations on summer weekdays)",
+      "interpretation": "HIGH co-movement: geographic multi-site does NOT diversify power-price shock"
+    },
+    {
+      "company": "Shin-Etsu",
+      "areas": [
+        "tohoku",
+        "hokuriku",
+        "tokyo"
+      ],
+      "site_ids": [
+        "shinetsu_naoetsu",
+        "shinetsu_takefu",
+        "shinetsu_isesaki"
+      ],
+      "priority": "highest",
+      "note": "直江津(tohoku) vs 武生(hokuriku) が核心仮説",
+      "pairwise_baseload_correlations_summer_weekday": [
+        {
+          "area_a": "tohoku",
+          "area_b": "hokuriku",
+          "r": 0.873132,
+          "n_obs": 129,
+          "p_value": 0
+        },
+        {
+          "area_a": "tohoku",
+          "area_b": "tokyo",
+          "r": 0.878181,
+          "n_obs": 129,
+          "p_value": 0
+        },
+        {
+          "area_a": "hokuriku",
+          "area_b": "tokyo",
+          "r": 0.837735,
+          "n_obs": 129,
+          "p_value": 0
+        }
+      ],
+      "mean_pairwise_r": 0.863016,
+      "redundancy_score": 0.137,
+      "redundancy_score_def": "1 - mean(pairwise baseload_price correlations on summer weekdays)",
+      "interpretation": "HIGH co-movement: geographic multi-site does NOT diversify power-price shock",
+      "naoetsu_tohoku_vs_takefu_hokuriku": {
+        "r": 0.873132,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "naoetsu_tohoku_vs_isesaki_tokyo": {
+        "r": 0.878181,
+        "n_obs": 129,
+        "p_value": 0
+      },
+      "takefu_hokuriku_vs_isesaki_tokyo": {
+        "r": 0.837735,
+        "n_obs": 129,
+        "p_value": 0
+      }
+    },
+    {
+      "company": "MHI",
+      "areas": [
+        "kyushu",
+        "kansai",
+        "chubu"
+      ],
+      "site_ids": [
+        "mhi_nagasaki",
+        "mhi_kobe",
+        "mhi_takasago",
+        "mhi_nagoya_aero"
+      ],
+      "priority": "normal",
+      "note": null,
+      "pairwise_baseload_correlations_summer_weekday": [
+        {
+          "area_a": "kyushu",
+          "area_b": "kansai",
+          "r": 0.870489,
+          "n_obs": 129,
+          "p_value": 0
+        },
+        {
+          "area_a": "kyushu",
+          "area_b": "chubu",
+          "r": 0.710562,
+          "n_obs": 129,
+          "p_value": 0
+        },
+        {
+          "area_a": "kansai",
+          "area_b": "chubu",
+          "r": 0.898259,
+          "n_obs": 129,
+          "p_value": 0
+        }
+      ],
+      "mean_pairwise_r": 0.826437,
+      "redundancy_score": 0.1736,
+      "redundancy_score_def": "1 - mean(pairwise baseload_price correlations on summer weekdays)",
+      "interpretation": "MODERATE co-movement: partial diversification only"
+    },
+    {
+      "company": "SUMCO",
+      "areas": [
+        "kyushu",
+        "tohoku"
+      ],
+      "site_ids": [
+        "sumco_imari",
+        "sumco_yonezawa"
+      ],
+      "priority": "normal",
+      "note": null,
+      "pairwise_baseload_correlations_summer_weekday": [
+        {
+          "area_a": "kyushu",
+          "area_b": "tohoku",
+          "r": 0.746907,
+          "n_obs": 129,
+          "p_value": 0
+        }
+      ],
+      "mean_pairwise_r": 0.746907,
+      "redundancy_score": 0.2531,
+      "redundancy_score_def": "1 - mean(pairwise baseload_price correlations on summer weekdays)",
+      "interpretation": "MODERATE co-movement: partial diversification only"
+    },
+    {
+      "company": "Tosoh",
+      "areas": [
+        "chugoku",
+        "chubu"
+      ],
+      "site_ids": [
+        "tosoh_nanyo",
+        "tosoh_yokkaichi"
+      ],
+      "priority": "normal",
+      "note": null,
+      "pairwise_baseload_correlations_summer_weekday": [
+        {
+          "area_a": "chugoku",
+          "area_b": "chubu",
+          "r": 0.741047,
+          "n_obs": 129,
+          "p_value": 0
+        }
+      ],
+      "mean_pairwise_r": 0.741047,
+      "redundancy_score": 0.259,
+      "redundancy_score_def": "1 - mean(pairwise baseload_price correlations on summer weekdays)",
+      "interpretation": "MODERATE co-movement: partial diversification only"
+    },
+    {
+      "company": "KHI",
+      "areas": [
+        "kansai",
+        "shikoku"
+      ],
+      "site_ids": [
+        "khi_kobe",
+        "khi_akashi",
+        "khi_harima",
+        "khi_sakaide"
+      ],
+      "priority": "normal",
+      "note": null,
+      "pairwise_baseload_correlations_summer_weekday": [
+        {
+          "area_a": "kansai",
+          "area_b": "shikoku",
+          "r": 0.681892,
+          "n_obs": 129,
+          "p_value": 0
+        }
+      ],
+      "mean_pairwise_r": 0.681892,
+      "redundancy_score": 0.3181,
+      "redundancy_score_def": "1 - mean(pairwise baseload_price correlations on summer weekdays)",
+      "interpretation": "MODERATE co-movement: partial diversification only"
+    },
+    {
+      "company": "Hitachi",
+      "areas": [
+        "tokyo",
+        "chugoku"
+      ],
+      "site_ids": [
+        "hitachi_hitachi",
+        "hitachi_omika",
+        "hitachi_kasado"
+      ],
+      "priority": "normal",
+      "note": null,
+      "pairwise_baseload_correlations_summer_weekday": [
+        {
+          "area_a": "tokyo",
+          "area_b": "chugoku",
+          "r": 0.672671,
+          "n_obs": 129,
+          "p_value": 0
+        }
+      ],
+      "mean_pairwise_r": 0.672671,
+      "redundancy_score": 0.3273,
+      "redundancy_score_def": "1 - mean(pairwise baseload_price correlations on summer weekdays)",
+      "interpretation": "MODERATE co-movement: partial diversification only"
+    }
+  ],
+  "headline": {
+    "shinetsu_tohoku_hokuriku": {
+      "r": 0.873132,
+      "n_obs": 129,
+      "p_value": 0
+    },
+    "lowest_redundancy": [
+      {
+        "company": "AGC",
+        "redundancy_score": 0,
+        "mean_r": null
+      },
+      {
+        "company": "JSR",
+        "redundancy_score": 0.0328,
+        "mean_r": 0.967206
+      },
+      {
+        "company": "HOYA",
+        "redundancy_score": 0.0328,
+        "mean_r": 0.967206
+      }
+    ]
+  }
+}

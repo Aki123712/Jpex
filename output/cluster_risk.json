@@ -1,0 +1,416 @@
+{
+  "meta": {
+    "version": "v5",
+    "generated_at": "2026-08-01T13:39:59.643Z",
+    "formula": "cluster_exposure = chokepoint_density × (spike_frequency + 1) × (baseload_p95 / median_p95_across_9_areas)",
+    "chokepoint_density_def": "tier1_material_count + fab_leading_count",
+    "sample": "summer_weekday baseload spike/p95 from correlation_results",
+    "n_areas": 9,
+    "p95_median_across_areas": 21.384
+  },
+  "areas": [
+    {
+      "jepx_area": "tokyo",
+      "site_count": 8,
+      "tier1_material_count": 5,
+      "tier2_component_count": 0,
+      "fab_leading_count": 0,
+      "fab_memory_count": 0,
+      "fab_count": 0,
+      "heavy_count": 2,
+      "equipment_count": 1,
+      "chokepoint_density": 5,
+      "spike_frequency_baseload_gt30": 0,
+      "baseload_p95": 23.716,
+      "p95_vs_median": 1.109,
+      "cluster_exposure": 5.5453,
+      "reserve_margin_aug_2026_pct": 0.9,
+      "reserve_tightness_normalized": 1,
+      "affected_companies": [
+        "Hitachi",
+        "HOYA",
+        "Shin-Etsu",
+        "JSR",
+        "TOK",
+        "Lasertec"
+      ],
+      "site_ids": [
+        "hitachi_hitachi",
+        "hitachi_omika",
+        "hoya_hachioji",
+        "hoya_nagasaka",
+        "shinetsu_isesaki",
+        "jsr_chiba",
+        "tok_sagami",
+        "lasertec_yokohama"
+      ]
+    },
+    {
+      "jepx_area": "kyushu",
+      "site_count": 6,
+      "tier1_material_count": 2,
+      "tier2_component_count": 0,
+      "fab_leading_count": 3,
+      "fab_memory_count": 0,
+      "fab_count": 3,
+      "heavy_count": 1,
+      "equipment_count": 0,
+      "chokepoint_density": 5,
+      "spike_frequency_baseload_gt30": 0,
+      "baseload_p95": 18.468,
+      "p95_vs_median": 0.864,
+      "cluster_exposure": 4.3182,
+      "reserve_margin_aug_2026_pct": 6.2,
+      "reserve_tightness_normalized": 0.1452,
+      "affected_companies": [
+        "TSMC",
+        "Sony",
+        "MHI",
+        "Sumitomo Chemical",
+        "SUMCO"
+      ],
+      "site_ids": [
+        "jasm_fab1",
+        "jasm_fab2",
+        "sony_tec_kumamoto",
+        "mhi_nagasaki",
+        "sumitomo_chem_oita",
+        "sumco_imari"
+      ]
+    },
+    {
+      "jepx_area": "tohoku",
+      "site_count": 6,
+      "tier1_material_count": 4,
+      "tier2_component_count": 1,
+      "fab_leading_count": 0,
+      "fab_memory_count": 1,
+      "fab_count": 1,
+      "heavy_count": 0,
+      "equipment_count": 0,
+      "chokepoint_density": 4,
+      "spike_frequency_baseload_gt30": 0,
+      "baseload_p95": 21.384,
+      "p95_vs_median": 1,
+      "cluster_exposure": 4,
+      "reserve_margin_aug_2026_pct": 4.8,
+      "reserve_tightness_normalized": 0.1875,
+      "affected_companies": [
+        "Kioxia",
+        "AGC",
+        "Panasonic Industry",
+        "Shin-Etsu",
+        "SUMCO"
+      ],
+      "site_ids": [
+        "kioxia_kitakami",
+        "agc_koriyama",
+        "agc_motomiya",
+        "panasonic_koriyama",
+        "shinetsu_naoetsu",
+        "sumco_yonezawa"
+      ]
+    },
+    {
+      "jepx_area": "chubu",
+      "site_count": 4,
+      "tier1_material_count": 1,
+      "tier2_component_count": 1,
+      "fab_leading_count": 0,
+      "fab_memory_count": 1,
+      "fab_count": 1,
+      "heavy_count": 1,
+      "equipment_count": 0,
+      "chokepoint_density": 1,
+      "spike_frequency_baseload_gt30": 0,
+      "baseload_p95": 23.074,
+      "p95_vs_median": 1.079,
+      "cluster_exposure": 1.079,
+      "reserve_margin_aug_2026_pct": 3.5,
+      "reserve_tightness_normalized": 0.2571,
+      "affected_companies": [
+        "Kioxia",
+        "MHI",
+        "JSR",
+        "Tosoh"
+      ],
+      "site_ids": [
+        "kioxia_yokkaichi",
+        "mhi_nagoya_aero",
+        "jsr_yokkaichi",
+        "tosoh_yokkaichi"
+      ]
+    },
+    {
+      "jepx_area": "hokuriku",
+      "site_count": 1,
+      "tier1_material_count": 1,
+      "tier2_component_count": 0,
+      "fab_leading_count": 0,
+      "fab_memory_count": 0,
+      "fab_count": 0,
+      "heavy_count": 0,
+      "equipment_count": 0,
+      "chokepoint_density": 1,
+      "spike_frequency_baseload_gt30": 0,
+      "baseload_p95": 22.22,
+      "p95_vs_median": 1.039,
+      "cluster_exposure": 1.0391,
+      "reserve_margin_aug_2026_pct": 5.5,
+      "reserve_tightness_normalized": 0.1636,
+      "affected_companies": [
+        "Shin-Etsu"
+      ],
+      "site_ids": [
+        "shinetsu_takefu"
+      ]
+    },
+    {
+      "jepx_area": "hokkaido",
+      "site_count": 1,
+      "tier1_material_count": 0,
+      "tier2_component_count": 0,
+      "fab_leading_count": 1,
+      "fab_memory_count": 0,
+      "fab_count": 1,
+      "heavy_count": 0,
+      "equipment_count": 0,
+      "chokepoint_density": 1,
+      "spike_frequency_baseload_gt30": 0,
+      "baseload_p95": 18.934,
+      "p95_vs_median": 0.885,
+      "cluster_exposure": 0.8854,
+      "reserve_margin_aug_2026_pct": 6.1,
+      "reserve_tightness_normalized": 0.1475,
+      "affected_companies": [
+        "Rapidus"
+      ],
+      "site_ids": [
+        "rapidus_iim1"
+      ]
+    },
+    {
+      "jepx_area": "shikoku",
+      "site_count": 2,
+      "tier1_material_count": 1,
+      "tier2_component_count": 0,
+      "fab_leading_count": 0,
+      "fab_memory_count": 0,
+      "fab_count": 0,
+      "heavy_count": 1,
+      "equipment_count": 0,
+      "chokepoint_density": 1,
+      "spike_frequency_baseload_gt30": 0,
+      "baseload_p95": 18.46,
+      "p95_vs_median": 0.863,
+      "cluster_exposure": 0.8633,
+      "reserve_margin_aug_2026_pct": 5.8,
+      "reserve_tightness_normalized": 0.1552,
+      "affected_companies": [
+        "KHI",
+        "Sumitomo Chemical"
+      ],
+      "site_ids": [
+        "khi_sakaide",
+        "sumitomo_chem_ehime"
+      ]
+    },
+    {
+      "jepx_area": "kansai",
+      "site_count": 6,
+      "tier1_material_count": 0,
+      "tier2_component_count": 1,
+      "fab_leading_count": 0,
+      "fab_memory_count": 0,
+      "fab_count": 0,
+      "heavy_count": 5,
+      "equipment_count": 0,
+      "chokepoint_density": 0,
+      "spike_frequency_baseload_gt30": 0,
+      "baseload_p95": 21.894,
+      "p95_vs_median": 1.024,
+      "cluster_exposure": 0,
+      "reserve_margin_aug_2026_pct": 4.3,
+      "reserve_tightness_normalized": 0.2093,
+      "affected_companies": [
+        "MHI",
+        "KHI",
+        "Sumitomo Bakelite"
+      ],
+      "site_ids": [
+        "mhi_kobe",
+        "mhi_takasago",
+        "khi_kobe",
+        "khi_akashi",
+        "khi_harima",
+        "sumitomo_bakelite_amagasaki"
+      ]
+    },
+    {
+      "jepx_area": "chugoku",
+      "site_count": 2,
+      "tier1_material_count": 0,
+      "tier2_component_count": 1,
+      "fab_leading_count": 0,
+      "fab_memory_count": 0,
+      "fab_count": 0,
+      "heavy_count": 1,
+      "equipment_count": 0,
+      "chokepoint_density": 0,
+      "spike_frequency_baseload_gt30": 0,
+      "baseload_p95": 19.292,
+      "p95_vs_median": 0.902,
+      "cluster_exposure": 0,
+      "reserve_margin_aug_2026_pct": 5,
+      "reserve_tightness_normalized": 0.18,
+      "affected_companies": [
+        "Hitachi",
+        "Tosoh"
+      ],
+      "site_ids": [
+        "hitachi_kasado",
+        "tosoh_nanyo"
+      ]
+    }
+  ],
+  "focus_clusters": {
+    "yokkaichi_chubu": {
+      "label": "四日市クラスタ",
+      "area": "chubu",
+      "thesis": "同一市内に NAND(キオクシア) + EUVレジスト(JSR) + 東ソー が共存。エリア障害が同時直撃",
+      "site_ids": [
+        "kioxia_yokkaichi",
+        "jsr_yokkaichi",
+        "tosoh_yokkaichi"
+      ],
+      "cluster_stats": {
+        "jepx_area": "chubu",
+        "site_count": 4,
+        "tier1_material_count": 1,
+        "tier2_component_count": 1,
+        "fab_leading_count": 0,
+        "fab_memory_count": 1,
+        "fab_count": 1,
+        "heavy_count": 1,
+        "equipment_count": 0,
+        "chokepoint_density": 1,
+        "spike_frequency_baseload_gt30": 0,
+        "baseload_p95": 23.074,
+        "p95_vs_median": 1.079,
+        "cluster_exposure": 1.079,
+        "reserve_margin_aug_2026_pct": 3.5,
+        "reserve_tightness_normalized": 0.2571,
+        "affected_companies": [
+          "Kioxia",
+          "MHI",
+          "JSR",
+          "Tosoh"
+        ],
+        "site_ids": [
+          "kioxia_yokkaichi",
+          "mhi_nagoya_aero",
+          "jsr_yokkaichi",
+          "tosoh_yokkaichi"
+        ]
+      }
+    },
+    "tokyo_tight": {
+      "label": "東京管区クラスタ",
+      "area": "tokyo",
+      "thesis": "8月予備率0.9%・spike/p95最悪帯に代替不能部材(HOYA/信越伊勢崎/TOK/JSR千葉)+日立が集中",
+      "site_ids": [
+        "hitachi_hitachi",
+        "hitachi_omika",
+        "hoya_hachioji",
+        "hoya_nagasaka",
+        "shinetsu_isesaki",
+        "jsr_chiba",
+        "tok_sagami",
+        "lasertec_yokohama"
+      ],
+      "cluster_stats": {
+        "jepx_area": "tokyo",
+        "site_count": 8,
+        "tier1_material_count": 5,
+        "tier2_component_count": 0,
+        "fab_leading_count": 0,
+        "fab_memory_count": 0,
+        "fab_count": 0,
+        "heavy_count": 2,
+        "equipment_count": 1,
+        "chokepoint_density": 5,
+        "spike_frequency_baseload_gt30": 0,
+        "baseload_p95": 23.716,
+        "p95_vs_median": 1.109,
+        "cluster_exposure": 5.5453,
+        "reserve_margin_aug_2026_pct": 0.9,
+        "reserve_tightness_normalized": 1,
+        "affected_companies": [
+          "Hitachi",
+          "HOYA",
+          "Shin-Etsu",
+          "JSR",
+          "TOK",
+          "Lasertec"
+        ],
+        "site_ids": [
+          "hitachi_hitachi",
+          "hitachi_omika",
+          "hoya_hachioji",
+          "hoya_nagasaka",
+          "shinetsu_isesaki",
+          "jsr_chiba",
+          "tok_sagami",
+          "lasertec_yokohama"
+        ]
+      },
+      "anomaly_ref": "output/tokyo_anomaly.json"
+    },
+    "tohoku_materials": {
+      "label": "東北クラスタ",
+      "area": "tohoku",
+      "thesis": "キオクシア北上 + AGC EUVブランクス + 信越直江津 + SUMCO米沢",
+      "site_ids": [
+        "kioxia_kitakami",
+        "agc_koriyama",
+        "agc_motomiya",
+        "panasonic_koriyama",
+        "shinetsu_naoetsu",
+        "sumco_yonezawa"
+      ],
+      "cluster_stats": {
+        "jepx_area": "tohoku",
+        "site_count": 6,
+        "tier1_material_count": 4,
+        "tier2_component_count": 1,
+        "fab_leading_count": 0,
+        "fab_memory_count": 1,
+        "fab_count": 1,
+        "heavy_count": 0,
+        "equipment_count": 0,
+        "chokepoint_density": 4,
+        "spike_frequency_baseload_gt30": 0,
+        "baseload_p95": 21.384,
+        "p95_vs_median": 1,
+        "cluster_exposure": 4,
+        "reserve_margin_aug_2026_pct": 4.8,
+        "reserve_tightness_normalized": 0.1875,
+        "affected_companies": [
+          "Kioxia",
+          "AGC",
+          "Panasonic Industry",
+          "Shin-Etsu",
+          "SUMCO"
+        ],
+        "site_ids": [
+          "kioxia_kitakami",
+          "agc_koriyama",
+          "agc_motomiya",
+          "panasonic_koriyama",
+          "shinetsu_naoetsu",
+          "sumco_yonezawa"
+        ]
+      }
+    }
+  }
+}

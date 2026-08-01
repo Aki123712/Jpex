@@ -5,7 +5,8 @@
     "heuristic": true,
     "disclaimer": "chokepoint_score is a HEURISTIC for prioritization, not a calibrated risk model. Oligopoly scores are manual expert priors (1-5). Reserve tightness uses Aug 2026 area reserve margin inverse, normalized so tokyo(0.9%)=1.0.",
     "formula": "chokepoint_score = oligopoly_score(1-5) × tightness; tightness = (1/aug_margin) / max_over_areas(1/aug_margin)",
-    "power_consumption": "always null unless public disclosure — not estimated"
+    "power_consumption": "always null unless public disclosure — not estimated",
+    "updated_with": "v5 pipeline"
   },
   "reserve_tightness_by_area": {
     "tokyo": 1,
