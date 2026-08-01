@@ -123,3 +123,17 @@ Interpretation guide:
 ## Sources
 
 JEPX spot CSVs · Open-Meteo archive · METI/OCCTO reserve margins · company plant lists / IR
+
+## Interactive dashboard
+
+前端程序在 [`dashboard/`](./dashboard/)：
+
+```bash
+cd dashboard && npm install && npm run dev
+```
+
+- 情景推演（基准 / 猛暑 / 猛暑+故障）
+- 区域峰价走势、气温×峰价散点（Tooltip 深色可读）
+- 日内 48 时段曲线
+- 数据：`dashboard/public/data/jepx-model.json`
+
