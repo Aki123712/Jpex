@@ -1,0 +1,625 @@
+{
+  "meta": {
+    "generated_at": "2026-08-01T12:56:23.190Z",
+    "jepx_source": "https://www.jepx.jp/electricpower/market-data/spot/ (spot_summary CSV via _download.php)",
+    "jepx_files": [
+      "spot_summary_2025.csv",
+      "spot_summary_2026.csv"
+    ],
+    "jepx_date_range": {
+      "min": "2025/04/01",
+      "max": "2026/08/02"
+    },
+    "temp_source": "SYNTHETIC proxy calibrated to seasonal climatology (NOT official JMA). Replace with real JMA CSV using same schema.",
+    "temp_note": "tavg/tmax/tmin/cdd26 are model proxies for structure testing; do not treat as observational truth.",
+    "peak_definition": "mean of half-hourly prices for time_code 27-32 (13:00-16:00)",
+    "missing_value_policy": "rows with non-numeric price dropped; peak_price falls back to avg_price if peak window empty",
+    "encoding": "UTF-8, LF, comma-separated, no BOM"
+  },
+  "sample_definitions": {
+    "all": "all days, focus areas only",
+    "weekday_only": "is_weekend=0 AND is_obon=0",
+    "summer_weekday": "Jun-Sep AND is_weekend=0 AND is_obon=0"
+  },
+  "summary_summer_weekday": {
+    "tokyo": {
+      "n_days": 129,
+      "peak_price_mean": 19.343,
+      "peak_price_max": 38.87,
+      "avg_price_mean": 16.3,
+      "tmax_mean": 30.264,
+      "cdd26_mean": 0.979
+    },
+    "kansai": {
+      "n_days": 129,
+      "peak_price_mean": 17.403,
+      "peak_price_max": 32.7,
+      "avg_price_mean": 14.121,
+      "tmax_mean": 30.981,
+      "cdd26_mean": 1.431
+    },
+    "kyushu": {
+      "n_days": 129,
+      "peak_price_mean": 11.033,
+      "peak_price_max": 24.33,
+      "avg_price_mean": 11.969,
+      "tmax_mean": 31.545,
+      "cdd26_mean": 1.862
+    },
+    "chubu": {
+      "n_days": 129,
+      "peak_price_mean": 18.132,
+      "peak_price_max": 32.7,
+      "avg_price_mean": 15.59,
+      "tmax_mean": 30.981,
+      "cdd26_mean": 1.431
+    }
+  },
+  "correlations": {
+    "all": {
+      "tokyo": {
+        "tmax_vs_peak_price": {
+          "r": 0.462807,
+          "n": 489
+        },
+        "tmax_vs_avg_price": {
+          "r": 0.362616,
+          "n": 489
+        },
+        "tmax_vs_max_price": {
+          "r": 0.328667,
+          "n": 489
+        },
+        "cdd26_vs_peak_price": {
+          "r": 0.269334,
+          "n": 489
+        },
+        "cdd26_vs_avg_price": {
+          "r": 0.226434,
+          "n": 489
+        }
+      },
+      "kansai": {
+        "tmax_vs_peak_price": {
+          "r": 0.424451,
+          "n": 489
+        },
+        "tmax_vs_avg_price": {
+          "r": 0.302119,
+          "n": 489
+        },
+        "tmax_vs_max_price": {
+          "r": 0.391487,
+          "n": 489
+        },
+        "cdd26_vs_peak_price": {
+          "r": 0.387231,
+          "n": 489
+        },
+        "cdd26_vs_avg_price": {
+          "r": 0.355752,
+          "n": 489
+        }
+      },
+      "kyushu": {
+        "tmax_vs_peak_price": {
+          "r": 0.251444,
+          "n": 489
+        },
+        "tmax_vs_avg_price": {
+          "r": 0.195938,
+          "n": 489
+        },
+        "tmax_vs_max_price": {
+          "r": 0.353679,
+          "n": 489
+        },
+        "cdd26_vs_peak_price": {
+          "r": 0.338273,
+          "n": 489
+        },
+        "cdd26_vs_avg_price": {
+          "r": 0.399956,
+          "n": 489
+        }
+      },
+      "chubu": {
+        "tmax_vs_peak_price": {
+          "r": 0.403741,
+          "n": 489
+        },
+        "tmax_vs_avg_price": {
+          "r": 0.31477,
+          "n": 489
+        },
+        "tmax_vs_max_price": {
+          "r": 0.373121,
+          "n": 489
+        },
+        "cdd26_vs_peak_price": {
+          "r": 0.371343,
+          "n": 489
+        },
+        "cdd26_vs_avg_price": {
+          "r": 0.31835,
+          "n": 489
+        }
+      }
+    },
+    "weekday_only": {
+      "tokyo": {
+        "tmax_vs_peak_price": {
+          "r": 0.517011,
+          "n": 346
+        },
+        "tmax_vs_avg_price": {
+          "r": 0.381528,
+          "n": 346
+        },
+        "tmax_vs_max_price": {
+          "r": 0.342136,
+          "n": 346
+        },
+        "cdd26_vs_peak_price": {
+          "r": 0.282161,
+          "n": 346
+        },
+        "cdd26_vs_avg_price": {
+          "r": 0.206967,
+          "n": 346
+        }
+      },
+      "kansai": {
+        "tmax_vs_peak_price": {
+          "r": 0.516955,
+          "n": 346
+        },
+        "tmax_vs_avg_price": {
+          "r": 0.358442,
+          "n": 346
+        },
+        "tmax_vs_max_price": {
+          "r": 0.445787,
+          "n": 346
+        },
+        "cdd26_vs_peak_price": {
+          "r": 0.468307,
+          "n": 346
+        },
+        "cdd26_vs_avg_price": {
+          "r": 0.413862,
+          "n": 346
+        }
+      },
+      "kyushu": {
+        "tmax_vs_peak_price": {
+          "r": 0.270524,
+          "n": 346
+        },
+        "tmax_vs_avg_price": {
+          "r": 0.228143,
+          "n": 346
+        },
+        "tmax_vs_max_price": {
+          "r": 0.401874,
+          "n": 346
+        },
+        "cdd26_vs_peak_price": {
+          "r": 0.361117,
+          "n": 346
+        },
+        "cdd26_vs_avg_price": {
+          "r": 0.444916,
+          "n": 346
+        }
+      },
+      "chubu": {
+        "tmax_vs_peak_price": {
+          "r": 0.508076,
+          "n": 346
+        },
+        "tmax_vs_avg_price": {
+          "r": 0.368272,
+          "n": 346
+        },
+        "tmax_vs_max_price": {
+          "r": 0.423813,
+          "n": 346
+        },
+        "cdd26_vs_peak_price": {
+          "r": 0.448272,
+          "n": 346
+        },
+        "cdd26_vs_avg_price": {
+          "r": 0.358015,
+          "n": 346
+        }
+      }
+    },
+    "summer_weekday": {
+      "tokyo": {
+        "tmax_vs_peak_price": {
+          "r": 0.256587,
+          "n": 129
+        },
+        "tmax_vs_avg_price": {
+          "r": 0.303516,
+          "n": 129
+        },
+        "tmax_vs_max_price": {
+          "r": 0.157511,
+          "n": 129
+        },
+        "cdd26_vs_peak_price": {
+          "r": 0.088806,
+          "n": 129
+        },
+        "cdd26_vs_avg_price": {
+          "r": 0.115109,
+          "n": 129
+        }
+      },
+      "kansai": {
+        "tmax_vs_peak_price": {
+          "r": 0.380588,
+          "n": 129
+        },
+        "tmax_vs_avg_price": {
+          "r": 0.436437,
+          "n": 129
+        },
+        "tmax_vs_max_price": {
+          "r": 0.311321,
+          "n": 129
+        },
+        "cdd26_vs_peak_price": {
+          "r": 0.361551,
+          "n": 129
+        },
+        "cdd26_vs_avg_price": {
+          "r": 0.435453,
+          "n": 129
+        }
+      },
+      "kyushu": {
+        "tmax_vs_peak_price": {
+          "r": 0.198983,
+          "n": 129
+        },
+        "tmax_vs_avg_price": {
+          "r": 0.437338,
+          "n": 129
+        },
+        "tmax_vs_max_price": {
+          "r": 0.422409,
+          "n": 129
+        },
+        "cdd26_vs_peak_price": {
+          "r": 0.217391,
+          "n": 129
+        },
+        "cdd26_vs_avg_price": {
+          "r": 0.458353,
+          "n": 129
+        }
+      },
+      "chubu": {
+        "tmax_vs_peak_price": {
+          "r": 0.38558,
+          "n": 129
+        },
+        "tmax_vs_avg_price": {
+          "r": 0.402666,
+          "n": 129
+        },
+        "tmax_vs_max_price": {
+          "r": 0.267512,
+          "n": 129
+        },
+        "cdd26_vs_peak_price": {
+          "r": 0.342825,
+          "n": 129
+        },
+        "cdd26_vs_avg_price": {
+          "r": 0.348939,
+          "n": 129
+        }
+      }
+    }
+  },
+  "regressions": {
+    "all": {
+      "tokyo": {
+        "peak_on_tmax": {
+          "slope": 0.324128,
+          "intercept": 7.694748,
+          "r2": 0.21419,
+          "n": 489
+        },
+        "peak_on_cdd26": {
+          "slope": 2.221038,
+          "intercept": 13.479048,
+          "r2": 0.072541,
+          "n": 489
+        },
+        "avg_on_tmax": {
+          "slope": 0.154871,
+          "intercept": 11.087442,
+          "r2": 0.13149,
+          "n": 489
+        }
+      },
+      "kansai": {
+        "peak_on_tmax": {
+          "slope": 0.293051,
+          "intercept": 5.099026,
+          "r2": 0.180159,
+          "n": 489
+        },
+        "peak_on_cdd26": {
+          "slope": 2.378655,
+          "intercept": 9.971197,
+          "r2": 0.149948,
+          "n": 489
+        },
+        "avg_on_tmax": {
+          "slope": 0.116591,
+          "intercept": 9.186346,
+          "r2": 0.091276,
+          "n": 489
+        }
+      },
+      "kyushu": {
+        "peak_on_tmax": {
+          "slope": 0.12691,
+          "intercept": 4.698862,
+          "r2": 0.063224,
+          "n": 489
+        },
+        "peak_on_cdd26": {
+          "slope": 1.256702,
+          "intercept": 6.559106,
+          "r2": 0.114428,
+          "n": 489
+        },
+        "avg_on_tmax": {
+          "slope": 0.056112,
+          "intercept": 9.013415,
+          "r2": 0.038392,
+          "n": 489
+        }
+      },
+      "chubu": {
+        "peak_on_tmax": {
+          "slope": 0.27984,
+          "intercept": 6.331148,
+          "r2": 0.163007,
+          "n": 489
+        },
+        "peak_on_cdd26": {
+          "slope": 2.289956,
+          "intercept": 10.973388,
+          "r2": 0.137896,
+          "n": 489
+        },
+        "avg_on_tmax": {
+          "slope": 0.135309,
+          "intercept": 10.123864,
+          "r2": 0.09908,
+          "n": 489
+        }
+      }
+    },
+    "weekday_only": {
+      "tokyo": {
+        "peak_on_tmax": {
+          "slope": 0.358229,
+          "intercept": 8.490561,
+          "r2": 0.267301,
+          "n": 346
+        },
+        "peak_on_cdd26": {
+          "slope": 2.34802,
+          "intercept": 14.91276,
+          "r2": 0.079615,
+          "n": 346
+        },
+        "avg_on_tmax": {
+          "slope": 0.16164,
+          "intercept": 11.644852,
+          "r2": 0.145564,
+          "n": 346
+        }
+      },
+      "kansai": {
+        "peak_on_tmax": {
+          "slope": 0.357154,
+          "intercept": 5.615719,
+          "r2": 0.267242,
+          "n": 346
+        },
+        "peak_on_cdd26": {
+          "slope": 2.910117,
+          "intercept": 11.578504,
+          "r2": 0.219312,
+          "n": 346
+        },
+        "avg_on_tmax": {
+          "slope": 0.139694,
+          "intercept": 9.599663,
+          "r2": 0.128481,
+          "n": 346
+        }
+      },
+      "kyushu": {
+        "peak_on_tmax": {
+          "slope": 0.140645,
+          "intercept": 5.368019,
+          "r2": 0.073183,
+          "n": 346
+        },
+        "peak_on_cdd26": {
+          "slope": 1.385955,
+          "intercept": 7.441427,
+          "r2": 0.130406,
+          "n": 346
+        },
+        "avg_on_tmax": {
+          "slope": 0.065348,
+          "intercept": 9.428734,
+          "r2": 0.052049,
+          "n": 346
+        }
+      },
+      "chubu": {
+        "peak_on_tmax": {
+          "slope": 0.34447,
+          "intercept": 6.836428,
+          "r2": 0.258142,
+          "n": 346
+        },
+        "peak_on_cdd26": {
+          "slope": 2.733642,
+          "intercept": 12.626473,
+          "r2": 0.200948,
+          "n": 346
+        },
+        "avg_on_tmax": {
+          "slope": 0.158888,
+          "intercept": 10.56166,
+          "r2": 0.135624,
+          "n": 346
+        }
+      }
+    },
+    "summer_weekday": {
+      "tokyo": {
+        "peak_on_tmax": {
+          "slope": 0.6167,
+          "intercept": 0.679469,
+          "r2": 0.065837,
+          "n": 129
+        },
+        "peak_on_cdd26": {
+          "slope": 0.505151,
+          "intercept": 18.848445,
+          "r2": 0.007887,
+          "n": 129
+        },
+        "avg_on_tmax": {
+          "slope": 0.476284,
+          "intercept": 1.88557,
+          "r2": 0.092122,
+          "n": 129
+        }
+      },
+      "kansai": {
+        "peak_on_tmax": {
+          "slope": 0.944446,
+          "intercept": -11.856104,
+          "r2": 0.144848,
+          "n": 129
+        },
+        "peak_on_cdd26": {
+          "slope": 1.595307,
+          "intercept": 15.120515,
+          "r2": 0.130719,
+          "n": 129
+        },
+        "avg_on_tmax": {
+          "slope": 0.69274,
+          "intercept": -7.340284,
+          "r2": 0.190477,
+          "n": 129
+        }
+      },
+      "kyushu": {
+        "peak_on_tmax": {
+          "slope": 0.352073,
+          "intercept": -0.073415,
+          "r2": 0.039594,
+          "n": 129
+        },
+        "peak_on_cdd26": {
+          "slope": 0.603959,
+          "intercept": 9.908132,
+          "r2": 0.047259,
+          "n": 129
+        },
+        "avg_on_tmax": {
+          "slope": 0.556802,
+          "intercept": -5.594829,
+          "r2": 0.191265,
+          "n": 129
+        }
+      },
+      "chubu": {
+        "peak_on_tmax": {
+          "slope": 0.930784,
+          "intercept": -10.703944,
+          "r2": 0.148672,
+          "n": 129
+        },
+        "peak_on_cdd26": {
+          "slope": 1.471501,
+          "intercept": 16.026597,
+          "r2": 0.117529,
+          "n": 129
+        },
+        "avg_on_tmax": {
+          "slope": 0.676505,
+          "intercept": -5.36846,
+          "r2": 0.16214,
+          "n": 129
+        }
+      }
+    }
+  },
+  "scenario_model": {
+    "description": "Regional peak stress multipliers for sensitivity app (not fitted from OLS)",
+    "peak_window": "time_code 27-32 (13:00-16:00 JST)",
+    "base_day_rule": "latest weekday in dataset",
+    "scenarios": {
+      "base": {
+        "peak_mult": {
+          "tokyo": 1,
+          "kansai": 1,
+          "kyushu": 1,
+          "chubu": 1
+        },
+        "demand_lift": 0
+      },
+      "heat": {
+        "peak_mult": {
+          "tokyo": 1.85,
+          "kansai": 1.55,
+          "kyushu": 1.35,
+          "chubu": 1.65
+        },
+        "demand_lift": 0.07
+      },
+      "heat_outage": {
+        "peak_mult": {
+          "tokyo": 3.2,
+          "kansai": 2.1,
+          "kyushu": 1.7,
+          "chubu": 2.4
+        },
+        "demand_lift": 0.12
+      }
+    },
+    "notes": [
+      "Use peak_price not avg_price under low reserve (right-skewed risk)",
+      "Exclude is_obon=1 and preferably is_weekend=1 for correlation",
+      "Always use area price columns, never system alone for regional plants"
+    ]
+  },
+  "verification_hints": {
+    "recompute_pearson": "r = (n*Σxy - ΣxΣy) / sqrt((n*Σx²-Σx²)*(n*Σy²-Σy²)) on merged_analysis.csv filtered sample",
+    "columns_for_tokyo_peak_vs_tmax": {
+      "filter": "area=='tokyo' & is_weekend==0 & is_obon==0",
+      "x": "tmax",
+      "y": "peak_price"
+    }
+  }
+}
