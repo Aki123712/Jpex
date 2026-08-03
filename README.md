@@ -137,3 +137,9 @@ cd dashboard && npm install && npm run dev
 - 日内 48 时段曲线
 - 数据：`dashboard/public/data/jepx-model.json`
 
+## Data freshness
+
+- JEPX spot (area price): **2025/04/01 → 2026/08/04** (official `spot_summary`, last refresh 2026-08-03)
+- Temperature (Open-Meteo archive): through **2026-08-03** (archive lag; 08-04 weather not yet final)
+- Source: JEPX `csv_read.php` + Open-Meteo ERA5 daily
+
