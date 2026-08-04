@@ -139,7 +139,7 @@ cd dashboard && npm install && npm run dev
 
 ## Data freshness
 
-- JEPX spot (area price): **2025/04/01 → 2026/08/04** (official `spot_summary`, last refresh 2026-08-03)
-- Temperature (Open-Meteo archive): through **2026-08-03** (archive lag; 08-04 weather not yet final)
+- JEPX spot (area price): **2025/04/01 → 2026/08/05** (official `spot_summary`, last refresh 2026-08-04)
+- Temperature (Open-Meteo archive): through **2026-08-04** (archive lag)
 - Source: JEPX `csv_read.php` + Open-Meteo ERA5 daily
 
